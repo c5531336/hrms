@@ -15,6 +15,5 @@
 <script src="{{asset('assets/js/library.min.js')}}"></script>
 {{--    demo--}}
 @yield('script')
-<script src="{{asset('assets/js/dashboard3.js')}}"></script>
 </body>
 </html>
