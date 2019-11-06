@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Imports\TimeKeepingMachineImporter;
-use App\TimeKeepingMachine;
+use App\TimeKeepingMachines;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
-
+use Illuminate\Support\Facades\Storage;
+use PhpOffice\PhpSpreadsheet\Shared\Date as ExcelDate;
+use Carbon\Carbon;
 class TimeKeepingMachineController extends Controller
 {
     /**
@@ -95,15 +97,13 @@ class TimeKeepingMachineController extends Controller
      */
     public function import(Request $request)
     {
+//        $path = $request->file('file')->storeAs(
+//            'test',$request->file->getClientOriginalName()
+//        );
 
 
-        if(preg_match('/(xls)/',$request->file->getClientOriginalName()))
-        {
-            (new TimeKeepingMachineImporter)->import($request->file, null, \Maatwebsite\Excel\Excel::XLS);
-
-//            Excel::import(new TimeKeepingMachineImporter, $request->file);
-        }
-
+        $path = $request->file('file')->store('test');
+        Excel::import(new TimeKeepingMachineImporter,$path);
         return back();
     }
 

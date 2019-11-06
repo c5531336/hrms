@@ -2,11 +2,16 @@
 
 namespace App\Imports;
 
-use App\TimeKeepingMachine;
+use App\TimeKeepingMachines;
+use Carbon\Carbon;
 use Maatwebsite\Excel\Concerns\ToModel;
 use Maatwebsite\Excel\Concerns\Importable;
+use Maatwebsite\Excel\Concerns\WithChunkReading;
+use Maatwebsite\Excel\Concerns\WithProgressBar;
+use Maatwebsite\Excel\Concerns\WithBatchInserts;
+use PhpOffice\PhpSpreadsheet\Shared\Date as ExcelDate;
 
-class TimeKeepingMachineImporter implements ToModel
+class TimeKeepingMachineImporter implements ToModel,WithChunkReading,WithBatchInserts
 {
     use Importable;
     /**
@@ -16,19 +21,23 @@ class TimeKeepingMachineImporter implements ToModel
     */
     public function model(array $row)
     {
-        if (!isset($row[0])) {
+        if (isset($row[4]) && $row[4]==='Ngày') {
             return null;
         }
-        if (!isset($row[0])) {
-            return null;
-        }
-        if (!isset($row[0])) {
-            return null;
-        }
-        return new TimeKeepingMachine([
+        $date= ExcelDate::excelToDateTimeObject($row[4]);
+        $carbon = Carbon::instance($date);
+        return new TimeKeepingMachines([
             'employee_id'=>$row[0],
             'employee_name'=>$row[1],
-            'date'=>$row[4]
+            'date'=>$carbon->toDateString()
         ]);
+    }
+    public function chunkSize(): int
+    {
+        return 200;
+    }
+    public function batchSize(): int
+    {
+        return 200;
     }
 }
