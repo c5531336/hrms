@@ -24,6 +24,11 @@ Route::middleware([])->group(function () {
     Route::get('user/profile', function () {
         // Uses first & second Middleware
     });
+    Route::prefix('time-keeping-machine')->group(function () {
+        Route::get('/', 'TimeKeepingMachineController@importView');
+        Route::post('import', 'TimeKeepingMachineController@import')->name('import');
+    });
+
 });
 /*
  * test route
