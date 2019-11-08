@@ -23,7 +23,6 @@ class Permission extends Migration
             $table->boolean('create')->default(false);
             $table->timestamps();
             $table->index(['role_id']);
-            $table->foreign('role_id')->references('id')->on('roles');
         });
     }
 
