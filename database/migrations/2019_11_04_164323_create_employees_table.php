@@ -14,7 +14,8 @@ class CreateEmployeesTable extends Migration
     public function up()
     {
         Schema::create('employees', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->bigIncrements('id'); // ko quan tâm đến cột này nữa
+            $table->string('employee_id')->default('');
             $table->string('name');
             $table->string('department');
             $table->string('position');
