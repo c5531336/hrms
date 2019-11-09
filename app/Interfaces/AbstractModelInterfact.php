@@ -9,5 +9,4 @@ interface AbstractModelInterfact
     public function update();
     public function delete();
     public function findById();
-
 }
