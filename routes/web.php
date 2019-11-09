@@ -28,8 +28,22 @@ Route::middleware([])->group(function () {
         Route::get('/', 'TimeKeepingMachineController@importView')->name('index');
         Route::post('import', 'TimeKeepingMachineController@import')->name('import');
     });
-
-
+    /**
+     * SalaryManagament
+     */
+    Route::prefix('salary-management')->name('salary-management.')->group(function () {
+        /*
+         * Payroll
+         */
+        Route::prefix('payroll')->name('payroll.')->group(function () {
+            Route::get('/', function () {
+                return view('SalaryManagement.Payroll.index');
+            })->name('index');
+            Route::get('/{id}', function () {
+                return view('SalaryManagement.Payroll.index');
+            })->name('detail');
+        });
+    });
 });
 /*
  * test route
