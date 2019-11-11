@@ -29,7 +29,7 @@ Route::middleware([])->group(function () {
         Route::post('import', 'TimeKeepingMachineController@import')->name('import');
     });
     /**
-     * SalaryManagament
+     * SalaryManagement
      */
     Route::prefix('salary-management')->name('salary-management.')->group(function () {
         /*
@@ -39,10 +39,22 @@ Route::middleware([])->group(function () {
             Route::get('/', function () {
                 return view('SalaryManagement.Payroll.index');
             })->name('index');
-            Route::get('/{id}', function () {
-                return view('SalaryManagement.Payroll.index');
-            })->name('detail');
+            Route::get('/employee-details', function () {
+                return view('SalaryManagement.Payroll.salary_employee_detail');
+            })->name('employee-detail');
+            Route::get('/workdays-details', function () {
+                return view('SalaryManagement.Payroll.salary_employee_workdays-detail');
+            })->name('workdays-detail');
+            Route::get('/income-details', function () {
+                return view('SalaryManagement.Payroll.salary_employee_income-details');
+            })->name('income-detail');
+            Route::get('/deduction-details', function () {
+                return view('SalaryManagement.Payroll.salary_employee_deduction-details');
+            })->name('deduction-detail');
         });
+
+
+
     });
 });
 /*
