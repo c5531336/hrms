@@ -1,24 +1,6 @@
 @extends('layouts.app')
 @section('content')
     <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
-        <div class="content-header">
-            <div class="container-fluid">
-                <div class="row mb-2">
-                    <div class="col-sm-6">
-                        <h1 class="m-0 text-dark">Dashboard v3</h1>
-                    </div><!-- /.col -->
-                    <div class="col-sm-6">
-                        <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item active">Dashboard v3</li>
-                        </ol>
-                    </div><!-- /.col -->
-                </div><!-- /.row -->
-            </div><!-- /.container-fluid -->
-        </div>
-        <!-- /.content-header -->
-
         <!-- Main content -->
         <div class="content">
             <div class="container-fluid">
@@ -31,17 +13,20 @@
 
                         </div>
                         <div class="card-body">
-                            <table id="example" class="table table-bordered table-hover ">
+                            <table id="TTL" class="table table-bordered table-hover ">
                                 <thead>
                                 <tr>
-                                    <th>x</th>
-                                    <th>y</th>
-                                    <th>z</th>
-                                    <th>nb</th>
-                                    <th>nb</th>
-                                    <th>function</th>
+                                    <th>ID</th>
+                                    <th>MSNV</th>
+                                    <th>Full Name</th>
+                                    <th>Position</th>
+                                    <th>Gender</th>
+                                    <th>Total Workdays</th>
+                                    <th>Estimated Total Income</th>
+                                    <th>Total Deduction</th>
+                                    <th>Final Salary</th>
+                                    <th>Details</th>
                                 </tr>
-
                                 </thead>
                             </table>
                         </div>
@@ -55,33 +40,88 @@
     <script>
         let data = [
             {
-                "name":       "Tiger Nixon",
-                "position":   "System Architect",
-                "salary":     "$3,120",
-                "start_date": "2011/04/25",
-                "office":     "Edinburgh",
-                "extn":       "5421"
+                "ID": "1",
+                "MSNV": "0001",
+                "Full Name": "Tiger Nixon",
+                "Position": "System Architect",
+                "Gender": "Male",
+                "Total Workdays": "26",
+                "Estimated Total Income": "9,000,000",
+                "Total Deduction": "2,000,000",
+                "Final Salary": "7,000,000",
+                "Details": "<div class=\"btn-group\" role=\"group\">\n" +
+                    "    <button id=\"btnGroupDrop1\" type=\"button\" class=\"btn btn-secondary dropdown-toggle\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n" +
+                    "      Detail\n" +
+                    "    </button>\n" +
+                    "    <div class=\"dropdown-menu\" aria-labelledby=\"btnGroupDrop1\">\n" +
+                    "      <a class=\"dropdown-item\" href=\"{{route('salary-management.payroll.employee-detail')}}\">Employee-Details</a>\n" +
+                    "      <a class=\"dropdown-item\" href=\"{{route('salary-management.payroll.workdays-detail')}}\">Workdays-Details</a>\n" +
+                    "      <a class=\"dropdown-item\" href=\"{{route('salary-management.payroll.income-detail')}}\">Income-Details</a>\n" +
+                    "      <a class=\"dropdown-item\" href=\"{{route('salary-management.payroll.deduction-detail')}}\">Deduction-Details</a>\n" +
+                    "    </div>\n" +
+                    "  </div>"
             },
             {
-                "name":       "Garrett Winters",
-                "position":   "Director",
-                "salary":     "$5,300",
-                "start_date": "2011/07/25",
-                "office":     "Edinburgh",
-                "extn":       "8422"
+                "ID": "2",
+                "MSNV": "0002",
+                "Full Name":       "Tiger Nixon",
+                "Position":   "System Architect",
+                "Gender":     "Male",
+                "Total Workdays": "26",
+                "Estimated Total Income":"9,000,000",
+                "Total Deduction":       "2,000,000",
+                "Final Salary": "7,000,000",
+                "Details": "<div class=\"btn-group\" role=\"group\">\n" +
+                    "    <button id=\"btnGroupDrop1\" type=\"button\" class=\"btn btn-secondary dropdown-toggle\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n" +
+                    "      Detail\n" +
+                    "    </button>\n" +
+                    "    <div class=\"dropdown-menu\" aria-labelledby=\"btnGroupDrop1\">\n" +
+                    "      <a class=\"dropdown-item\" href=\"{{route('salary-management.payroll.employee-detail')}}\">Employee-Details</a>\n" +
+                    "      <a class=\"dropdown-item\" href=\"{{route('salary-management.payroll.workdays-detail')}}\">Workdays-Details</a>\n" +
+                    "      <a class=\"dropdown-item\" href=\"{{route('salary-management.payroll.income-detail')}}\">Income-Details</a>\n" +
+                    "      <a class=\"dropdown-item\" href=\"{{route('salary-management.payroll.deduction-detail')}}\">Deduction-Details</a>\n" +
+                    "    </div>\n" +
+                    "  </div>"
+            },
+            {
+                "ID": "3",
+                "MSNV": "0003",
+                "Full Name":       "Tiger Nixon",
+                "Position":   "System Architect",
+                "Gender":     "Female",
+                "Total Workdays": "26",
+                "Estimated Total Income":"9,000,000",
+                "Total Deduction":       "2,000,000",
+                "Final Salary": "7,000,000",
+                "Details": "<div class=\"btn-group\" role=\"group\">\n" +
+                    "    <button id=\"btnGroupDrop1\" type=\"button\" class=\"btn btn-secondary dropdown-toggle\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n" +
+                    "      Detail\n" +
+                    "    </button>\n" +
+                    "    <div class=\"dropdown-menu\" aria-labelledby=\"btnGroupDrop1\">\n" +
+                    "      <a class=\"dropdown-item\" href=\"{{route('salary-management.payroll.employee-detail')}}\">Employee-Details</a>\n" +
+                    "      <a class=\"dropdown-item\" href=\"{{route('salary-management.payroll.workdays-detail')}}\">Workdays-Details</a>\n" +
+                    "      <a class=\"dropdown-item\" href=\"{{route('salary-management.payroll.income-detail')}}\">Income-Details</a>\n" +
+                    "      <a class=\"dropdown-item\" href=\"{{route('salary-management.payroll.deduction-detail')}}\">Deduction-Details</a>\n" +
+                    "    </div>\n" +
+                    "  </div>"
             }
         ];
 
-        $('#example').DataTable( {
+        $('#TTL').DataTable({
             data: data,
             paging: false,
             columns: [
-                { data: 'name' },
-                { data: 'position' },
-                { data: 'salary' },
-                { data: 'office' },
-                { data: 'extn' },
+                { data: 'ID' },
+                { data: 'MSNV' },
+                { data: 'Full Name' },
+                { data: 'Position' },
+                { data: 'Gender' },
+                { data: 'Total Workdays'},
+                { data: 'Estimated Total Income'},
+                { data: 'Total Deduction'},
+                { data: 'Final Salary'},
+                { data: 'Details'}
             ]
-        } );
+        });
     </script>
 @endsection
