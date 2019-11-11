@@ -19,6 +19,7 @@ mix.js('resources/js/app.js', 'public/assets/js')
 // import adminlte js plugin
 mix.scripts([
     'node_modules/datatables.net/js/jquery.dataTables.min.js',
+    'node_modules/admin-lte/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js',
     'node_modules/chart.js/dist/Chart.min.js',
     'node_modules/moment/moment.js',
     'node_modules/daterangepicker/daterangepicker.js',
