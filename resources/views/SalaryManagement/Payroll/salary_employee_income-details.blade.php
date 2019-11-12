@@ -6,11 +6,8 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="card bg-light mt-3">
-
                         <div class="card-header">
-
                             Bảng Thu nhập chi tiết
-
                         </div>
                         <div class="card-body">
                             <div class="container-fluid">
@@ -75,7 +72,7 @@
         @endsection
         @section('script')
             <script>
-                let data = [
+                let dataSalary = [
                     {
                         "ID": "1",
                         "MSNV": "0001",
@@ -199,7 +196,7 @@
                 ];
 
                 $('#Salary-Details').DataTable({
-                    data: data,
+                    data: dataSalary,
                     paging: false,
                     "scrollX": true,
                     "overflow": true,

@@ -39,18 +39,9 @@ Route::middleware([])->group(function () {
             Route::get('/', function () {
                 return view('SalaryManagement.Payroll.index');
             })->name('index');
-            Route::get('/employee-details', function () {
-                return view('SalaryManagement.Payroll.salary_employee_detail');
-            })->name('employee-detail');
-            Route::get('/workdays-details', function () {
-                return view('SalaryManagement.Payroll.salary_employee_workdays-detail');
-            })->name('workdays-detail');
-            Route::get('/income-details', function () {
-                return view('SalaryManagement.Payroll.salary_employee_income-details');
-            })->name('income-detail');
-            Route::get('/deduction-details', function () {
-                return view('SalaryManagement.Payroll.salary_employee_deduction-details');
-            })->name('deduction-detail');
+            Route::get('/details', function () {
+                return view('SalaryManagement.Payroll.salary_details');
+            })->name('details');
         });
 
 

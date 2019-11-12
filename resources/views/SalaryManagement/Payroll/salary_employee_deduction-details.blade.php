@@ -13,7 +13,7 @@
 
                         </div>
                         <div class="card-body">
-                            <table id="Workdays-Details" class="table table-bordered table-hover ">
+                            <table id="Deduction-Details" class="table table-bordered table-hover ">
                                 <thead>
                                 <tr>
                                     <th>ID</th>
@@ -45,7 +45,7 @@
         @endsection
         @section('script')
             <script>
-                let data = [
+                let dataDeduction = [
                     {
                         "ID": "1",
                         "MSNV": "0001",
@@ -101,9 +101,8 @@
                         "Total Deductions": "2,000,000"
                     }
                 ];
-
-                $('#Workdays-Details').DataTable({
-                    data: data,
+                $('#Deduction-Details').DataTable({
+                    data: dataDeduction,
                     paging: false,
                     "scrollX": true,
                     "overflow": true,

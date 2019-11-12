@@ -49,17 +49,7 @@
                 "Estimated Total Income": "9,000,000",
                 "Total Deduction": "2,000,000",
                 "Final Salary": "7,000,000",
-                "Details": "<div class=\"btn-group\" role=\"group\">\n" +
-                    "    <button id=\"btnGroupDrop1\" type=\"button\" class=\"btn btn-secondary dropdown-toggle\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n" +
-                    "      Detail\n" +
-                    "    </button>\n" +
-                    "    <div class=\"dropdown-menu\" aria-labelledby=\"btnGroupDrop1\">\n" +
-                    "      <a class=\"dropdown-item\" href=\"{{route('salary-management.payroll.employee-detail')}}\">Employee-Details</a>\n" +
-                    "      <a class=\"dropdown-item\" href=\"{{route('salary-management.payroll.workdays-detail')}}\">Workdays-Details</a>\n" +
-                    "      <a class=\"dropdown-item\" href=\"{{route('salary-management.payroll.income-detail')}}\">Income-Details</a>\n" +
-                    "      <a class=\"dropdown-item\" href=\"{{route('salary-management.payroll.deduction-detail')}}\">Deduction-Details</a>\n" +
-                    "    </div>\n" +
-                    "  </div>"
+                "Details": "<a class=\"btn btn-primary\" href=\"{{route('salary-management.payroll.details')}}\" role=\"button\">Details</a>"
             },
             {
                 "ID": "2",
@@ -71,17 +61,7 @@
                 "Estimated Total Income":"9,000,000",
                 "Total Deduction":       "2,000,000",
                 "Final Salary": "7,000,000",
-                "Details": "<div class=\"btn-group\" role=\"group\">\n" +
-                    "    <button id=\"btnGroupDrop1\" type=\"button\" class=\"btn btn-secondary dropdown-toggle\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n" +
-                    "      Detail\n" +
-                    "    </button>\n" +
-                    "    <div class=\"dropdown-menu\" aria-labelledby=\"btnGroupDrop1\">\n" +
-                    "      <a class=\"dropdown-item\" href=\"{{route('salary-management.payroll.employee-detail')}}\">Employee-Details</a>\n" +
-                    "      <a class=\"dropdown-item\" href=\"{{route('salary-management.payroll.workdays-detail')}}\">Workdays-Details</a>\n" +
-                    "      <a class=\"dropdown-item\" href=\"{{route('salary-management.payroll.income-detail')}}\">Income-Details</a>\n" +
-                    "      <a class=\"dropdown-item\" href=\"{{route('salary-management.payroll.deduction-detail')}}\">Deduction-Details</a>\n" +
-                    "    </div>\n" +
-                    "  </div>"
+                "Details": "<a class=\"btn btn-primary\" href=\"{{route('salary-management.payroll.details')}}\" role=\"button\">Details</a>"
             },
             {
                 "ID": "3",
@@ -93,17 +73,7 @@
                 "Estimated Total Income":"9,000,000",
                 "Total Deduction":       "2,000,000",
                 "Final Salary": "7,000,000",
-                "Details": "<div class=\"btn-group\" role=\"group\">\n" +
-                    "    <button id=\"btnGroupDrop1\" type=\"button\" class=\"btn btn-secondary dropdown-toggle\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n" +
-                    "      Detail\n" +
-                    "    </button>\n" +
-                    "    <div class=\"dropdown-menu\" aria-labelledby=\"btnGroupDrop1\">\n" +
-                    "      <a class=\"dropdown-item\" href=\"{{route('salary-management.payroll.employee-detail')}}\">Employee-Details</a>\n" +
-                    "      <a class=\"dropdown-item\" href=\"{{route('salary-management.payroll.workdays-detail')}}\">Workdays-Details</a>\n" +
-                    "      <a class=\"dropdown-item\" href=\"{{route('salary-management.payroll.income-detail')}}\">Income-Details</a>\n" +
-                    "      <a class=\"dropdown-item\" href=\"{{route('salary-management.payroll.deduction-detail')}}\">Deduction-Details</a>\n" +
-                    "    </div>\n" +
-                    "  </div>"
+                "Details": "<a class=\"btn btn-primary\" href=\"{{route('salary-management.payroll.details')}}\" role=\"button\">Details</a>"
             }
         ];
 
