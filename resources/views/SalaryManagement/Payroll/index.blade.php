@@ -18,14 +18,14 @@
                                 <tr>
                                     <th>ID</th>
                                     <th>MSNV</th>
-                                    <th>Full Name</th>
-                                    <th>Position</th>
-                                    <th>Gender</th>
-                                    <th>Total Workdays</th>
-                                    <th>Estimated Total Income</th>
-                                    <th>Total Deduction</th>
-                                    <th>Final Salary</th>
-                                    <th>Details</th>
+                                    <th>Họ Và Tên</th>
+                                    <th>Bộ Phận</th>
+                                    <th>Giới Tính</th>
+                                    <th>Tổng Ngày Công</th>
+                                    <th>Tổ Thu Nhập Dự Tính</th>
+                                    <th>Tổng Khoản Trừ</th>
+                                    <th>Lương Thực Nhận</th>
+                                    <th>Chi Tiết</th>
                                 </tr>
                                 </thead>
                             </table>

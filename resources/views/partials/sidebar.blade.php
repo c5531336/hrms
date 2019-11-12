@@ -91,7 +91,7 @@
                     </a>
                     <ul class="nav nav-item nav-treeview">
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="{{route('salary-management.SalaryCalculation.index')}}" class="nav-link">
                                 <i class="nav-icon far fa-circle"></i>
                                 <p>Tính Lương</p>
                             </a>

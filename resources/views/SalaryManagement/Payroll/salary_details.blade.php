@@ -17,14 +17,14 @@
                                     <tr>
                                         <th>ID</th>
                                         <th>MSNV</th>
-                                        <th>Full Name</th>
-                                        <th>Position</th>
-                                        <th>Gender</th>
-                                        <th>Starting Work</th>
-                                        <th>Time off Work</th>
-                                        <th>Lunch Confirmed</th>
-                                        <th>Social insurance</th>
-                                        <th>Salary</th>
+                                        <th>Họ Và Tên</th>
+                                        <th>Chức vụ</th>
+                                        <th>Giới tính</th>
+                                        <th>Ngày nhận việc</th>
+                                        <th>Ngày thôi việc</th>
+                                        <th>Xác Nhận Ăn Trưa</th>
+                                        <th>Bảo Hiểm Xã Hội</th>
+                                        <th>Lương Cơ Bản</th>
                                     </tr>
                                     </thead>
                                 </table>
@@ -43,21 +43,21 @@
                                     <tr>
                                         <th>ID</th>
                                         <th>MSNV</th>
-                                        <th>Full Name </th>
-                                        <th>Position </th>
-                                        <th>X1-probationary</th>
-                                        <th>A1-probationary</th>
-                                        <th>E1-probationary</th>
-                                        <th>X-Offical </th>
-                                        <th>A-Offical </th>
+                                        <th>Họ Và Tên </th>
+                                        <th>Bộ Phận </th>
+                                        <th>X1-Thử Việc</th>
+                                        <th>A1-Thử Việc</th>
+                                        <th>E1-Thử Việc</th>
+                                        <th>X-Chính Thức </th>
+                                        <th>A-Chính Thức </th>
                                         <th>Đ4-Đ8</th>
-                                        <th>E-Night</th>
-                                        <th>HC-TimeOff</th>
-                                        <th>Timeoff-Daytime</th>
-                                        <th>Timeoff-NightShift</th>
+                                        <th>E-Ca Đêm</th>
+                                        <th>Thời Gian Nghỉ Ca Hành Chính</th>
+                                        <th>Thời Gian Nghỉ Ca Ngày</th>
+                                        <th>Thời Gian Nghỉ Ca Đêm</th>
                                         <th>OT</th>
-                                        <th>OT-Sunday</th>
-                                        <th>Total Workdays </th>
+                                        <th>OT Chủ Nhật</th>
+                                        <th>Tổng Ngày Công</th>
                                     </tr>
                                     </thead>
                                 </table>
@@ -76,26 +76,26 @@
                                     <tr>
                                         <th>ID</th>
                                         <th>MSNV</th>
-                                        <th>Full Name </th>
-                                        <th>Position </th>
-                                        <th>X1-probationary</th>
-                                        <th>A1-probationary</th>
-                                        <th>E1-probationary</th>
-                                        <th>X-Offical </th>
-                                        <th>A-Offical </th>
+                                        <th>Họ Và Tên </th>
+                                        <th>Bộ Phận </th>
+                                        <th>X1-Thử Việc</th>
+                                        <th>A1-Thử Việc</th>
+                                        <th>E1-Thử Việc</th>
+                                        <th>X-Chính Thức </th>
+                                        <th>A-Chính Thức </th>
                                         <th>Đ4-Đ8</th>
-                                        <th>E-Night</th>
-                                        <th>HC-TimeOff</th>
-                                        <th>Timeoff-Daytime</th>
-                                        <th>Timeoff-NightShift</th>
+                                        <th>E-Ca Đêm</th>
+                                        <th>Thời Gian Nghỉ Ca Hành Chính</th>
+                                        <th>Thời Gian Nghỉ Ca Ngày</th>
+                                        <th>Thời Gian Nghỉ Ca Đêm</th>
                                         <th>OT</th>
-                                        <th>OT-Sunday</th>
-                                        <th>Number of Product</th>
-                                        <th>Total Amount By Product</th>
-                                        <th>Productivity reward</th>
-                                        <th>Extra salary</th>
-                                        <th>Overtime wages</th>
-                                        <th>Total Salary</th>
+                                        <th>OT Chủ Nhật</th>
+                                        <th>Số Lượng SP</th>
+                                        <th>Thành Tiền</th>
+                                        <th>Thưởng Năng Suất</th>
+                                        <th>Bù Lương</th>
+                                        <th>Tiền Tăng Ca</th>
+                                        <th>Tổng Lương</th>
                                     </tr>
                                     </thead>
                                 </table>
@@ -114,16 +114,16 @@
                                     <tr>
                                         <th>ID</th>
                                         <th>MSNV</th>
-                                        <th>Full Name </th>
-                                        <th>Position </th>
-                                        <th>Responsibility</th>
-                                        <th>Productions</th>
-                                        <th>Eating-fee</th>
-                                        <th>Fuel</th>
-                                        <th>Housing Cost</th>
-                                        <th>Phone</th>
-                                        <th>Others</th>
-                                        <th>Total Allowances</th>
+                                        <th>Họ Và Tên</th>
+                                        <th>Bộ Phận </th>
+                                        <th>Trách Nhiệm</th>
+                                        <th>Sản Xuất</th>
+                                        <th>Tiền Ăn</th>
+                                        <th>Xăng</th>
+                                        <th>Nhà ở</th>
+                                        <th>Điện Thoại</th>
+                                        <th>Khác</th>
+                                        <th>Tổng Trợ cấp</th>
                                     </tr>
                                     </thead>
                                 </table>
@@ -142,20 +142,20 @@
                                     <tr>
                                         <th>ID</th>
                                         <th>MSNV</th>
-                                        <th>Full Name </th>
-                                        <th>Position </th>
-                                        <th>Social insurance</th>
-                                        <th>Personal income</th>
-                                        <th>Eating-fee</th>
-                                        <th>Advance Salary</th>
-                                        <th>Indemnify damages</th>
-                                        <th>Uniform</th>
-                                        <th>Others</th>
-                                        <th>Deduce yourself</th>
-                                        <th>Number of Dependents</th>
-                                        <th>Deduce NoD</th>
-                                        <th>Income taxes</th>
-                                        <th>Total Deductions</th>
+                                        <th>Họ Và Tên </th>
+                                        <th>Bộ Phận </th>
+                                        <th>Bảo Hiểm Xã Hội</th>
+                                        <th>Thu Nhập Cá Nhân</th>
+                                        <th>Tiền Ăn</th>
+                                        <th>Ứng Lương</th>
+                                        <th>Bồi Thường Thiệt Hại</th>
+                                        <th>Đồng Phục</th>
+                                        <th>Khác</th>
+                                        <th>Giảm Trừ Cá Nhân</th>
+                                        <th>Số Người Phụ Thuộc</th>
+                                        <th>Giảm Trừ Số Người Phụ Thuộc</th>
+                                        <th>Thu Nhập Chịu Thuế TNCN</th>
+                                        <th>Tổng Khoản Trừ</th>
                                     </tr>
                                     </thead>
                                 </table>

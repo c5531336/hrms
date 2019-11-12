@@ -43,13 +43,19 @@ Route::middleware([])->group(function () {
                 return view('SalaryManagement.Payroll.salary_details');
             })->name('details');
         });
+        /*
+         * Salary_Calculation
+         */
+        Route::prefix('SalaryCalculation')->name('SalaryCalculation.')->group(function () {
+            Route::get('/', function () {
+                return view('SalaryManagement.SalaryCalculation.index');
+            })->name('index');
 
-
-
+        });
     });
 });
 /*
  * test route
- */
+*/
 Route::get('/home2', 'HomeController@index2')->name('home2');
 Route::get('/home3', 'HomeController@index3')->name('home3');
