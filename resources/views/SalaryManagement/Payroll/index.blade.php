@@ -4,16 +4,13 @@
         <!-- Main content -->
         <div class="content">
             <div class="container-fluid">
-                <div class="row">
-                    <div class="card bg-light mt-3">
-
+                <div class="row ">
+                    <div class="card bg-light mt-3 ">
                         <div class="card-header">
-
                            Thông tin lương
-
                         </div>
-                        <div class="card-body">
-                            <table id="TTL" class="table table-bordered table-hover ">
+                        <div class="card-body table-responsive">
+                            <table id="TTL" class="table table-bordered table-hover">
                                 <thead>
                                 <tr>
                                     <th>ID</th>
@@ -79,6 +76,7 @@
 
         $('#TTL').DataTable({
             data: data,
+            responsive:true,
             paging: false,
             columns: [
                 { data: 'ID' },

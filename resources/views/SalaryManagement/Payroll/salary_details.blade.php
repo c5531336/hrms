@@ -5,7 +5,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0 text-dark">Bảng lương Chi tiết </h1>
+                        <a class="btn btn-lg btn-primary fas fa-backward" href="{{route('salary-management.payroll.index')}}" role="button"></a>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -29,7 +29,7 @@
                                 <div class="col-12">
                                     <h4>
                                         <i class="fas fa-globe"></i> Bảng lương chi tiết
-                                        <small class="float-right">Date: 2/10/2014</small>
+                                        <small class="float-right">Date: 11/11/2019</small>
                                     </h4>
                                 </div>
                                 <!-- /.col -->
@@ -39,74 +39,68 @@
                                 <div class="col-sm-4 invoice-col">
                                     <strong>MSNV</strong>: 1 <br>
                                     <strong>Họ Và Tên</strong>: Tiger Nixon<br>
-                                    <strong>Chức vụ</strong>: System Architect <br>
                                     <strong>Giới tính</strong>: Male <br>
+                                    <strong>Chức vụ</strong>: System Architect <br>
+                                    <strong>Bộ Phận</strong>: System Management <br>
+                                </div>
+                                <div class="col-sm-4 invoice-col">
                                     <strong>Ngày nhận việc</strong>: 01/09/2019 <br>
                                     <strong>Ngày thôi việc</strong>: - <br>
+                                    <strong>Xác Nhận Ăn Trưa</strong>: Có <br>
+                                    <strong>Bảo Hiểm Xã Hội</strong>: 525,000 <br>
+                                    <strong>Lương Cơ Bản</strong>: 5,000,000 <br>
                                 </div>
                             </div>
+                            <br>
                             <!-- /.row -->
 
                             <!-- Table row -->
                             <div class="row">
                                 <div class="col-12 table-responsive">
-                                    <table class="table table-striped">
+                                    <table class="table table-striped table-bordered ">
+                                        <h4>Ngày Công Chi Tiết</h4>
                                         <thead>
                                         <tr>
-                                            <th>Khoảng tiền</th>
-                                            <th>Số tiền</th>
-                                            <th>Khoảng tiền</th>
-                                            <th>Số tiền</th>
-                                            <th>Khoảng tiền</th>
-                                            <th>Số tiền</th>
+                                            <th>Thông Tin</th>
+                                            <th>Chi Tiết</th>
+                                            <th>Thông Tin</th>
+                                            <th>Chi Tiết</th>
+                                            <th>Thông Tin</th>
+                                            <th>Chi Tiết</th>
                                         </tr>
-
-                                        {{--                                        <th>Bộ Phận </th>--}}
-                                        {{--                                        <th>X1-Thử Việc</th>--}}
-                                        {{--                                        <th></th>--}}
-                                        {{--                                        <th></th>--}}
-                                        {{--                                        <th> </th>--}}
-                                        {{--                                        <th> </th>--}}
-                                        {{--                                        <th></th>--}}
-                                        {{--                                        <th></th>--}}
-                                        {{--                                        <th>Thời Gian Nghỉ Ca Hành Chính</th>--}}
-                                        {{--                                        <th>Thời Gian Nghỉ Ca Ngày</th>--}}
-                                        {{--                                        <th>Thời Gian Nghỉ Ca Đêm</th>--}}
-                                        {{--                                        <th>OT</th>--}}
-                                        {{--                                        <th>OT Chủ Nhật</th>--}}
-                                        {{--                                        <th>Tổng Ngày Công</th>--}}
                                         </thead>
                                         <tbody>
                                         <tr>
-                                            <td>Lương Cơ Bản</td>
-                                            <td>100 giờ </td>
-                                            <td>Bộ Phận</td>
-                                            <td>100 giờ</td>
                                             <td>X1-Thử Việc</td>
-                                            <td>100 giờ</td>
-                                        </tr>
-                                        <tr>
+                                            <td>26 Ngày</td>
                                             <td>A1-Thử Việc</td>
-                                            <td>100 giờ</td>
+                                            <td>26 Ngày</td>
                                             <td>E1-Thử Việc</td>
-                                            <td>100 giờ</td>
+                                            <td>26 Ngày</td>
+                                        </tr>
+                                        <tr>
                                             <td>X-Chính Thức</td>
-                                            <td>100 giờ</td>
-                                        </tr>
-                                        <tr>
+                                            <td>26 Ngày</td>
                                             <td>A-Chính Thức</td>
-                                            <td>Monsters DVD</td>
+                                            <td>26 Ngày</td>
                                             <td>Đ4-Đ8</td>
-                                            <td>Terry Richardson helvetica tousled street art master</td>
-                                            <td>E-Ca Đêm</td>
-                                            <td>$10.70</td>
+                                            <td>26 Ngày</td>
                                         </tr>
                                         <tr>
-                                            <td>1</td>
-                                            <td>Grown Ups Blue Ray</td>
-                                            <td>422-568-642</td>
-                                            <td>Tousled lomo letterpress</td>
-                                            <td>$25.99</td>
+                                            <td>E-Ca Đêm</td>
+                                            <td>100 Ngày</td>
+                                            <td>Nghỉ-HC</td>
+                                            <td>0 giờ</td>
+                                            <td>Thời Gian Nghỉ Ca Ngày</td>
+                                            <td>0 giờ</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Thời Gian Nghỉ Ca Đêm</td>
+                                            <td>0 giờ</td>
+                                            <td>OT</td>
+                                            <td>20 Giờ</td>
+                                            <td>Tổng Ngày Công</td>
+                                            <td>26 Ngày</td>
                                         </tr>
                                         </tbody>
                                     </table>
@@ -114,32 +108,186 @@
                                 <!-- /.col -->
                             </div>
                             <!-- /.row -->
-
                             <div class="row">
-                                <!-- accepted payments column -->
-
+                                <div class="col-12 table-responsive">
+                                    <table class="table table-striped table-bordered">
+                                        <h4>Lương Chi Tiết</h4>
+                                        <thead>
+                                        <tr>
+                                            <th>Thông Tin</th>
+                                            <th>Chi Tiết</th>
+                                            <th>Thông Tin</th>
+                                            <th>Chi Tiết</th>
+                                            <th>Thông Tin</th>
+                                            <th>Chi Tiết</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td>X1-Lương</td>
+                                            <td>1,000,000</td>
+                                            <td>A1-Lương</td>
+                                            <td>1,000,000</td>
+                                            <td>E1-Lương</td>
+                                            <td>1,000,000</td>
+                                        </tr>
+                                        <tr>
+                                            <td>X-Lương</td>
+                                            <td>1,000,000</td>
+                                            <td>A-Lương</td>
+                                            <td>1,000,000</td>
+                                            <td>Đ4-Đ8-Lương</td>
+                                            <td>1,000,000</td>
+                                        </tr>
+                                        <tr>
+                                            <td>E-Lương</td>
+                                            <td>1,000,000</td>
+                                            <td>Số Lượng SP</td>
+                                            <td>1,000,000</td>
+                                            <td>Thành Tiền SP</td>
+                                            <td>1,000,000</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Tiền Tăng Ca</td>
+                                            <td>1,000,000</td>
+                                            <td>Thưởng Năng Suất</td>
+                                            <td>1,000,000</td>
+                                            <td>Bù Lương</td>
+                                            <td>1,000,000</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Tổng Lương</td>
+                                            <td>1,000,000</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
                                 <!-- /.col -->
+                            </div>
+                            <!-- /.row -->
+                            <div class="row">
+                                <div class="col-12 table-responsive">
+                                    <table class="table table-striped table-bordered" >
+                                        <h4>Trợ cấp Chi Tiết</h4>
+                                        <thead>
+                                        <tr>
+                                            <th>Thông Tin</th>
+                                            <th>Chi Tiết</th>
+                                            <th>Thông Tin</th>
+                                            <th>Chi Tiết</th>
+                                            <th>Thông Tin</th>
+                                            <th>Chi Tiết</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td>Trách Nhiệm</td>
+                                            <td>1,000,000</td>
+                                            <th>Sản Xuất</th>
+                                            <td>1,000,000</td>
+                                            <th>Tiền Ăn</th>
+                                            <td>1,000,000</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Nhà ở</th>
+                                            <td>1,000,000</td>
+                                            <th>Xăng</th>
+                                            <td>1,000,000</td>
+                                            <th>Điện Thoại</th>
+                                            <td>1,000,000</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Khác</th>
+                                            <td>1,000,000</td>
+                                            <th>Tổng Trợ cấp</th>
+                                            <td>1,000,000</td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <!-- /.row -->
+                            <div class="row">
+                                <div class="col-12 table-responsive">
+                                    <table class="table table-striped table-bordered" >
+                                        <h4>Khoản Trừ Chi Tiết</h4>
+                                        <thead>
+                                        <tr>
+                                            <th>Thông Tin</th>
+                                            <th>Chi Tiết</th>
+                                            <th>Thông Tin</th>
+                                            <th>Chi Tiết</th>
+                                            <th>Thông Tin</th>
+                                            <th>Chi Tiết</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <th>Bảo Hiểm Xã Hội</th>
+                                            <td>1,000,000</td>
+                                            <th>Thu Nhập Cá Nhân</th>
+                                            <td>1,000,000</td>
+                                            <th>Tiền Ăn</th>
+                                            <td>1,000,000</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Ứng Lương</th>
+                                            <td>1,000,000</td>
+                                            <th>Bồi Thường Thiệt Hại</th>
+                                            <td>1,000,000</td>
+                                            <th>Đồng Phục</th>
+                                            <td>1,000,000</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Khác</th>
+                                            <td>1,000,000</td>
+                                            <th>Giảm Trừ Cá Nhân</th>
+                                            <td>0</td>
+                                            <th>Số Người Phụ Thuộc</th>
+                                            <td>0</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Giảm Trừ Số Người Phụ Thuộc</th>
+                                            <td>0</td>
+                                            <th>Thu Nhập Chịu Thuế TNCN</th>
+                                            <td>0</td>
+                                            <th>Tổng Khoản Trừ</th>
+                                            <td>1,000,000</td>
+
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <!-- /.row -->
+                            <div class="row">
                                 <div class="col-6">
-                                    <p class="lead">Amount Due 2/22/2014</p>
+                                    <p class="lead">Amount Due 30/11/2019</p>
 
                                     <div class="table-responsive">
                                         <table class="table">
                                             <tbody>
                                             <tr>
-                                                <th style="width:50%">Subtotal:</th>
-                                                <td>$250.30</td>
+                                                <th style="width:50%">Tổng Ngày Công:</th>
+                                                <td>26</td>
                                             </tr>
                                             <tr>
-                                                <th>Tax (9.3%)</th>
-                                                <td>$10.34</td>
+                                                <th >Tổng Thu Nhập:</th>
+                                                <td>10,000,000</td>
                                             </tr>
                                             <tr>
-                                                <th>Shipping:</th>
-                                                <td>$5.80</td>
+                                                <th>Tổng Khoản Trừ:</th>
+                                                <td>2,000,000</td>
                                             </tr>
                                             <tr>
-                                                <th>Total:</th>
-                                                <td>$265.24</td>
+                                                <th>Lương Thực Nhận:</th>
+                                                <td>8,000,000</td>
                                             </tr>
                                             </tbody>
                                         </table>
@@ -152,16 +300,7 @@
                             <!-- this row will not appear when printing -->
                             <div class="row no-print">
                                 <div class="col-12">
-                                    <a href="invoice-print.html" target="_blank" class="btn btn-default"><i
-                                            class="fas fa-print"></i> Print</a>
-                                    <button type="button" class="btn btn-success float-right"><i
-                                            class="far fa-credit-card"></i> Submit
-                                        Payment
-                                    </button>
-                                    <button type="button" class="btn btn-primary float-right"
-                                            style="margin-right: 5px;">
-                                        <i class="fas fa-download"></i> Generate PDF
-                                    </button>
+                                    <a class="btn btn-secondary btn-block " href="#" role="button" >Quay lại đầu trang</a>
                                 </div>
                             </div>
                         </div>
@@ -169,168 +308,287 @@
                     </div><!-- /.col -->
                 </div><!-- /.row -->
             </div>
-            {{--            <div class="container-fluid">--}}
-            {{--                <div class=" ">--}}
-            {{--                    <!-- Employee_Details_Table -->--}}
-            {{--                    <div class="row">--}}
-            {{--                        <div class="card bg-light mt-3">--}}
-            {{--                            <div class="card-body">--}}
-            {{--                                <table id="Employee-Details" class="table table-bordered table-hover ">--}}
-            {{--                                    <thead>--}}
-            {{--                                    <div class="card-header">--}}
-            {{--                                        Bảng Chi tiết Cá Nhân--}}
-            {{--                                    </div>--}}
-            {{--                                    <tr>--}}
-            {{--                                        <th>ID</th>--}}
-            {{--                                        <th>MSNV</th>--}}
-            {{--                                        <th>Họ Và Tên</th>--}}
-            {{--                                        <th>Chức vụ</th>--}}
-            {{--                                        <th>Giới tính</th>--}}
-            {{--                                        <th>Ngày nhận việc</th>--}}
-            {{--                                        <th>Ngày thôi việc</th>--}}
-            {{--                                        <th>Xác Nhận Ăn Trưa</th>--}}
-            {{--                                        <th>Bảo Hiểm Xã Hội</th>--}}
-            {{--                                        <th>Lương Cơ Bản</th>--}}
-            {{--                                    </tr>--}}
-            {{--                                    </thead>--}}
-            {{--                                </table>--}}
-            {{--                            </div>--}}
-            {{--                        </div>--}}
-            {{--                    </div>--}}
-            {{--                    <!-- Workdays_Details_Table -->--}}
-            {{--                    <div class="row">--}}
-            {{--                        <div class="card bg-light mt-3">--}}
-            {{--                            <div class="card-header">--}}
-            {{--                                Bảng Công chi tiết--}}
-            {{--                            </div>--}}
-            {{--                            <div class="card-body">--}}
-            {{--                                <table id="Workdays-Details" class="table table-bordered table-hover ">--}}
-            {{--                                    <thead>--}}
-            {{--                                    <tr>--}}
-            {{--                                        <th>ID</th>--}}
-            {{--                                        <th>MSNV</th>--}}
-            {{--                                        <th>Họ Và Tên </th>--}}
-            {{--                                        <th>Bộ Phận </th>--}}
-            {{--                                        <th>X1-Thử Việc</th>--}}
-            {{--                                        <th>A1-Thử Việc</th>--}}
-            {{--                                        <th>E1-Thử Việc</th>--}}
-            {{--                                        <th>X-Chính Thức </th>--}}
-            {{--                                        <th>A-Chính Thức </th>--}}
-            {{--                                        <th>Đ4-Đ8</th>--}}
-            {{--                                        <th>E-Ca Đêm</th>--}}
-            {{--                                        <th>Thời Gian Nghỉ Ca Hành Chính</th>--}}
-            {{--                                        <th>Thời Gian Nghỉ Ca Ngày</th>--}}
-            {{--                                        <th>Thời Gian Nghỉ Ca Đêm</th>--}}
-            {{--                                        <th>OT</th>--}}
-            {{--                                        <th>OT Chủ Nhật</th>--}}
-            {{--                                        <th>Tổng Ngày Công</th>--}}
-            {{--                                    </tr>--}}
-            {{--                                    </thead>--}}
-            {{--                                </table>--}}
-            {{--                            </div>--}}
-            {{--                        </div>--}}
-            {{--                    </div>--}}
-            {{--                    <!-- Income_Details_Table -->--}}
-            {{--                    <div class="row">--}}
-            {{--                        <div class="card bg-light mt-3">--}}
-            {{--                            <div class="card-header">--}}
-            {{--                                Thu nhập chi tiết--}}
-            {{--                            </div>--}}
-            {{--                            <div class="card-body">--}}
-            {{--                                <table id="Salary-Details" class="table table-bordered table-hover ">--}}
-            {{--                                    <thead>--}}
-            {{--                                    <tr>--}}
-            {{--                                        <th>ID</th>--}}
-            {{--                                        <th>MSNV</th>--}}
-            {{--                                        <th>Họ Và Tên </th>--}}
-            {{--                                        <th>Bộ Phận </th>--}}
-            {{--                                        <th>X1-Thử Việc</th>--}}
-            {{--                                        <th>A1-Thử Việc</th>--}}
-            {{--                                        <th>E1-Thử Việc</th>--}}
-            {{--                                        <th>X-Chính Thức </th>--}}
-            {{--                                        <th>A-Chính Thức </th>--}}
-            {{--                                        <th>Đ4-Đ8</th>--}}
-            {{--                                        <th>E-Ca Đêm</th>--}}
-            {{--                                        <th>Thời Gian Nghỉ Ca Hành Chính</th>--}}
-            {{--                                        <th>Thời Gian Nghỉ Ca Ngày</th>--}}
-            {{--                                        <th>Thời Gian Nghỉ Ca Đêm</th>--}}
-            {{--                                        <th>OT</th>--}}
-            {{--                                        <th>OT Chủ Nhật</th>--}}
-            {{--                                        <th>Số Lượng SP</th>--}}
-            {{--                                        <th>Thành Tiền</th>--}}
-            {{--                                        <th>Thưởng Năng Suất</th>--}}
-            {{--                                        <th>Bù Lương</th>--}}
-            {{--                                        <th>Tiền Tăng Ca</th>--}}
-            {{--                                        <th>Tổng Lương</th>--}}
-            {{--                                    </tr>--}}
-            {{--                                    </thead>--}}
-            {{--                                </table>--}}
-            {{--                            </div>--}}
-            {{--                        </div>--}}
-            {{--                    </div>--}}
-            {{--                    <!-- Allowance_Details_Table -->--}}
-            {{--                    <div class="row">--}}
-            {{--                        <div class="card bg-light mt-3">--}}
-            {{--                            <div class="card-header">--}}
-            {{--                                Trợ cấp chi tiết--}}
-            {{--                            </div>--}}
-            {{--                            <div class="card-body">--}}
-            {{--                                <table id="Allowance-Details" class="table table-bordered table-hover">--}}
-            {{--                                    <thead>--}}
-            {{--                                    <tr>--}}
-            {{--                                        <th>ID</th>--}}
-            {{--                                        <th>MSNV</th>--}}
-            {{--                                        <th>Họ Và Tên</th>--}}
-            {{--                                        <th>Bộ Phận </th>--}}
-            {{--                                        <th>Trách Nhiệm</th>--}}
-            {{--                                        <th>Sản Xuất</th>--}}
-            {{--                                        <th>Tiền Ăn</th>--}}
-            {{--                                        <th>Xăng</th>--}}
-            {{--                                        <th>Nhà ở</th>--}}
-            {{--                                        <th>Điện Thoại</th>--}}
-            {{--                                        <th>Khác</th>--}}
-            {{--                                        <th>Tổng Trợ cấp</th>--}}
-            {{--                                    </tr>--}}
-            {{--                                    </thead>--}}
-            {{--                                </table>--}}
-            {{--                            </div>--}}
-            {{--                        </div>--}}
-            {{--                </div>--}}
-            {{--                    <!-- Deduction_Details_Table -->--}}
-            {{--                    <div class="row">--}}
-            {{--                        <div class="card bg-light mt-3">--}}
-            {{--                            <div class="card-header">--}}
-            {{--                                Khoản trừ chi tiết--}}
-            {{--                            </div>--}}
-            {{--                            <div class="card-body">--}}
-            {{--                                <table id="Deduction-Details" class="table table-bordered table-hover ">--}}
-            {{--                                    <thead>--}}
-            {{--                                    <tr>--}}
-            {{--                                        <th>ID</th>--}}
-            {{--                                        <th>MSNV</th>--}}
-            {{--                                        <th>Họ Và Tên </th>--}}
-            {{--                                        <th>Bộ Phận </th>--}}
-            {{--                                        <th>Bảo Hiểm Xã Hội</th>--}}
-            {{--                                        <th>Thu Nhập Cá Nhân</th>--}}
-            {{--                                        <th>Tiền Ăn</th>--}}
-            {{--                                        <th>Ứng Lương</th>--}}
-            {{--                                        <th>Bồi Thường Thiệt Hại</th>--}}
-            {{--                                        <th>Đồng Phục</th>--}}
-            {{--                                        <th>Khác</th>--}}
-            {{--                                        <th>Giảm Trừ Cá Nhân</th>--}}
-            {{--                                        <th>Số Người Phụ Thuộc</th>--}}
-            {{--                                        <th>Giảm Trừ Số Người Phụ Thuộc</th>--}}
-            {{--                                        <th>Thu Nhập Chịu Thuế TNCN</th>--}}
-            {{--                                        <th>Tổng Khoản Trừ</th>--}}
-            {{--                                    </tr>--}}
-            {{--                                    </thead>--}}
-            {{--                                </table>--}}
-            {{--                            </div>--}}
-            {{--                        </div>--}}
-            {{--                    </div>--}}
-            {{--                <button type="button" class="btn btn-default btn-block" ><a href="{{route('salary-management.payroll.index')}}">BACK</a></button>--}}
-            {{--            </div>--}}
-            {{--        </div>--}}
+            {{--       The SecondChoice
+                            <div class="card">
+	                            <div class="card-header">
+                                    <h3 class="card-title">Ngày Công chi Tiết</h3>
+                                    <div class="card-tools">
+                                        <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                                            <i class="fas fa-minus"></i></button>
+                                    </div>
+                                </div>
+                                <div class=" card-body table-responsive">
+                                    <table class="table table-striped table-bordered ">
+                                        <thead>
+                                        <tr>
+                                            <th>Thông Tin</th>
+                                            <th>Chi Tiết</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+
+                                        <tr>
+                                            <td>X1-Thử Việc</td>
+                                            <td>100 giờ</td>
+                                        </tr>
+                                        <tr>
+                                            <td>A1-Thử Việc</td>
+                                            <td>100 giờ</td>
+                                        </tr>
+                                        <tr>
+                                            <td>E1-Thử Việc</td>
+                                            <td>100 giờ</td>
+                                        </tr>
+                                        <tr>
+                                            <td>X-Chính Thức</td>
+                                            <td>100 giờ</td>
+                                        </tr>
+                                        <tr>
+                                            <td>A-Chính Thức</td>
+                                            <td>100 giờ</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Đ4-Đ8</td>
+                                            <td>100 giờ</td>
+                                        </tr>
+                                        <tr>
+                                            <td>E-Ca Đêm</td>
+                                            <td>100 Giờ</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Nghỉ-HC</td>
+                                            <td>0</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Thời Gian Nghỉ Ca Ngày</td>
+                                            <td>0</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Thời Gian Nghỉ Ca Đêm</td>
+                                            <td>0</td>
+                                        </tr>
+                                        <tr>
+                                            <td>OT</td>
+                                            <td>20 giờ</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Tổng Ngày Công</td>
+                                            <td>26 Ngày</td>
+                                        </tr>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            <!-- /.col -->
+                            </div>
+                            <!-- /.card -->
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="card-title">Lương Chi Tiết</h3>
+                                    <div class="card-tools">
+                                        <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                                            <i class="fas fa-minus"></i></button>
+                                    </div>
+                                </div>
+                                <div class=" card-body table-responsive">
+                                    <table class="table table-striped table-bordered ">
+                                        <thead>
+                                        <tr>
+                                            <th>Thông Tin</th>
+                                            <th>Chi Tiết</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td>X1-Lương</td>
+                                            <td>1,000,000</td>
+                                        </tr>
+                                        <tr>
+                                            <td>A1-Lương</td>
+                                            <td>1,000,000</td>
+                                        </tr>
+                                        <tr>
+                                            <td>E1-Lương</td>
+                                            <td>1,000,000</td>
+                                        </tr>
+                                        <tr>
+                                            <td>X-Lương</td>
+                                            <td>1,000,000</td>
+                                        </tr>
+                                        <tr>
+                                            <td>A-Lương</td>
+                                            <td>1,000,000</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Đ4-Đ8-Lương</td>
+                                            <td>1,000,000</td>
+                                        </tr>
+                                        <tr>
+                                            <td>E-Lương</td>
+                                            <td>1,000,000</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Số Lượng SP</td>
+                                            <td>10</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Thành Tiền SP</td>
+                                            <td>1,000,000</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Tiền Tăng Ca</td>
+                                            <td>1,000,000</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Thưởng Năng Suất</td>
+                                            <td>1,000,000</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Bù Lương</td>
+                                            <td>1,000,000</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Tổng Lương</td>
+                                            <td>1,000,000</td>
+                                        </tr>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <!-- /.col -->
+                                </div>
+                                <!-- /.card -->
+                                <div class="card">
+                                    <div class="card-header">
+                                    <h3 class="card-title">Trợ Cấp Chi Tiết</h3>
+                                    <div class="card-tools">
+                                        <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                                            <i class="fas fa-minus"></i></button>
+                                    </div>
+                                </div>
+                                <div class=" card-body table-responsive">
+                                    <table class="table table-striped table-bordered ">
+                                        <thead>
+                                        <tr>
+                                            <th>Thông Tin</th>
+                                            <th>Chi Tiết</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+
+                                        <tr>
+                                            <td>Trách Nhiệm</td>
+                                            <td>1,000,000</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Sản xuất</td>
+                                            <td>1,000,000</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Tiền Ăn</td>
+                                            <td>1,000,000</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Nhà ở</td>
+                                            <td>1,000,000</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Xăng</td>
+                                            <td>1,000,000</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Điện thoại</td>
+                                            <td>1,000,000</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Khác</td>
+                                            <td>1,000,000</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Tổng trợ cấp</td>
+                                            <td>1,000,000</td>
+                                        </tr>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            <!-- /.col -->
+                            </div>
+                            <!-- /.card -->
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="card-title">Khoản Trừ Chi Tiết</h3>
+                                    <div class="card-tools">
+                                        <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                                            <i class="fas fa-minus"></i></button>
+                                    </div>
+                                </div>
+                                <div class=" card-body table-responsive">
+                                    <table class="table table-striped table-bordered ">
+                                        <thead>
+                                        <tr>
+                                            <th>Thông Tin</th>
+                                            <th>Chi Tiết</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+
+                                        <tr>
+                                            <td>Bảo Hiểm Xã Hội</td>
+                                            <td>1,000,000</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Thu Nhập Cá Nhân</td>
+                                            <td>1,000,000</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Tiền ăn</td>
+                                            <td>1,000,000</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Ứng Lương</td>
+                                            <td>1,000,000</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Bồi Thường Thiệt Hại</td>
+                                            <td>1,000,000</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Đồng Phục</td>
+                                            <td>1,000,000</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Khác</td>
+                                            <td>1,000,000</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Giảm trừ Cá Nhân</td>
+                                            <td>0</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Số Người Phụ Thuộc</td>
+                                            <td>0</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Giảm Trừ Số Người Phụ Thuộc</td>
+                                            <td>0</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Thu Nhập chịu Thuế TNCN</td>
+                                            <td>0</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Tổng Khoản Trừ</td>
+                                            <td>1,000,000</td>
+                                        </tr>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            <!-- /.col -->
+                            </div>
+                            <!-- /.card -->
+--}}
             @endsection
             @section('script')
                 <script>
@@ -369,8 +627,6 @@
                             {data: 'Salary'}
                         ]
                     });
-                </script>
-                <script>
                     /*Datatable Workdays_Details*/
                     let dataWorkdays = [
                         {
@@ -419,8 +675,6 @@
                             {data: 'Total Workdays'}
                         ]
                     });
-                </script>
-                <script>
                     /*Datatable Income-Details*/
                     let dataSalary = [
                         {
