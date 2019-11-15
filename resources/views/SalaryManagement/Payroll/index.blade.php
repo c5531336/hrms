@@ -46,7 +46,7 @@
                 "Estimated Total Income": "9,000,000",
                 "Total Deduction": "2,000,000",
                 "Final Salary": "7,000,000",
-                "Details": "<a class=\"btn btn-primary\" href=\"{{route('salary-management.payroll.details')}}\" role=\"button\">Details</a>"
+                "Details": "<a class=\"btn btn-primary\" href=\"{{route('salary-management.payroll.details')}}\" role=\"button\">Details</a><a class=\"btn btn-primary\" href=\"{{route('salary-management.payroll.details2')}}\" role=\"button\">Details v2</a>"
             },
             {
                 "ID": "2",
