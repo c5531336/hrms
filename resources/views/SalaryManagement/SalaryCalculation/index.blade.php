@@ -4,15 +4,14 @@
         <!-- Main content -->
         <div class="content">
             <div class="container-fluid">
+                <!--Open Row-->
                 <div class="row">
                     <div class="card bg-light mt-3">
-
                         <div class="card-header">
-
                             Bảng Tính Lương
-
                         </div>
                         <div class="card-body">
+                            <!--Open Table-->
                             <table id="Salary-Calculation" class="table table-bordered table-hover ">
                                 <thead>
                                 <tr>
@@ -75,13 +74,20 @@
                                     <th>Khác</th>
                                     <th>Tổng Khoản Trừ</th>
                                     <th>Lương Thực Nhận</th>
+                                    <th>Action</th>
                                 </tr>
                                 </thead>
+                                <!--Close Table head-->
+                                <tfoot>
+                                <button class="btn btn-success">Import User Data</button>
+                                </tfoot>
                             </table>
+                            <!--Close Table-->
                         </div>
-
+                        <!--Close Card body-->
                     </div>
                 </div>
+                <!--Close Row-->
             </div>
         </div>
 @endsection
@@ -102,55 +108,55 @@
                         "Social insurance": "550,000",
                         "Probationary Salary": "1,000,000",
                         "Official Salary": "5,000,000",
-                        "X1-probationary":     "100 <a href=\"#\"><i class=\"fas fa-edit\"></i></a>",
-                        "A1-probationary": "100 <a href=\"#\"><i class=\"fas fa-edit\"></i></a>",
-                        "E1-probationary":"100 <a href=\"#\"><i class=\"fas fa-edit\"></i></a>",
-                        "X-Offical": "100 <a href=\"#\"><i class=\"fas fa-edit\"></i></a>",
-                        "A-Offical": "100 <a href=\"#\"><i class=\"fas fa-edit\"></i></a>",
-                        "D4-D8": "100 <a href=\"#\"><i class=\"fas fa-edit\"></i></a>",
-                        "E-Night": "100 <a href=\"#\"><i class=\"fas fa-edit\"></i></a>",
-                        "HC-TimeOff": "100 <a href=\"#\"><i class=\"fas fa-edit\"></i></a>",
-                        "Timeoff-Daytime": "100 <a href=\"#\"><i class=\"fas fa-edit\"></i></a>",
-                        "Timeoff-NightShift": "100 <a href=\"#\"><i class=\"fas fa-edit\"></i></a>",
-                        "OT" : "100 <a href=\"#\"><i class=\"fas fa-edit\"></i></a>",
-                        "OT-Sunday": "100 <a href=\"#\"><i class=\"fas fa-edit\"></i></a>",
+                        "X1-probationary":     "100 ",
+                        "A1-probationary": "100 ",
+                        "E1-probationary":"100 ",
+                        "X-Offical": "100 ",
+                        "A-Offical": "100 ",
+                        "D4-D8": "100 ",
+                        "E-Night": "100 ",
+                        "HC-TimeOff": "100 ",
+                        "Timeoff-Daytime": "100 ",
+                        "Timeoff-NightShift": "100 ",
+                        "OT" : "100 ",
+                        "OT-Sunday": "100 ",
                         "Total Workdays": "26",
-                        "X1-Salary":     "1,000,000 <a href=\"#\"><i class=\"fas fa-edit\"></i></a>",
-                        "A1-Salary": "1,000,000 <a href=\"#\"><i class=\"fas fa-edit\"></i></a>",
-                        "E1-Salary":"1,000,000 <a href=\"#\"><i class=\"fas fa-edit\"></i></a>",
-                        "X-Salary": "1,000,000 <a href=\"#\"><i class=\"fas fa-edit\"></i></a>",
-                        "A-Salary": "1,000,000 <a href=\"#\"><i class=\"fas fa-edit\"></i></a>",
-                        "Salary_D4-D8": "1,000,000 <a href=\"#\"><i class=\"fas fa-edit\"></i></a>",
-                        "E-Salary": "1,000,000 <a href=\"#\"><i class=\"fas fa-edit\"></i></a>",
-                        "Number of Product": "100 <a href=\"#\"><i class=\"fas fa-edit\"></i></a>",
-                        "Total amount by product": "2,500,000 <a href=\"#\"><i class=\"fas fa-edit\"></i></a>",
+                        "X1-Salary":     "1,000,000 ",
+                        "A1-Salary": "1,000,000 ",
+                        "E1-Salary":"1,000,000 ",
+                        "X-Salary": "1,000,000 ",
+                        "A-Salary": "1,000,000 ",
+                        "Salary_D4-D8": "1,000,000 ",
+                        "E-Salary": "1,000,000 ",
+                        "Number of Product": "100 ",
+                        "Total amount by product": "2,500,000 ",
                         "Total Salary": "4,000,000",
-                        "Overtime wages" : "800,000 <a href=\"#\"><i class=\"fas fa-edit\"></i></a>",
-                        "Responsibility": "500,000 <a href=\"#\"><i class=\"fas fa-edit\"></i></a>",
-                        "Productions": "500,000 <a href=\"#\"><i class=\"fas fa-edit\"></i></a>",
-                        "Eating-fee": "500,000 <a href=\"#\"><i class=\"fas fa-edit\"></i></a>",
-                        "Fuel": "300,000 <a href=\"#\"><i class=\"fas fa-edit\"></i></a>",
-                        "Housing Cost": "1,000,000 <a href=\"#\"><i class=\"fas fa-edit\"></i></a>",
-                        "Phone": "500,000 <a href=\"#\"><i class=\"fas fa-edit\"></i></a>",
-                        "Others": "100,000 <a href=\"#\"><i class=\"fas fa-edit\"></i></a>",
+                        "Overtime wages" : "800,000 ",
+                        "Responsibility": "500,000 ",
+                        "Productions": "500,000 ",
+                        "Eating-fee": "500,000 ",
+                        "Fuel": "300,000 ",
+                        "Housing Cost": "1,000,000 ",
+                        "Phone": "500,000 ",
+                        "Others": "100,000 ",
                         "Total Allowances": "3,400,000",
-                        "Productivity reward": "1,000,000 <a href=\"#\"><i class=\"fas fa-edit\"></i></a>",
-                        "Extra salary" : "0 <a href=\"#\"><i class=\"fas fa-edit\"></i></a>",
+                        "Productivity reward": "1,000,000 ",
+                        "Extra salary" : "0 ",
                         "Total Income": "13,400,000",
-                        "Deduce yourself": "0 <a href=\"#\"><i class=\"fas fa-edit\"></i></a>",
-                        "Number of Dependents": "0 <a href=\"#\"><i class=\"fas fa-edit\"></i></a>",
-                        "Deduce NoD": "0 <a href=\"#\"><i class=\"fas fa-edit\"></i></a>",
-                        "Income taxes" : "0 <a href=\"#\"><i class=\"fas fa-edit\"></i></a>",
+                        "Deduce yourself": "0 ",
+                        "Number of Dependents": "0 ",
+                        "Deduce NoD": "0 ",
+                        "Income taxes" : "0 ",
                         "Deduction Social insurance": "510,000",
-                        "Deduction Personal income": "510,000 <a href=\"#\"><i class=\"fas fa-edit\"></i></a>",
-                        "Deduction Eating-fee":"480,000 <a href=\"#\"><i class=\"fas fa-edit\"></i></a>",
-                        "Deduction Advance Salary": "420,000 <a href=\"#\"><i class=\"fas fa-edit\"></i></a>",
-                        "Deduction Indemnify damages": "0 <a href=\"#\"><i class=\"fas fa-edit\"></i></a>",
-                        "Deduction Uniform": "80,000 <a href=\"#\"><i class=\"fas fa-edit\"></i></a>",
-                        "Deduction Others": "0 <a href=\"#\"><i class=\"fas fa-edit\"></i></a>",
+                        "Deduction Personal income": "510,000 ",
+                        "Deduction Eating-fee":"480,000 ",
+                        "Deduction Advance Salary": "420,000 ",
+                        "Deduction Indemnify damages": "0 ",
+                        "Deduction Uniform": "80,000 ",
+                        "Deduction Others": "0 ",
                         "Total Deductions": "2,000,000",
-                        "Final Salary" :"9,000,000"
-
+                        "Final Salary" :"9,000,000",
+                        "Action": "<a class=\"far fa-lg fa-edit\" href=\"#\" role=\"button\">Edit</a>"
                     }
                 ];
                 $('#Salary-Calculation').DataTable({
@@ -217,7 +223,8 @@
                         { data: 'Deduction Uniform'},
                         { data: 'Deduction Others'},
                         { data: 'Total Deductions'},
-                        { data: 'Final Salary'}
+                        { data: 'Final Salary'},
+                        { data: 'Action'}
                     ]
                 });
             </script>
