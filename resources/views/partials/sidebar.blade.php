@@ -38,24 +38,24 @@
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="{{route('time-keeping-machine.index')}}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Theo Ca và Sản Lượng</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Công Công Nhân</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Kiểm Tra Chấm Công</p>
-                            </a>
-                        </li>
+{{--                        <li class="nav-item">--}}
+{{--                            <a href="#" class="nav-link">--}}
+{{--                                <i class="far fa-circle nav-icon"></i>--}}
+{{--                                <p>Theo Ca và Sản Lượng</p>--}}
+{{--                            </a>--}}
+{{--                        </li>--}}
+{{--                        <li class="nav-item">--}}
+{{--                            <a href="#" class="nav-link">--}}
+{{--                                <i class="far fa-circle nav-icon"></i>--}}
+{{--                                <p>Công Công Nhân</p>--}}
+{{--                            </a>--}}
+{{--                        </li>--}}
+{{--                        <li class="nav-item">--}}
+{{--                            <a href="#" class="nav-link">--}}
+{{--                                <i class="far fa-circle nav-icon"></i>--}}
+{{--                                <p>Kiểm Tra Chấm Công</p>--}}
+{{--                            </a>--}}
+{{--                        </li>--}}
                         <li class="nav-item has-treeview">
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-circle"></i>
@@ -65,16 +65,16 @@
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
+{{--                                <li class="nav-item">--}}
+{{--                                    <a href="#" class="nav-link">--}}
+{{--                                        <i class="far fa-dot-circle nav-icon"></i>--}}
+{{--                                        <p>Nhập Sản Lượng</p>--}}
+{{--                                    </a>--}}
+{{--                                </li>--}}
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link">
+                                    <a href="{{route('time-keeping-machine.index')}}" class="nav-link">
                                         <i class="far fa-dot-circle nav-icon"></i>
-                                        <p>Nhập Sản Lượng</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link">
-                                        <i class="far fa-dot-circle nav-icon"></i>
-                                        <p>Nhập Giờ Công</p>
+                                        <p>Nhập Từ File </p>
                                     </a>
                                 </li>
                             </ul>
@@ -102,24 +102,25 @@
                                 <p>Bảng Lương</p>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon far fa-circle"></i>
-                                <p>Phiếu Lương Online</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon far fa-circle"></i>
-                                <p>Xuất báo cáo</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon far fa-circle"></i>
-                                <p>Quản lý ngày phép</p>
-                            </a>
-                        </li>
+{{--                        Unhide when release --}}
+{{--                        <li class="nav-item">--}}
+{{--                            <a href="#" class="nav-link">--}}
+{{--                                <i class="nav-icon far fa-circle"></i>--}}
+{{--                                <p>Phiếu Lương Online</p>--}}
+{{--                            </a>--}}
+{{--                        </li>--}}
+{{--                        <li class="nav-item">--}}
+{{--                            <a href="#" class="nav-link">--}}
+{{--                                <i class="nav-icon far fa-circle"></i>--}}
+{{--                                <p>Xuất báo cáo</p>--}}
+{{--                            </a>--}}
+{{--                        </li>--}}
+{{--                        <li class="nav-item">--}}
+{{--                            <a href="#" class="nav-link">--}}
+{{--                                <i class="nav-icon far fa-circle"></i>--}}
+{{--                                <p>Quản lý ngày phép</p>--}}
+{{--                            </a>--}}
+{{--                        </li>--}}
                     </ul>
                 </li>
             </ul>

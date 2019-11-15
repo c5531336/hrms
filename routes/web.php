@@ -42,6 +42,9 @@ Route::middleware([])->group(function () {
             Route::get('/details', function () {
                 return view('SalaryManagement.Payroll.salary_details');
             })->name('details');
+            Route::get('/details2', function () {
+                return view('SalaryManagement.Payroll.salary_detail_2');
+            })->name('details2');
         });
         /*
          * Salary_Calculation
