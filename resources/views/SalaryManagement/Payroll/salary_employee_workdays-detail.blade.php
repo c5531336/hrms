@@ -46,7 +46,7 @@
         @endsection
         @section('script')
             <script>
-                let data = [
+                let dataWorkdays = [
                     {
                         "ID": "1",
                         "MSNV": "0001",
@@ -107,7 +107,7 @@
                 ];
 
                 $('#Workdays-Details').DataTable({
-                    data: data,
+                    data: dataWorkdays,
                     paging: false,
                     "scrollX": true,
                     "overflow": true,

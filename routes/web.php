@@ -39,26 +39,26 @@ Route::middleware([])->group(function () {
             Route::get('/', function () {
                 return view('SalaryManagement.Payroll.index');
             })->name('index');
-            Route::get('/employee-details', function () {
-                return view('SalaryManagement.Payroll.salary_employee_detail');
-            })->name('employee-detail');
-            Route::get('/workdays-details', function () {
-                return view('SalaryManagement.Payroll.salary_employee_workdays-detail');
-            })->name('workdays-detail');
-            Route::get('/income-details', function () {
-                return view('SalaryManagement.Payroll.salary_employee_income-details');
-            })->name('income-detail');
-            Route::get('/deduction-details', function () {
-                return view('SalaryManagement.Payroll.salary_employee_deduction-details');
-            })->name('deduction-detail');
+            Route::get('/details', function () {
+                return view('SalaryManagement.Payroll.salary_details');
+            })->name('details');
+            Route::get('/details2', function () {
+                return view('SalaryManagement.Payroll.salary_detail_2');
+            })->name('details2');
         });
+        /*
+         * Salary_Calculation
+         */
+        Route::prefix('SalaryCalculation')->name('SalaryCalculation.')->group(function () {
+            Route::get('/', function () {
+                return view('SalaryManagement.SalaryCalculation.index');
+            })->name('index');
 
-
-
+        });
     });
 });
 /*
  * test route
- */
+*/
 Route::get('/home2', 'HomeController@index2')->name('home2');
 Route::get('/home3', 'HomeController@index3')->name('home3');

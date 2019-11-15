@@ -4,28 +4,25 @@
         <!-- Main content -->
         <div class="content">
             <div class="container-fluid">
-                <div class="row">
-                    <div class="card bg-light mt-3">
-
+                <div class="row ">
+                    <div class="card bg-light mt-3 ">
                         <div class="card-header">
-
                            Thông tin lương
-
                         </div>
-                        <div class="card-body">
-                            <table id="TTL" class="table table-bordered table-hover ">
+                        <div class="card-body table-responsive">
+                            <table id="TTL" class="table table-bordered table-hover">
                                 <thead>
                                 <tr>
                                     <th>ID</th>
                                     <th>MSNV</th>
-                                    <th>Full Name</th>
-                                    <th>Position</th>
-                                    <th>Gender</th>
-                                    <th>Total Workdays</th>
-                                    <th>Estimated Total Income</th>
-                                    <th>Total Deduction</th>
-                                    <th>Final Salary</th>
-                                    <th>Details</th>
+                                    <th>Họ Và Tên</th>
+                                    <th>Bộ Phận</th>
+                                    <th>Giới Tính</th>
+                                    <th>Tổng Ngày Công</th>
+                                    <th>Tổ Thu Nhập Dự Tính</th>
+                                    <th>Tổng Khoản Trừ</th>
+                                    <th>Lương Thực Nhận</th>
+                                    <th>Chi Tiết</th>
                                 </tr>
                                 </thead>
                             </table>
@@ -49,17 +46,7 @@
                 "Estimated Total Income": "9,000,000",
                 "Total Deduction": "2,000,000",
                 "Final Salary": "7,000,000",
-                "Details": "<div class=\"btn-group\" role=\"group\">\n" +
-                    "    <button id=\"btnGroupDrop1\" type=\"button\" class=\"btn btn-secondary dropdown-toggle\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n" +
-                    "      Detail\n" +
-                    "    </button>\n" +
-                    "    <div class=\"dropdown-menu\" aria-labelledby=\"btnGroupDrop1\">\n" +
-                    "      <a class=\"dropdown-item\" href=\"{{route('salary-management.payroll.employee-detail')}}\">Employee-Details</a>\n" +
-                    "      <a class=\"dropdown-item\" href=\"{{route('salary-management.payroll.workdays-detail')}}\">Workdays-Details</a>\n" +
-                    "      <a class=\"dropdown-item\" href=\"{{route('salary-management.payroll.income-detail')}}\">Income-Details</a>\n" +
-                    "      <a class=\"dropdown-item\" href=\"{{route('salary-management.payroll.deduction-detail')}}\">Deduction-Details</a>\n" +
-                    "    </div>\n" +
-                    "  </div>"
+                "Details": "<a class=\"btn btn-primary\" href=\"{{route('salary-management.payroll.details')}}\" role=\"button\">Details</a><a class=\"btn btn-primary\" href=\"{{route('salary-management.payroll.details2')}}\" role=\"button\">Details v2</a>"
             },
             {
                 "ID": "2",
@@ -71,17 +58,7 @@
                 "Estimated Total Income":"9,000,000",
                 "Total Deduction":       "2,000,000",
                 "Final Salary": "7,000,000",
-                "Details": "<div class=\"btn-group\" role=\"group\">\n" +
-                    "    <button id=\"btnGroupDrop1\" type=\"button\" class=\"btn btn-secondary dropdown-toggle\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n" +
-                    "      Detail\n" +
-                    "    </button>\n" +
-                    "    <div class=\"dropdown-menu\" aria-labelledby=\"btnGroupDrop1\">\n" +
-                    "      <a class=\"dropdown-item\" href=\"{{route('salary-management.payroll.employee-detail')}}\">Employee-Details</a>\n" +
-                    "      <a class=\"dropdown-item\" href=\"{{route('salary-management.payroll.workdays-detail')}}\">Workdays-Details</a>\n" +
-                    "      <a class=\"dropdown-item\" href=\"{{route('salary-management.payroll.income-detail')}}\">Income-Details</a>\n" +
-                    "      <a class=\"dropdown-item\" href=\"{{route('salary-management.payroll.deduction-detail')}}\">Deduction-Details</a>\n" +
-                    "    </div>\n" +
-                    "  </div>"
+                "Details": "<a class=\"btn btn-primary\" href=\"{{route('salary-management.payroll.details')}}\" role=\"button\">Details</a>"
             },
             {
                 "ID": "3",
@@ -93,22 +70,13 @@
                 "Estimated Total Income":"9,000,000",
                 "Total Deduction":       "2,000,000",
                 "Final Salary": "7,000,000",
-                "Details": "<div class=\"btn-group\" role=\"group\">\n" +
-                    "    <button id=\"btnGroupDrop1\" type=\"button\" class=\"btn btn-secondary dropdown-toggle\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n" +
-                    "      Detail\n" +
-                    "    </button>\n" +
-                    "    <div class=\"dropdown-menu\" aria-labelledby=\"btnGroupDrop1\">\n" +
-                    "      <a class=\"dropdown-item\" href=\"{{route('salary-management.payroll.employee-detail')}}\">Employee-Details</a>\n" +
-                    "      <a class=\"dropdown-item\" href=\"{{route('salary-management.payroll.workdays-detail')}}\">Workdays-Details</a>\n" +
-                    "      <a class=\"dropdown-item\" href=\"{{route('salary-management.payroll.income-detail')}}\">Income-Details</a>\n" +
-                    "      <a class=\"dropdown-item\" href=\"{{route('salary-management.payroll.deduction-detail')}}\">Deduction-Details</a>\n" +
-                    "    </div>\n" +
-                    "  </div>"
+                "Details": "<a class=\"btn btn-primary\" href=\"{{route('salary-management.payroll.details')}}\" role=\"button\">Details</a>"
             }
         ];
 
         $('#TTL').DataTable({
             data: data,
+            responsive:true,
             paging: false,
             columns: [
                 { data: 'ID' },
