@@ -11,7 +11,7 @@
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item active">Dashboard v3</li>
+                            <li class="breadcrumb-item active">Salary Details</li>
                         </ol>
                     </div><!-- /.col -->
                 </div><!-- /.row -->
@@ -22,14 +22,13 @@
         <div class="content">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-12">
+                    <div class="col-6">
                         <!-- Main content -->
                         <div class="invoice p-3 mb-3">
                             <div class="row">
-                                <div class="col-12">
+                                <div class="col-md-12">
                                     <h4>
                                         <i class="fas fa-globe"></i> Bảng lương chi tiết
-                                        <small class="float-right">Date: 11/11/2019</small>
                                     </h4>
                                 </div>
                                 <!-- /.col -->
@@ -55,7 +54,7 @@
                     </div>
                 </div>
             </div>
-            {{--    The SecondChoice --}}
+            <!-- /.container-fluid-->
             <div class="card">
                 <div class="card-header">
                     <h3 class="card-title">Ngày Công chi Tiết</h3>
@@ -339,7 +338,41 @@
                 <!-- /.col -->
             </div>
             <!-- /.card -->
+            <div class="row">
+                <div class="col-6">
+                    <p class="lead">Amount Due 30/11/2019</p>
 
+                    <div class="table-responsive">
+                        <table class="table">
+                            <tbody>
+                            <tr>
+                                <th style="width:50%">Tổng Ngày Công:</th>
+                                <td>26</td>
+                            </tr>
+                            <tr>
+                                <th >Tổng Thu Nhập:</th>
+                                <td>10,000,000</td>
+                            </tr>
+                            <tr>
+                                <th>Tổng Khoản Trừ:</th>
+                                <td>2,000,000</td>
+                            </tr>
+                            <tr>
+                                <th>Lương Thực Nhận:</th>
+                                <td>8,000,000</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- /.col -->
+            </div>
+            <!-- /.row -->
+            <div class="row no-print">
+                <div class="col-12">
+                    <a class="btn btn-secondary btn-block " href="#" role="button" >Quay lại đầu trang</a>
+                </div>
+            </div>
         </div>
         @endsection
         @section('script')

@@ -27,6 +27,11 @@ Route::middleware([])->group(function () {
     Route::prefix('time-keeping-machine')->name('time-keeping-machine.')->group(function () {
         Route::get('/', 'TimeKeepingMachineController@importView')->name('index');
         Route::post('import', 'TimeKeepingMachineController@import')->name('import');
+        Route::prefix('time-keeping-for-workers')->name('time-keeping-for-workers.')->group(function () {
+            Route::get('/', function () {
+                return view('TimeKeepingMachine.TimekeepingForWorkers.index');
+            })->name('index');
+        });
     });
     /**
      * SalaryManagement
