@@ -1,10 +1,10 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class RoleUsers extends Model  
+class Deductions extends Model  
 {
 
     
@@ -14,14 +14,14 @@ class RoleUsers extends Model
      *
      * @var string
      */
-    protected $table = 'role_users';
+    protected $table = 'deductions';
 
     /**
      * Attributes that should be mass-assignable.
      *
      * @var array
      */
-    protected $fillable = ['user_id', 'role_id', 'created_at', 'updated_at'];
+    protected $fillable = ['employee_id', 'self_deductions', 'amount_of_dependencies', 'individual_tax', 'BHXH', 'TNCN', 'foods', 'salary_advance', 'indemnify_damages', 'uniform', 'off_time', 'total_deductions'];
 
     /**
      * The attributes excluded from the model's JSON form.
@@ -42,6 +42,6 @@ class RoleUsers extends Model
      *
      * @var array
      */
-    protected $dates = ['created_at', 'updated_at'];
+    protected $dates = [];
 
 }

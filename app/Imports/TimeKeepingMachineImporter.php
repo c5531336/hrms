@@ -2,7 +2,7 @@
 
 namespace App\Imports;
 
-use App\TimeKeepingMachines;
+use App\Models\TimeKeepingMachines;
 use Carbon\Carbon;
 use Maatwebsite\Excel\Concerns\Importable;
 use Maatwebsite\Excel\Concerns\ToModel;
@@ -17,7 +17,8 @@ class TimeKeepingMachineImporter implements ToModel, WithChunkReading, WithBatch
     /**
      * @param array $row
      *
-     * @return \Illuminate\Database\Eloquent\Model|null
+     * @return TimeKeepingMachines|\Illuminate\Database\Eloquent\Model|\Illuminate\Database\Eloquent\Model[]|null
+     * @throws \Exception
      */
     public function model(array $row)
     {

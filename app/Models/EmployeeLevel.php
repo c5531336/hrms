@@ -1,10 +1,10 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Deductions extends Model  
+class EmployeeLevel extends Model  
 {
 
     
@@ -14,14 +14,14 @@ class Deductions extends Model
      *
      * @var string
      */
-    protected $table = 'deductions';
+    protected $table = 'EmployeeLevel';
 
     /**
      * Attributes that should be mass-assignable.
      *
      * @var array
      */
-    protected $fillable = ['employee_id', 'self_deductions', 'amount_of_dependencies', 'individual_tax', 'BHXH', 'TNCN', 'foods', 'salary_advance', 'indemnify_damages', 'uniform', 'off_time', 'total_deductions'];
+    protected $fillable = ['EmployeeLevelId', 'Name', 'Level', 'Location', 'Block', 'BasicSalary', 'BasicSalaryRate', 'BasicFoodAllowance', 'BasicFuelAllowance', 'BasicHouseholdAllowance', 'BasicAllowanceRate', 'created_at', 'updated_at'];
 
     /**
      * The attributes excluded from the model's JSON form.
@@ -42,6 +42,6 @@ class Deductions extends Model
      *
      * @var array
      */
-    protected $dates = [];
+    protected $dates = ['created_at', 'updated_at'];
 
 }

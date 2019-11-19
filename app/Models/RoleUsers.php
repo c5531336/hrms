@@ -1,10 +1,10 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Users extends Model  
+class RoleUsers extends Model  
 {
 
     
@@ -14,14 +14,14 @@ class Users extends Model
      *
      * @var string
      */
-    protected $table = 'users';
+    protected $table = 'role_users';
 
     /**
      * Attributes that should be mass-assignable.
      *
      * @var array
      */
-    protected $fillable = ['name', 'email', 'email_verified_at', 'password', 'remember_token', 'created_at', 'updated_at'];
+    protected $fillable = ['user_id', 'role_id'];
 
     /**
      * The attributes excluded from the model's JSON form.
@@ -42,6 +42,6 @@ class Users extends Model
      *
      * @var array
      */
-    protected $dates = ['email_verified_at', 'created_at', 'updated_at'];
+    protected $dates = [];
 
 }

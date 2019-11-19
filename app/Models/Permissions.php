@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -21,7 +21,7 @@ class Permissions extends Model
      *
      * @var array
      */
-    protected $fillable = ['role_id', 'read', 'write', 'update', 'create', 'created_at', 'updated_at'];
+    protected $fillable = ['PermissionId', 'PermissionName', 'PermissionDescription', 'created_at', 'updated_at'];
 
     /**
      * The attributes excluded from the model's JSON form.
@@ -35,7 +35,7 @@ class Permissions extends Model
      *
      * @var array
      */
-    protected $casts = ['read' => 'boolean', 'write' => 'boolean', 'update' => 'boolean', 'create' => 'boolean'];
+    protected $casts = [];
 
     /**
      * The attributes that should be mutated to dates.
