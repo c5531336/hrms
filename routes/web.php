@@ -61,6 +61,20 @@ Route::middleware([])->group(function () {
 
         });
     });
+    /**
+     * EmployeeLevel
+     */
+    Route::prefix('employee-level')->name('employee-level.')->group(function () {
+
+    });
+    /**
+     * Importer
+     */
+    Route::prefix('importer')->namespace('Import')->name('Importer.')->group(function () {
+        Route::get('/','ImporterController@index')->name('index');
+        Route::post('/import-time-keeping','ImporterController@ImportTimeKeepingMachine')->name('TimeKeeping');
+        Route::post('/import-employee-level','ImporterController@ImportEmployeeLevel')->name('EmployeeLevel');
+    });
 });
 /*
  * test route

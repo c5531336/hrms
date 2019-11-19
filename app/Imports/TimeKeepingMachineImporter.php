@@ -22,11 +22,15 @@ class TimeKeepingMachineImporter implements ToModel, WithChunkReading, WithBatch
      */
     public function model(array $row)
     {
-        if (isset($row[4]) && $row[4] === 'Ngày') {
+        if (!isset($row[4],$row[3],$row[5])|| $row[4] === 'Ngày')  {
             return null;
         }
-        $date = ExcelDate::excelToDateTimeObject($row[4]);
-        $carbon = Carbon::instance($date);
+       if(!is_string($row[4])){
+           $date = ExcelDate::excelToDateTimeObject($row[4]);
+           $carbon = Carbon::instance($date);
+       }else{
+           $carbon = Carbon::createFromFormat('d/m/Y', $row[4]);
+       }
         $checkin_1 = ($row[6] !== '' && isset($row[6])) ? $this->parseTime($row[6]) : null;
         $checkout_1 = ($row[7] !== '' && isset($row[7])) ? $this->parseTime($row[7]) : null;
         $checkin_2 = ($row[8] !== '' && isset($row[8])) ? $this->parseTime($row[8]) : null;
