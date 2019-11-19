@@ -61,29 +61,7 @@
                                 <p>Công Công Nhân</p>
                             </a>
                         </li>
-                        <li class="nav-item has-treeview">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-circle"></i>
-                                <p>
-                                    Nhập Liệu
-                                    <i class="right fas fa-angle-left"></i>
-                                </p>
-                            </a>
-                            <ul class="nav nav-treeview">
-{{--                                <li class="nav-item">--}}
-{{--                                    <a href="#" class="nav-link">--}}
-{{--                                        <i class="far fa-dot-circle nav-icon"></i>--}}
-{{--                                        <p>Nhập Sản Lượng</p>--}}
-{{--                                    </a>--}}
-{{--                                </li>--}}
-                                <li class="nav-item">
-                                    <a href="{{route('time-keeping-machine.index')}}" class="nav-link">
-                                        <i class="far fa-dot-circle nav-icon"></i>
-                                        <p>Nhập Từ File </p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
+
                     </ul>
                 </li>
                 <li class="nav-item has-treeview">
@@ -126,6 +104,29 @@
 {{--                                <p>Quản lý ngày phép</p>--}}
 {{--                            </a>--}}
 {{--                        </li>--}}
+                    </ul>
+                </li>
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-circle"></i>
+                        <p>
+                            Nhập Liệu
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        {{--                                <li class="nav-item">--}}
+                        {{--                                    <a href="#" class="nav-link">--}}
+                        {{--                                        <i class="far fa-dot-circle nav-icon"></i>--}}
+                        {{--                                        <p>Nhập Sản Lượng</p>--}}
+                        {{--                                    </a>--}}
+                        {{--                                </li>--}}
+                        <li class="nav-item">
+                            <a href="{{route('Importer.index')}}" class="nav-link">
+                                <i class="far fa-dot-circle nav-icon"></i>
+                                <p>Nhập Từ File </p>
+                            </a>
+                        </li>
                     </ul>
                 </li>
             </ul>
