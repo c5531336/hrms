@@ -1,10 +1,10 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class PasswordResets extends Model  
+class TimeKeepingMachines extends Model  
 {
 
     
@@ -14,14 +14,14 @@ class PasswordResets extends Model
      *
      * @var string
      */
-    protected $table = 'password_resets';
+    protected $table = 'time_keeping_machines';
 
     /**
      * Attributes that should be mass-assignable.
      *
      * @var array
      */
-    protected $fillable = ['email', 'token', 'created_at'];
+    protected $fillable = ['employee_id', 'employee_name', 'date'];
 
     /**
      * The attributes excluded from the model's JSON form.
@@ -42,6 +42,6 @@ class PasswordResets extends Model
      *
      * @var array
      */
-    protected $dates = ['created_at'];
+    protected $dates = ['date'];
 
 }

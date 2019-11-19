@@ -15,10 +15,10 @@ class Role extends Migration
     {
         //
         Schema::create('roles', function (Blueprint $table) {
-            $table->Increments('id');
-            $table->string('role_name');
-            $table->timestamps();
-            $table->index('id');
+            $table->Increments('RoleId');
+            $table->string('RoleName');
+            $table->string('RoleDescription');
+            $table->index('RoleId');
         });
     }
 

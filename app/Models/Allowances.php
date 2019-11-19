@@ -1,10 +1,10 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class FailedJobs extends Model  
+class Allowances extends Model  
 {
 
     
@@ -14,14 +14,14 @@ class FailedJobs extends Model
      *
      * @var string
      */
-    protected $table = 'failed_jobs';
+    protected $table = 'allowances';
 
     /**
      * Attributes that should be mass-assignable.
      *
      * @var array
      */
-    protected $fillable = ['connection', 'queue', 'payload', 'exception', 'failed_at'];
+    protected $fillable = ['employee_id', 'responsibility', 'production', 'foods', 'fuel', 'household', 'phone_billing', 'other_allowances', 'productivity_reward', 'extra_salary', 'total_allowances'];
 
     /**
      * The attributes excluded from the model's JSON form.
@@ -42,6 +42,6 @@ class FailedJobs extends Model
      *
      * @var array
      */
-    protected $dates = ['failed_at'];
+    protected $dates = [];
 
 }

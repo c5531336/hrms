@@ -1,10 +1,10 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class TimeKeepings extends Model  
+class Users extends Model  
 {
 
     
@@ -14,14 +14,14 @@ class TimeKeepings extends Model
      *
      * @var string
      */
-    protected $table = 'time_keepings';
+    protected $table = 'users';
 
     /**
      * Attributes that should be mass-assignable.
      *
      * @var array
      */
-    protected $fillable = ['employee_id', 'time_hanh_chinh_x1', 'time_ca_ngay_a1', 'time_ca_dem_e1', 'time_hanhchinh_x', 'time_d4_d8', 'time_ca_dem_e', 'time_off_hanh_chinh', 'time_off_ca_ngay', 'time_off_ca_dem', 'time_plus_hanh_chinh', 'time_plus_cn', 'total_working_days'];
+    protected $fillable = ['name', 'email', 'email_verified_at', 'password', 'remember_token', 'created_at', 'updated_at'];
 
     /**
      * The attributes excluded from the model's JSON form.
@@ -42,6 +42,6 @@ class TimeKeepings extends Model
      *
      * @var array
      */
-    protected $dates = [];
+    protected $dates = ['email_verified_at', 'created_at', 'updated_at'];
 
 }
