@@ -2,8 +2,9 @@
 
 namespace App\Providers;
 
+use Barryvdh\Debugbar\ServiceProvider as Debugbar;
 use Illuminate\Support\ServiceProvider;
-
+use Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider;
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -13,7 +14,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        if(env('APP_ENV')==='local'){
+            $this->app->register(IdeHelperServiceProvider::class);
+            $this->app->register(Debugbar::class);
+        }
     }
 
     /**
