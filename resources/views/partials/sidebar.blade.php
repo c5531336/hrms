@@ -56,7 +56,7 @@
 {{--                            </a>--}}
 {{--                        </li>--}}
                         <li class="nav-item">
-                            <a href="{{route('time-keeping-machine.time-keeping-for-workers.index')}}" class="nav-link" onclick="ShowTimeToDay()">
+                            <a href="{{route('time-keeping-machine.time-keeping-for-workers.index')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Công Công Nhân</p>
                             </a>
@@ -134,3 +134,38 @@
     </div>
     <!-- /.sidebar -->
 </aside>
+<style>
+    [class*=sidebar-dark-] {
+        background-color: #ffffff;
+    }
+
+    [class*=sidebar-dark-] .sidebar a {
+        background-color: rgba(255, 255, 255, 0.1);
+        color: #cc0404;
+    }
+
+
+    [class*=sidebar-dark-] .nav-sidebar > .nav-item.menu-open > .nav-link, [class*=sidebar-dark-] .nav-sidebar > .nav-item:hover > .nav-link, [class*=sidebar-dark-] .nav-sidebar > .nav-item > .nav-link:focus {
+        background-color: rgba(255, 255, 255, 0.1);
+        color: #ff0000;
+    }
+
+    [class*=sidebar-dark-] .user-panel a:hover {
+        color: #ff1919;
+        text-decoration: underline;
+    }
+
+    .sidebar-dark-primary .nav-sidebar > .nav-item > .nav-link.active, .sidebar-light-primary .nav-sidebar > .nav-item > .nav-link.active {
+        background-color: #007bff;
+        color: #ffffff;
+    }
+
+    [class*=sidebar-dark-] .nav-treeview > .nav-item > .nav-link {
+        color: #ff0000;
+    }
+
+    [class*=sidebar-dark-] .nav-treeview > .nav-item > .nav-link:hover, [class*=sidebar-dark-] .nav-treeview > .nav-item > .nav-link:focus {
+        background-color: rgba(255, 255, 255, 0.1);
+        color: #ff0000;
+    }
+</style>
