@@ -56,6 +56,12 @@
 {{--                            </a>--}}
 {{--                        </li>--}}
                         <li class="nav-item">
+                            <a href="{{route('timekeeping.index')}}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Công Tổng Hợp</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <a href="{{route('time-keeping-machine.time-keeping-for-workers.index')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Công Công Nhân</p>
