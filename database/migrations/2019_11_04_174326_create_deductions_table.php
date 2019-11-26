@@ -32,6 +32,7 @@ class CreateDeductionsTable extends Migration
             $table->double('uniform',20)->default(0);
             $table->double('off_time',20)->default(0);
             $table->double('total_deductions',20)->default(0);
+            $table->timestamps();
         });
     }
 

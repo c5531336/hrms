@@ -27,6 +27,9 @@ class CreateAllowancesTable extends Migration
             $table->double('productivity_reward',20)->default(0);
             $table->double('extra_salary',20)->default(0);
             $table->double('total_allowances',20)->default(0);
+
+            $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
         });
     }
 

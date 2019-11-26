@@ -17,8 +17,19 @@ class CreateTimeKeepingsTable extends Migration
             $table->bigIncrements('id');
             // ma so nhan vien
             $table->bigInteger('employee_id');
+            /**
+             * change to same format of import from machine
+             */
+//            $table->date('date')->nullable();
+//            $table->time('checkin_1')->nullable();
+//            $table->time('checkout_1')->nullable();
+//            $table->time('checkin_2')->nullable();
+//            $table->time('checkout_2')->nullable();
+//            $table->time('checkin_3')->nullable();
+//            $table->time('checkout_3')->nullable();
+//            $table->tinyInteger('absent')->default(0);
             // ca hanh chinh thu viec ma X1
-            $table->float('time_hanh_chinh_x1')->default(0);
+           /* $table->float('time_hanh_chinh_x1')->default(0);
             // ca ngay thu viec ma a1
             $table->float('time_ca_ngay_a1')->default(0);
             // ca dem thu viec ma e1
@@ -40,7 +51,7 @@ class CreateTimeKeepingsTable extends Migration
             // tang ca chu nhat
             $table->float('time_plus_cn')->default(0);
             // tong ngay cong
-            $table->float('total_working_days')->default(0);
+            $table->float('total_working_days')->default(0);*/
         });
     }
 
