@@ -4,24 +4,24 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class TimeKeepings extends Model  
+class Department extends Model
 {
 
-    
+
 
     /**
      * The database table used by the model.
      *
      * @var string
      */
-    protected $table = 'time_keepings';
-
+    protected $table = 'Department';
+    protected $primaryKey='DepartmentId';
     /**
      * Attributes that should be mass-assignable.
      *
      * @var array
      */
-    protected $fillable = ['employee_id'];
+    protected $fillable = ['BranchId', 'Name', 'ParentDepartmentID', 'DepartmentCode', 'Description', 'Allowance'];
 
     /**
      * The attributes excluded from the model's JSON form.

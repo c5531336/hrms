@@ -15,7 +15,7 @@ class CreateTimeKeepingMachinesTable extends Migration
     {
         Schema::create('time_keeping_machines', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('employee_id')->default('');
+            $table->bigInteger('employee_id');
             $table->string('employee_name')->default('');
             $table->date('date')->nullable();
             $table->time('checkin_1')->nullable();

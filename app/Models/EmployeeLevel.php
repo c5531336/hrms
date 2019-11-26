@@ -4,10 +4,10 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class EmployeeLevel extends Model  
+class EmployeeLevel extends Model
 {
 
-    
+
 
     /**
      * The database table used by the model.
@@ -15,13 +15,13 @@ class EmployeeLevel extends Model
      * @var string
      */
     protected $table = 'EmployeeLevel';
-
+    protected $primaryKey='EmployeeLevelId';
     /**
      * Attributes that should be mass-assignable.
      *
      * @var array
      */
-    protected $fillable = ['EmployeeLevelId', 'Name', 'Level', 'Location', 'Block', 'BasicSalary', 'BasicSalaryRate', 'BasicFoodAllowance', 'BasicFuelAllowance', 'BasicHouseholdAllowance', 'BasicAllowanceRate', 'created_at', 'updated_at'];
+    protected $fillable = [ 'Name', 'Level', 'BranchId', 'Code', 'BasicSalary', 'BasicSalaryRate', 'BasicFoodAllowance', 'BasicFuelAllowance', 'BasicHouseholdAllowance', 'BasicAllowanceRate', 'BasicPhoneAllowance', 'BasicResponseAllowance', 'created_at', 'updated_at'];
 
     /**
      * The attributes excluded from the model's JSON form.

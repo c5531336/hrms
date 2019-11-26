@@ -4,24 +4,24 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class TimeKeepings extends Model  
+class TimeShift extends Model
 {
 
-    
+
 
     /**
      * The database table used by the model.
      *
      * @var string
      */
-    protected $table = 'time_keepings';
-
+    protected $table = 'TimeShift';
+    protected $primaryKey='TimeShiftId';
     /**
      * Attributes that should be mass-assignable.
      *
      * @var array
      */
-    protected $fillable = ['employee_id'];
+    protected $fillable = ['Name', 'FoodAllowance', 'TimeAllowance', 'created_at', 'updated_at'];
 
     /**
      * The attributes excluded from the model's JSON form.
@@ -42,6 +42,6 @@ class TimeKeepings extends Model
      *
      * @var array
      */
-    protected $dates = [];
+    protected $dates = ['created_at', 'updated_at'];
 
 }

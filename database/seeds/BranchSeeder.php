@@ -11,10 +11,11 @@ class BranchSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('users')->insert([
-                                       'name' => Str::random(10),
-                                       'email' => Str::random(10).'@gmail.com',
-                                       'password' => bcrypt('password'),
-                                   ]);
+        DB::table('Branch')->insert([['name' => 'Vĩnh Lộc',
+                                      'BranchCode' => 'VL'],
+                                     ['name' => '3 tháng 2',
+                                      'BranchCode' => '32'],
+                                     ['name' => 'Long An',
+                                      'BranchCode' => 'LA']]);
     }
 }
