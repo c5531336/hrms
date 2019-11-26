@@ -16,18 +16,18 @@ class CreateEmployeesTable extends Migration
         Schema::create('employees', function (Blueprint $table) {
             $table->bigIncrements('id'); // ko quan tâm đến cột này nữa
             $table->string('employee_id')->default('');
+            $table->integer('BranchId');
             $table->string('name');
             $table->string('department');
-            $table->string('position');
+            $table->bigInteger('EmployeeLevelId');
             $table->enum('gender',['Name','Nữ']);
-            $table->date('start_working')->nullable();
-            $table->date('end_working')->nullable();
-            $table->double('social_insurance',20)->default(0);
-            $table->double('probationary_salary',20)->default(0);
-            $table->double('official_salary',20)->default(0);
-            $table->double('allowance_gender_department',20)->default(0);
-            $table->unsignedInteger('annual_day_off')->default(12);
-            $table->timestamps();
+            $table->double('basicSalary',20,2)->default(0);
+            $table->double('probationarySalary')->default(0);
+            $table->integer('probationTime')->default(0);
+            $table->tinyInteger('isProbation')->default(0);
+
+            $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
         });
     }
 

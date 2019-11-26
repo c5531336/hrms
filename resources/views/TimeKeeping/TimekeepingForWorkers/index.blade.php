@@ -30,6 +30,7 @@
                             <th>MSNV</th>
                             <th>Họ Và Tên</th>
                             <th>Bộ Phận</th>
+                            <th>Ca làm việc </th>
                             <th>Thời Gian Vào</th>
                             <th>Thời Gian Ra</th>
                         </tr>
@@ -40,6 +41,10 @@
                             <th>0001</th>
                             <th>Nguyễn Văn A</th>
                             <th>HCNS</th>
+                            <th><select name="aaa" id="xxx">
+                                    <option value="12" selected>xxx</option>
+                                    <option value="3">yyy</option>
+                                </select> </th>
                             <th><input id="btn1" class="show" type="button" value="Click Me" onclick="GetRealTime1()"><p id="get-time1" style="font-size: 15px; font-weight: bold;"></p></th>
                             <th><input id="btn2" class="show" type="button" value="Click Me" onclick="GetRealTime2()"><p id="get-time2" style="font-size: 15px; font-weight: bold;"></p></th>
                         </tr>

@@ -13,26 +13,16 @@ class CreateSalariesTable extends Migration
      */
     public function up()
     {
+        /**
+         * use to export (run cron job each month on fixed day)
+         */
         Schema::create('salaries', function (Blueprint $table) {
             $table->bigIncrements('id');
             // ma so nhan vien
-            $table->bigInteger('employee_id');
-            // ca hanh chinh thu viec ma X1
-            $table->double('salary_hanh_chinh_x1',20)->default(0);
-            // ca ngay thu viec ma a1
-            $table->double('salary_ca_ngay_a1',20)->default(0);
-            // ca dem thu viec ma e1
-            $table->double('salary_ca_dem_e1',20)->default(0);
-            // ca hanh chinh ma X
-            $table->double('salary_hanhchinh_x',20)->default(0);
-            // ca d4/d8
-            $table->double('salary_d4_d8',20)->default(0);
-            // ca dem ma e
-            $table->double('salary_ca_dem_e',20)->default(0);
-            // luong san pham
-            $table->double('salary_san_pham',20)->default(0);
-            // total
-            $table->double('total_salary',20);
+            $table->string('employee_id');
+            $table->double('total_salary',20,2);
+            $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
         });
     }
 
