@@ -64,16 +64,16 @@ Route::middleware([])->group(function () {
     /**
      * EmployeeLevel
      */
-    Route::prefix('employee-level')->name('employee-level.')->group(function () {
-
+    Route::prefix('employee')->name('employee.')->group(function () {
+        Route::resource('employee-level', 'EmployeeLevelController')->parameters(['employee-level' => 'EmployeeLevelId']);
     });
     /**
      * Importer
      */
     Route::prefix('importer')->namespace('Import')->name('Importer.')->group(function () {
-        Route::get('/','ImporterController@index')->name('index');
-        Route::post('/import-time-keeping','ImporterController@ImportTimeKeepingMachine')->name('TimeKeeping');
-        Route::post('/import-employee-level','ImporterController@ImportEmployeeLevel')->name('EmployeeLevel');
+        Route::get('/', 'ImporterController@index')->name('index');
+        Route::post('/import-time-keeping', 'ImporterController@ImportTimeKeepingMachine')->name('TimeKeeping');
+        Route::post('/import-employee-level', 'ImporterController@ImportEmployeeLevel')->name('EmployeeLevel');
     });
 });
 /*

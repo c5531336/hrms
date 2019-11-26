@@ -39,6 +39,7 @@ return [
             'driver' => 'stack',
             'channels' => ['daily'],
             'ignore_exceptions' => false,
+            'permission' => 0777,
         ],
 
         'single' => [
