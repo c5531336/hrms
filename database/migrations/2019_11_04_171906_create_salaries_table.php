@@ -19,7 +19,7 @@ class CreateSalariesTable extends Migration
         Schema::create('salaries', function (Blueprint $table) {
             $table->bigIncrements('id');
             // ma so nhan vien
-            $table->string('employee_id');
+            $table->integer('employee_id');
             $table->double('total_salary',20,2);
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));

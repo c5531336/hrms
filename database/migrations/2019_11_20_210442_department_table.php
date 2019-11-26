@@ -15,6 +15,7 @@ class DepartmentTable extends Migration
     {
         Schema::create('Department', function (Blueprint $table) {
             $table->increments('DepartmentId');
+            $table->integer('BranchId');
             $table->string('Name');
             $table->integer('ParentDepartmentID')->default(0);
             $table->string('DepartmentCode');

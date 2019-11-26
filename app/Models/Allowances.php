@@ -21,7 +21,7 @@ class Allowances extends Model
      *
      * @var array
      */
-    protected $fillable = ['employee_id', 'responsibility', 'production', 'foods', 'fuel', 'household', 'phone_billing', 'other_allowances', 'productivity_reward', 'extra_salary', 'total_allowances'];
+    protected $fillable = ['employee_id', 'responsibility', 'production', 'foods', 'fuel', 'household', 'phone_billing', 'other_allowances', 'productivity_reward', 'extra_salary', 'total_allowances', 'created_at', 'updated_at'];
 
     /**
      * The attributes excluded from the model's JSON form.
@@ -42,6 +42,6 @@ class Allowances extends Model
      *
      * @var array
      */
-    protected $dates = [];
+    protected $dates = ['created_at', 'updated_at'];
 
 }

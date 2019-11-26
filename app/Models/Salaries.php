@@ -21,7 +21,7 @@ class Salaries extends Model
      *
      * @var array
      */
-    protected $fillable = ['employee_id', 'salary_hanh_chinh_x1', 'salary_ca_ngay_a1', 'salary_ca_dem_e1', 'salary_hanhchinh_x', 'salary_d4_d8', 'salary_ca_dem_e', 'salary_san_pham', 'total_salary'];
+    protected $fillable = ['employee_id', 'total_salary', 'created_at', 'updated_at'];
 
     /**
      * The attributes excluded from the model's JSON form.
@@ -42,6 +42,6 @@ class Salaries extends Model
      *
      * @var array
      */
-    protected $dates = [];
+    protected $dates = ['created_at', 'updated_at'];
 
 }

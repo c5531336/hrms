@@ -21,7 +21,7 @@ class Deductions extends Model
      *
      * @var array
      */
-    protected $fillable = ['employee_id', 'self_deductions', 'amount_of_dependencies', 'individual_tax', 'BHXH', 'TNCN', 'foods', 'salary_advance', 'indemnify_damages', 'uniform', 'off_time', 'total_deductions'];
+    protected $fillable = ['employee_id', 'self_deductions', 'amount_of_dependencies', 'individual_tax', 'BHXH', 'TNCN', 'foods', 'salary_advance', 'indemnify_damages', 'uniform', 'off_time', 'total_deductions', 'created_at', 'updated_at'];
 
     /**
      * The attributes excluded from the model's JSON form.
@@ -42,6 +42,6 @@ class Deductions extends Model
      *
      * @var array
      */
-    protected $dates = [];
+    protected $dates = ['created_at', 'updated_at'];
 
 }
