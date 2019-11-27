@@ -23,7 +23,11 @@
         <div class="row container-fluid">
             <div class="col-md-12 table-responsive">
                 <table class="table table-striped table-bordered ">
-                    <h4>Tổng Công</h4>
+                    <div class="col-md-12">
+                        <h4>
+                            <i class="fas fa-globe-asia"></i> Tổng Công
+                        </h4>
+                    </div>
                     <thead>
                     <tr>
                         <th>ID</th>
@@ -43,7 +47,7 @@
                         <th>EN1</th>
                         <th>Cangay</th>
                         <th>150</th>
-                        <th><a class="btn btn-primary" href="#" role="button">Details</a></th>
+                        <th><a class="btn btn-primary" href="{{route('timekeeping.TimekeepingDetails.index')}}" role="button">Details</a></th>
                     </tr>
                     <tr>
                         <th>2</th>

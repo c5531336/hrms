@@ -28,6 +28,11 @@ Route::middleware([])->group(function () {
        Route::get('/',function(){
           return view('timekeeping.index');
        })->name('index');
+       Route::prefix('TimekeepingDetails')->name('TimekeepingDetails.')->group(function(){
+           Route::get('/',function(){
+              return view('Timekeeping.TimekeepingDetails.index');
+           })->name('index');
+       });
     });
     Route::prefix('time-keeping-machine')->name('time-keeping-machine.')->group(function () {
         Route::get('/', 'TimeKeepingMachineController@importView')->name('index');
