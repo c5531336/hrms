@@ -43,5 +43,14 @@ class Department extends Model
      * @var array
      */
     protected $dates = [];
-
+    public $timestamps=false;
+    /**
+     * Define Scope
+     */
+    /**
+     * Define Relationship
+     */
+    public function belongedBranch(){
+        return $this->belongsTo(Branch::class,'BranchId','BranchId');
+    }
 }
