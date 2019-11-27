@@ -2,7 +2,7 @@
 
 namespace App\Interfaces;
 
-interface AbstractModelInterfact
+interface AbstractModelInterface
 {
     public function getAll();
     public function create();
