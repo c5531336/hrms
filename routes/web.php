@@ -28,6 +28,14 @@ Route::middleware([])->group(function () {
        Route::get('/',function(){
           return view('timekeeping.index');
        })->name('index');
+       Route::prefix('Edit')->name('edit.')->group(function (){
+          Route::get('/',function(){
+            return view('Timekeeping.Edit.index');
+          })->name('index');
+          Route::get('/details',function (){
+             return view('Timekeeping.Edit.editdetails');
+          })->name('editdetails');
+       });
        Route::prefix('TimekeepingDetails')->name('TimekeepingDetails.')->group(function(){
            Route::get('/',function(){
               return view('Timekeeping.TimekeepingDetails.index');
