@@ -80,6 +80,12 @@ Route::middleware([])->group(function () {
         });
     });
     /**
+     * EmployeeLevel
+     */
+   Route::prefix('employee')->name('employee.')->group(function () {
+        Route::resource('employee-level', 'EmployeeLevelController')->parameters(['employee-level' => 'EmployeeLevelId']);
+    });
+    /**
      * Department
      */
     Route::namespace('Department')->group(function () {
