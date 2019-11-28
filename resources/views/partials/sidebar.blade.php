@@ -29,8 +29,24 @@
                     </a>
                 </li>
                 <li class="nav-item has-treeview">
+                    <a href="{{route('branch.index')}}" class="nav-link">
+                        <i class="nav-icon fas fa-code-branch"></i>
+                        <p>
+                            Chi Nhánh
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item has-treeview">
+                    <a href="{{route('department.index')}}" class="nav-link">
+                        <i class="nav-icon fas fa-user"></i>
+                        <p>
+                            Phòng Ban
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-chart-pie"></i>
+                        <i class="nav-icon fas fa-business-time"></i>
                         <p>
                             Chấm công
                             <i class="right fas fa-angle-left"></i>
@@ -100,7 +116,7 @@
                 </li>
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-tree"></i>
+                        <i class="nav-icon fas fa-money-check"></i>
                         <p>
                             Quản Lý Lương
                             <i class="fas fa-angle-left right"></i>
@@ -142,7 +158,7 @@
                 </li>
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-circle"></i>
+                        <i class="nav-icon fas fa-file-import"></i>
                         <p>
                             Nhập Liệu
                             <i class="right fas fa-angle-left"></i>
