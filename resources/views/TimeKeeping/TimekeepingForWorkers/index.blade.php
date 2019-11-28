@@ -48,6 +48,22 @@
                             <th><input id="btn1" class="show" type="button" value="Click Me" onclick="GetRealTime1()"><p id="get-time1" style="font-size: 15px; font-weight: bold;"></p></th>
                             <th><input id="btn2" class="show" type="button" value="Click Me" onclick="GetRealTime2()"><p id="get-time2" style="font-size: 15px; font-weight: bold;"></p></th>
                         </tr>
+                        <tr>
+                            <th>2</th>
+                            <th>0002</th>
+                            <th>Nguyễn Văn B</th>
+                            <th>HCNS</th>
+                            <th><input id="btn1" class="show" type="button" value="Click Me" onclick="GetRealTime1()"><p id="get-time1" style="font-size: 15px; font-weight: bold;"></p></th>
+                            <th><input id="btn2" class="show" type="button" value="Click Me" onclick="GetRealTime2()"><p id="get-time2" style="font-size: 15px; font-weight: bold;"></p></th>
+                        </tr>
+                        <tr>
+                            <th>3</th>
+                            <th>0003</th>
+                            <th>Nguyễn Văn C</th>
+                            <th>HCNS</th>
+                            <th><input id="btn1" class="show" type="button" value="Click Me" onclick="GetRealTime1()"><p id="get-time1" style="font-size: 15px; font-weight: bold;"></p></th>
+                            <th><input id="btn2" class="show" type="button" value="Click Me" onclick="GetRealTime2()"><p id="get-time2" style="font-size: 15px; font-weight: bold;"></p></th>
+                        </tr>
                     </tbody>
                 </table>
             </div>
