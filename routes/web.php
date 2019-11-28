@@ -26,11 +26,11 @@ Route::middleware([])->group(function () {
     });
     Route::prefix('timekeeping')->name('timekeeping.')->group(function (){
        Route::get('/',function(){
-          return view('timekeeping.index');
+          return view('TimeKeeping.index');
        })->name('index');
        Route::prefix('Edit')->name('edit.')->group(function (){
           Route::get('/',function(){
-            return view('Timekeeping.Edit.index');
+            return view('TimeKeeping.Edit.index');
           })->name('index');
           Route::get('/details',function (){
              return view('Timekeeping.Edit.editdetails');
@@ -38,7 +38,7 @@ Route::middleware([])->group(function () {
        });
        Route::prefix('TimekeepingDetails')->name('TimekeepingDetails.')->group(function(){
            Route::get('/',function(){
-              return view('Timekeeping.TimekeepingDetails.index');
+              return view('TimeKeeping.TimeKeepingDetails.index');
            })->name('index');
        });
     });
@@ -47,7 +47,7 @@ Route::middleware([])->group(function () {
         Route::post('import', 'TimeKeepingMachineController@import')->name('import');
         Route::prefix('time-keeping-for-workers')->name('time-keeping-for-workers.')->group(function () {
             Route::get('/', function () {
-                return view('TimeKeepingMachine.TimekeepingForWorkers.index');
+                return view('TimeKeeping.TimekeepingForWorkers.index');
             })->name('index');
         });
     });
