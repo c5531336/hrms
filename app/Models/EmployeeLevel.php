@@ -43,5 +43,10 @@ class EmployeeLevel extends Model
      * @var array
      */
     protected $dates = ['created_at', 'updated_at'];
-
+    /**
+     * Relation Ship
+     */
+    public function belongedBranch(){
+        return $this->belongsTo(Branch::class,'BranchId','BranchId');
+    }
 }

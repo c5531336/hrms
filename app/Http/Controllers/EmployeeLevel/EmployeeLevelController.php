@@ -15,7 +15,7 @@ class EmployeeLevelController extends Controller
      */
     public function index()
     {
-        //
+        return view('EmployeeLevel.index',['EmployeeLevels'=>EmployeeLevel::with(['belongedBranch'])->get()]);
     }
 
     /**
