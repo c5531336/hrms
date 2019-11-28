@@ -74,6 +74,12 @@ Route::middleware([])->group(function () {
         Route::resource('department', 'DepartmentController')->parameters(['department' => 'DepartmentId']);
     });
     /**
+     * Branch
+     */
+    Route::namespace('Branch')->group(function () {
+        Route::resource('branch', 'BranchController');
+    });
+    /**
      * Importer
      */
     Route::prefix('importer')->namespace('Import')->name('Importer.')->group(function () {
