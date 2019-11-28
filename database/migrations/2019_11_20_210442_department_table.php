@@ -17,11 +17,11 @@ class DepartmentTable extends Migration
             $table->increments('DepartmentId');
             $table->integer('BranchId');
             $table->string('Name');
-            $table->integer('ParentDepartmentID')->default(0);
+            $table->integer('ParentDepartmentId')->default(0);
             $table->string('DepartmentCode');
             $table->text('Description')->nullable();
             $table->double('Allowance')->default(0);
-            $table->index(['DepartmentId','ParentDepartmentID']);
+            $table->index(['DepartmentId','ParentDepartmentId']);
         });
     }
 
