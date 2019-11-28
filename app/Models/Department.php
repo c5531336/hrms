@@ -44,6 +44,7 @@ class Department extends Model
      */
     protected $dates = [];
     public $timestamps=false;
+    protected $attributes = ['Allowance'=>0];
     /**
      * Define Scope
      */

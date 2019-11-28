@@ -33,12 +33,12 @@ Route::middleware([])->group(function () {
             return view('TimeKeeping.Edit.index');
           })->name('index');
           Route::get('/details',function (){
-             return view('Timekeeping.Edit.editdetails');
+             return view('TimeKeeping.Edit.editdetails');
           })->name('editdetails');
        });
        Route::prefix('TimekeepingDetails')->name('TimekeepingDetails.')->group(function(){
            Route::get('/',function(){
-              return view('TimeKeeping.TimeKeepingDetails.index');
+              return view('TimeKeeping.TimekeepingDetails.index');
            })->name('index');
        });
     });
@@ -80,12 +80,6 @@ Route::middleware([])->group(function () {
         });
     });
     /**
-     * EmployeeLevel
-     */
-//    Route::prefix('employee')->name('employee.')->group(function () {
-//        Route::resource('employee-level', 'EmployeeLevelController')->parameters(['employee-level' => 'EmployeeLevelId']);
-//    });
-    /**
      * Department
      */
     Route::namespace('Department')->group(function () {
@@ -96,6 +90,12 @@ Route::middleware([])->group(function () {
      */
     Route::namespace('Branch')->group(function () {
         Route::resource('branch', 'BranchController');
+    });
+    /**
+     * EmployeeLevel
+     */
+    Route::namespace('EmployeeLevel')->group(function () {
+        Route::resource('employee-level', 'EmployeeLevelController')->parameters(['employee-level'=>'EmployeeLevel']);
     });
     /**
      * Importer
