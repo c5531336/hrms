@@ -38,9 +38,17 @@
                 </li>
                 <li class="nav-item has-treeview">
                     <a href="{{route('department.index')}}" class="nav-link">
-                        <i class="nav-icon fas fa-user"></i>
+                        <i class="nav-icon fas fa-door-open"></i>
                         <p>
                             Phòng Ban
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item has-treeview">
+                    <a href="{{route('employee-level.index')}}" class="nav-link">
+                        <i class="nav-icon fas fa-user-friends"></i>
+                        <p>
+                            Bậc Lương Công Nhân
                         </p>
                     </a>
                 </li>
