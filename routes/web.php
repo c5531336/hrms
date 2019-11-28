@@ -33,12 +33,12 @@ Route::middleware([])->group(function () {
             return view('TimeKeeping.Edit.index');
           })->name('index');
           Route::get('/details',function (){
-             return view('Timekeeping.Edit.editdetails');
+             return view('TimeKeeping.Edit.editdetails');
           })->name('editdetails');
        });
        Route::prefix('TimekeepingDetails')->name('TimekeepingDetails.')->group(function(){
            Route::get('/',function(){
-              return view('TimeKeeping.TimeKeepingDetails.index');
+              return view('TimeKeeping.TimekeepingDetails.index');
            })->name('index');
        });
     });

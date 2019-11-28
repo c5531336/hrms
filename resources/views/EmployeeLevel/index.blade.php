@@ -9,7 +9,7 @@
                         <div class="card-header">
                             <div class="row">
                                 <div class="col-md-9">
-                                    Danh sách bậc công nhân
+                                    Danh sách bậc lương công nhân
                                 </div>
                                 <div class="col-md-3">
                                     <a name="" id="" class="btn btn-success"
@@ -22,24 +22,40 @@
                             <table id="EmployeeLevels" class="table table-bordered table-hover ">
                                 <thead>
                                 <tr>
-                                    <th>Mã Chi Nhánh</th>
+                                    <th>Chi Nhánh</th>
                                     <th>Tên Chi Nhánh</th>
+                                    <th>bậc lương</th>
+                                    <th>mã bậc lương</th>
+                                    <th>lương căn bản</th>
+                                    <th>Trợ cấp cơm </th>
+                                    <th>Trợ cấp xăng</th>
+                                    <th>Trợ cấp nhà </th>
+                                    <th>Trợ cấp điện thoại</th>
+                                    <th>Trợ cấp trách nhiệm </th>
                                     <th>Chức năng</th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 @foreach($EmployeeLevels as $EmployeeLevel)
                                     <tr>
-                                        <td>{{$EmployeeLevel->BranchCode}}</td>
+                                        <td>{{$EmployeeLevel->belongedBranch->Name}}</td>
                                         <td>{{$EmployeeLevel->Name}}</td>
+                                        <td>{{$EmployeeLevel->Level}}</td>
+                                        <td>{{$EmployeeLevel->Code}}</td>
+                                        <td>{{$EmployeeLevel->BasicSalary}}</td>
+                                        <td>{{$EmployeeLevel->BasicFoodAllowance}}</td>
+                                        <td>{{$EmployeeLevel->BasicFuelAllowance}}</td>
+                                        <td>{{$EmployeeLevel->BasicHouseholdAllowance}}</td>
+                                        <td>{{$EmployeeLevel->BasicPhoneAllowance}}</td>
+                                        <td>{{$EmployeeLevel->BasicResponseAllowance}}</td>
                                         <td>
                                             <div class="btn-group" role="group" aria-label="Basic example">
                                                 <a
                                                     class="btn btn-outline-info"
-                                                    href="{{route('employee-level.edit',$item->BranchId)}}"
+                                                    href="{{route('employee-level.edit',$EmployeeLevel->EmployeeLevelId)}}"
                                                     role="button">Edit</a>
                                                 <form class="delete-employee-level-form" method="post"
-                                                      action="{{route('employee-level.destroy',$item->BranchId)}}">
+                                                      action="{{route('employee-level.destroy',$EmployeeLevel->EmployeeLevelId)}}">
                                                     @method('DELETE')
                                                     @csrf
                                                     <button type="button"
@@ -66,7 +82,7 @@
 @section('script')
     <script>
         $('#EmployeeLevels').DataTable({
-                paging: false,
+                paging: true,
                 searching: false,
                 "scrollX": true,
                 "overflow": true,

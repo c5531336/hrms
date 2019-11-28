@@ -60,7 +60,11 @@ class DepartmentController extends Controller
         if ($validator->fails()) {
             return redirect()->route('department.create')->withErrors($validator)->withInput();
         }
-        if (Department::create($request->all())) {
+        $data=$request->all();
+        if((int)$request->ParentDepartmentId === 0){
+            $data['Allowance']=0;
+        }
+        if (Department::create($data)) {
             return redirect()->route('department.index')->with('message', 'Tạo Phòng ban thành công !!!');
         }
         return redirect()->route('department.index')->with('message', 'Tạo Phòng ban thất bại !!!');
