@@ -64,8 +64,20 @@ Route::middleware([])->group(function () {
     /**
      * EmployeeLevel
      */
-    Route::prefix('employee')->name('employee.')->group(function () {
-        Route::resource('employee-level', 'EmployeeLevelController')->parameters(['employee-level' => 'EmployeeLevelId']);
+//    Route::prefix('employee')->name('employee.')->group(function () {
+//        Route::resource('employee-level', 'EmployeeLevelController')->parameters(['employee-level' => 'EmployeeLevelId']);
+//    });
+    /**
+     * Department
+     */
+    Route::namespace('Department')->group(function () {
+        Route::resource('department', 'DepartmentController')->parameters(['department' => 'DepartmentId']);
+    });
+    /**
+     * Branch
+     */
+    Route::namespace('Branch')->group(function () {
+        Route::resource('branch', 'BranchController');
     });
     /**
      * Importer
