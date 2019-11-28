@@ -42,6 +42,6 @@ class Branch extends Model
      *
      * @var array
      */
-    protected $dates = [];
+    public $timestamps = false;
 
 }
