@@ -71,7 +71,7 @@ Route::middleware([])->group(function () {
      * Department
      */
     Route::namespace('Department')->group(function () {
-        Route::resource('department', 'DepartmentController')->parameters(['department' => 'DepartmentId']);
+        Route::resource('department', 'DepartmentController');
     });
     /**
      * Branch
