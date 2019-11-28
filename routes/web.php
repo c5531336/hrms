@@ -24,12 +24,30 @@ Route::middleware([])->group(function () {
     Route::get('user/profile', function () {
         // Uses first & second Middleware
     });
+    Route::prefix('timekeeping')->name('timekeeping.')->group(function (){
+       Route::get('/',function(){
+          return view('TimeKeeping.index');
+       })->name('index');
+       Route::prefix('Edit')->name('edit.')->group(function (){
+          Route::get('/',function(){
+            return view('TimeKeeping.Edit.index');
+          })->name('index');
+          Route::get('/details',function (){
+             return view('Timekeeping.Edit.editdetails');
+          })->name('editdetails');
+       });
+       Route::prefix('TimekeepingDetails')->name('TimekeepingDetails.')->group(function(){
+           Route::get('/',function(){
+              return view('TimeKeeping.TimeKeepingDetails.index');
+           })->name('index');
+       });
+    });
     Route::prefix('time-keeping-machine')->name('time-keeping-machine.')->group(function () {
         Route::get('/', 'TimeKeepingMachineController@importView')->name('index');
         Route::post('import', 'TimeKeepingMachineController@import')->name('import');
         Route::prefix('time-keeping-for-workers')->name('time-keeping-for-workers.')->group(function () {
             Route::get('/', function () {
-                return view('TimeKeepingMachine.TimekeepingForWorkers.index');
+                return view('TimeKeeping.TimekeepingForWorkers.index');
             })->name('index');
         });
     });
@@ -51,7 +69,7 @@ Route::middleware([])->group(function () {
                 return view('SalaryManagement.Payroll.salary_detail_2');
             })->name('details2');
         });
-        /*
+        /**
          * Salary_Calculation
          */
         Route::prefix('SalaryCalculation')->name('SalaryCalculation.')->group(function () {

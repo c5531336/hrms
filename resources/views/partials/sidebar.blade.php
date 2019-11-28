@@ -56,12 +56,46 @@
 {{--                            </a>--}}
 {{--                        </li>--}}
                         <li class="nav-item">
-                            <a href="{{route('time-keeping-machine.time-keeping-for-workers.index')}}" class="nav-link" onclick="ShowTimeToDay()">
+                            <a href="{{route('timekeeping.index')}}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Công Tổng Hợp</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{route('time-keeping-machine.time-keeping-for-workers.index')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Công Công Nhân</p>
                             </a>
                         </li>
-
+                        <li class="nav-item">
+                            <a href="{{route('timekeeping.edit.index')}}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Chỉnh Sửa</p>
+                            </a>
+                        </li>
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-circle"></i>
+                                <p>
+                                    Nhập Liệu
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+{{--                                <li class="nav-item">--}}
+{{--                                    <a href="#" class="nav-link">--}}
+{{--                                        <i class="far fa-dot-circle nav-icon"></i>--}}
+{{--                                        <p>Nhập Sản Lượng</p>--}}
+{{--                                    </a>--}}
+{{--                                </li>--}}
+                                <li class="nav-item">
+                                    <a href="{{route('time-keeping-machine.index')}}" class="nav-link">
+                                        <i class="far fa-dot-circle nav-icon"></i>
+                                        <p>Nhập Từ File </p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
                     </ul>
                 </li>
                 <li class="nav-item has-treeview">
@@ -135,3 +169,38 @@
     </div>
     <!-- /.sidebar -->
 </aside>
+<style>
+    [class*=sidebar-dark-] {
+        background-color: #ffffff;
+    }
+
+    [class*=sidebar-dark-] .sidebar a {
+        background-color: rgba(255, 255, 255, 0.1);
+        color: #cc0404;
+    }
+
+
+    [class*=sidebar-dark-] .nav-sidebar > .nav-item.menu-open > .nav-link, [class*=sidebar-dark-] .nav-sidebar > .nav-item:hover > .nav-link, [class*=sidebar-dark-] .nav-sidebar > .nav-item > .nav-link:focus {
+        background-color: rgba(255, 255, 255, 0.1);
+        color: #ff0000;
+    }
+
+    [class*=sidebar-dark-] .user-panel a:hover {
+        color: #ff1919;
+        text-decoration: underline;
+    }
+
+    .sidebar-dark-primary .nav-sidebar > .nav-item > .nav-link.active, .sidebar-light-primary .nav-sidebar > .nav-item > .nav-link.active {
+        background-color: #007bff;
+        color: #ffffff;
+    }
+
+    [class*=sidebar-dark-] .nav-treeview > .nav-item > .nav-link {
+        color: #ff0000;
+    }
+
+    [class*=sidebar-dark-] .nav-treeview > .nav-item > .nav-link:hover, [class*=sidebar-dark-] .nav-treeview > .nav-item > .nav-link:focus {
+        background-color: rgba(255, 255, 255, 0.1);
+        color: #ff0000;
+    }
+</style>
