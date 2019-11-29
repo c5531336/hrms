@@ -26,7 +26,7 @@
                                             <tr>
                                                 <th>Chi Nhánh</th>
                                                 <th>Tên tổ</th>
-                                                <th>Mã Phòng ban</th>
+                                                <th>Mã tổ</th>
                                                 <th>Thuộc phòng ban</th>
                                                 <th>Trợ cấp</th>
                                                 <th>Chức năng</th>
@@ -70,7 +70,7 @@
                                             <thead>
                                             <tr>
                                                 <th>Chi Nhánh</th>
-                                                <th>Tên tổ</th>
+                                                <th>Tên Phòng ban</th>
                                                 <th>Mã Phòng ban</th>
                                                 <th>Chức năng</th>
                                             </tr>
