@@ -71,61 +71,61 @@
                             <th>1</th>
                             <th>15/10/2019</th>
                             <th>HC</th>
-                            <th><input type="number" class="form-control"></th>
-                            <th><input type="number" class="form-control"></th>
-                            <th><input type="number" class="form-control"></th>
-                            <th><input type="number" class="form-control"></th>
-                            <th><input type="number" class="form-control"></th>
-                            <th><input type="number" class="form-control"></th>
-                            <th><input type="number" class="form-control"></th>
+                            <th><input type="time" class="form-control"></th>
+                            <th><input type="time" class="form-control"></th>
+                            <th><input type="time" class="form-control"></th>
+                            <th><input type="time" class="form-control"></th>
+                            <th><input type="time" class="form-control"></th>
+                            <th><input type="time" class="form-control"></th>
+                            <th><input type="number" class="form-control" style="width: 50px;"></th>
                         </tr>
                         <tr>
                             <th>2</th>
                             <th>16/10/2019</th>
                             <th>HC</th>
-                            <th><input type="number" class="form-control"></th>
-                            <th><input type="number" class="form-control"></th>
-                            <th><input type="number" class="form-control"></th>
-                            <th><input type="number" class="form-control"></th>
-                            <th><input type="number" class="form-control"></th>
-                            <th><input type="number" class="form-control"></th>
-                            <th><input type="number" class="form-control"></th>
+                            <th><input type="time" class="form-control"></th>
+                            <th><input type="time" class="form-control"></th>
+                            <th><input type="time" class="form-control"></th>
+                            <th><input type="time" class="form-control"></th>
+                            <th><input type="time" class="form-control"></th>
+                            <th><input type="time" class="form-control"></th>
+                            <th><input type="number" class="form-control" style="width: 50px;"></th>
                         </tr>
                         <tr>
                             <th>3</th>
                             <th>17/10/2019</th>
                             <th>HC</th>
-                            <th><input type="number" class="form-control"></th>
-                            <th><input type="number" class="form-control"></th>
-                            <th><input type="number" class="form-control"></th>
-                            <th><input type="number" class="form-control"></th>
-                            <th><input type="number" class="form-control"></th>
-                            <th><input type="number" class="form-control"></th>
-                            <th><input type="number" class="form-control"></th>
+                            <th><input type="time" class="form-control"></th>
+                            <th><input type="time" class="form-control"></th>
+                            <th><input type="time" class="form-control"></th>
+                            <th><input type="time" class="form-control"></th>
+                            <th><input type="time" class="form-control"></th>
+                            <th><input type="time" class="form-control"></th>
+                            <th><input type="number" class="form-control" style="width: 50px;"></th>
                         </tr>
                         <tr>
                             <th>4</th>
                             <th>18/10/2019</th>
                             <th>HC</th>
-                            <th><input type="number" class="form-control"></th>
-                            <th><input type="number" class="form-control"></th>
-                            <th><input type="number" class="form-control"></th>
-                            <th><input type="number" class="form-control"></th>
-                            <th><input type="number" class="form-control"></th>
-                            <th><input type="number" class="form-control"></th>
-                            <th><input type="number" class="form-control"></th>
+                            <th><input type="time" class="form-control"></th>
+                            <th><input type="time" class="form-control"></th>
+                            <th><input type="time" class="form-control"></th>
+                            <th><input type="time" class="form-control"></th>
+                            <th><input type="time" class="form-control"></th>
+                            <th><input type="time" class="form-control"></th>
+                            <th><input type="number" class="form-control" style="width: 50px;"></th>
                         </tr>
                         <tr>
                             <th>5</th>
                             <th>19/10/2019</th>
                             <th>HC</th>
-                            <th><input type="number" class="form-control"></th>
-                            <th><input type="number" class="form-control"></th>
-                            <th><input type="number" class="form-control"></th>
-                            <th><input type="number" class="form-control"></th>
-                            <th><input type="number" class="form-control"></th>
-                            <th><input type="number" class="form-control"></th>
-                            <th><input type="number" class="form-control"></th>
+                            <th><input type="time" class="form-control"></th>
+                            <th><input type="time" class="form-control"></th>
+                            <th><input type="time" class="form-control"></th>
+                            <th><input type="time" class="form-control"></th>
+                            <th><input type="time" class="form-control"></th>
+                            <th><input type="time" class="form-control"></th>
+                            <th><input type="number" class="form-control" style="width: 50px;"></th>
                         </tr>
                         </tbody>
                     </table>
