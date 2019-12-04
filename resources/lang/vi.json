@@ -1,4 +1,5 @@
 {
+    "_comment": "View Employee",
     "Employee Level Code":"Mã Bậc Lương",
     "Employee Level Name": "Tên Bậc Lương",
     "Level ": "Bậc Lương",
@@ -12,6 +13,8 @@
     "Basic Response Allowance": "Trợ cấp trách nhiệm",
 
     "_comment": "General translate",
+    "Update success": "Cập nhập Thành Công!",
+    "Update fail": "Cập nhập Thành Công!",
     "Create": "Tạo",
     "Update": "Cập Nhập"
 }

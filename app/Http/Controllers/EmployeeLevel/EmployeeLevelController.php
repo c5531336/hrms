@@ -31,21 +31,6 @@ class EmployeeLevelController extends Controller
 
     public function store(EmployeeLevelRequest $request)
     {
-//        $validator = Validator::make($request->all(),[
-//            'BasicSalary'=>'required',
-//            'Level'=>'required',
-//            'BasicSalaryRate'=>'nullable',
-//            'BasicFoodAllowance'=>'required',
-//            'BasicFuelAllowance'=>'required',
-//            'BasicHouseholdAllowance'=>'required',
-//            'BasicAllowanceRate'=>'nullable',
-//            'BasicPhoneAllowance'=>'required',
-//            'BasicResponseAllowance'=>'required',
-//            'Code'       =>'required'
-//        ]);
-//        if ($validator->fails()) {
-//            return redirect()->route('employee-level.create')->withErrors($validator)->withInput();
-//        }
         if(EmployeeLevel::create($request->all())){
             return redirect()->route('employee-level.index')->with('message', 'Tạo bậc lương thành công !!!');
         }
@@ -77,24 +62,29 @@ class EmployeeLevelController extends Controller
 
     /**
      * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\EmployeeLevel  $employeeLevel
-     * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, EmployeeLevel $employeeLevel)
+    /**
+     * @param EmployeeLevel $request
+     * @param EmployeeLevel $employeeLevel
+     *
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function update(EmployeeLevelRequest $request, EmployeeLevel $employeeLevel)
     {
-        //
+        if( $employeeLevel->update($request->all())){
+            return redirect()->route('employee-level.index')->with('message',__('Update success'));
+        }
+        return redirect()->route('employee-level.index')->with('message', __('Update fail'));
     }
 
     /**
      * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\EmployeeLevel  $employeeLevel
-     * @return \Illuminate\Http\Response
      */
     public function destroy(EmployeeLevel $employeeLevel)
     {
-        //
+        if($employeeLevel->delete()){
+            return redirect()->route('department.index')->with('message', __('Delete success'));
+        }
+        return redirect()->route('department.index')->with('message', __('Delete fail'));
     }
 }
