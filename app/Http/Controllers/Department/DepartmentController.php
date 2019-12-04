@@ -14,31 +14,29 @@ class DepartmentController extends Controller
 {
     private $department;
 
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
         $parentData = Department::with('belongedBranch')->get();
-        $childrenData = Department::with(['belongedDepartment',
-                                          'belongedBranch'])->get();
-        return view('Department.index', ['departments' => $parentData,
-                                         'childrenDepartments' => $childrenData]);
+        $childrenData = Department::with([
+                                             'belongedDepartment',
+                                             'belongedBranch'
+                                         ])->get();
+        return view('Department.index', [
+            'departments'         => $parentData,
+            'childrenDepartments' => $childrenData
+        ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function create()
     {
         $parents = Department::where('ParentDepartmentId', 0)->get();
         $branches = Branch::all();
-        return view('Department.create', ['parents' => $parents,
-                                          'branches' => $branches]);
+        return view('Department.create', [
+            'parents'  => $parents,
+            'branches' => $branches
+        ]);
     }
 
     /**
@@ -46,23 +44,28 @@ class DepartmentController extends Controller
      *
      * @param \Illuminate\Http\Request $request
      *
-     * @return \Illuminate\Http\Response
+     * @return mixed
      */
     public function store(Request $request)
     {
-        $validator = Validator::make($request->all(), ['BranchId' => 'required',
-                                                       'DepartmentCode' => 'required|unique:Department,DepartmentCode',
-                                                       'Name' => 'required',
-                                                       'Allowance' => Rule::requiredIf((int)$request->ParentDepartmentId !== 0)], ['DepartmentCode.required' => 'Cần phải nhập Mã Phòng ban',
-                                                                                                                                   'DepartmentCode.unique' => 'Mã Phòng ban đã tồn tại',
-                                                                                                                                   'Name.required' => 'Cần phải nhập tên Phòng ban ',
-                                                                                                                                   'Allowance.required' => 'Cần phải nhập trợ cấp']);
+
+        $validator = Validator::make($request->all(), [
+            'BranchId'       => 'required',
+            'DepartmentCode' => 'required|unique:Department,DepartmentCode',
+            'Name'           => 'required',
+            'Allowance'      => Rule::requiredIf((int)$request->ParentDepartmentId !== 0)
+        ], [
+                                         'DepartmentCode.required' => 'Cần phải nhập Mã Phòng ban',
+                                         'DepartmentCode.unique'   => 'Mã Phòng ban đã tồn tại',
+                                         'Name.required'           => 'Cần phải nhập tên Phòng ban ',
+                                         'Allowance.required'      => 'Cần phải nhập trợ cấp'
+                                     ]);
         if ($validator->fails()) {
             return redirect()->route('department.create')->withErrors($validator)->withInput();
         }
-        $data=$request->all();
-        if((int)$request->ParentDepartmentId === 0){
-            $data['Allowance']=0;
+        $data = $request->all();
+        if ((int)$request->ParentDepartmentId === 0) {
+            $data['Allowance'] = 0;
         }
         if (Department::create($data)) {
             return redirect()->route('department.index')->with('message', 'Tạo Phòng ban thành công !!!');
@@ -93,8 +96,11 @@ class DepartmentController extends Controller
     {
         $parents = Department::where('ParentDepartmentId', 0)->get();
         $branches = Branch::all();
-        return view('Department.edit', ['parents' => $parents,
-                                          'branches' => $branches,'department'=>$department]);
+        return view('Department.edit', [
+            'parents'    => $parents,
+            'branches'   => $branches,
+            'department' => $department
+        ]);
     }
 
     /**
@@ -107,19 +113,23 @@ class DepartmentController extends Controller
      */
     public function update(Request $request, Department $department)
     {
-        $validator = Validator::make($request->all(), ['BranchId' => 'required',
-                                                       'DepartmentCode' => 'required',
-                                                       'Name' => 'required',
-                                                       'Allowance' => Rule::requiredIf((int)$request->ParentDepartmentId !== 0)], ['DepartmentCode.required' => 'Cần phải nhập Mã Phòng ban',
-                                                                                                                                   'DepartmentCode.unique' => 'Mã Phòng ban đã tồn tại',
-                                                                                                                                   'Name.required' => 'Cần phải nhập tên Phòng ban ',
-                                                                                                                                   'Allowance.required' => 'Cần phải nhập trợ cấp']);
+        $validator = Validator::make($request->all(), [
+            'BranchId'       => 'required',
+            'DepartmentCode' => 'required',
+            'Name'           => 'required',
+            'Allowance'      => Rule::requiredIf((int)$request->ParentDepartmentId !== 0)
+        ], [
+                                         'DepartmentCode.required' => 'Cần phải nhập Mã Phòng ban',
+                                         'DepartmentCode.unique'   => 'Mã Phòng ban đã tồn tại',
+                                         'Name.required'           => 'Cần phải nhập tên Phòng ban ',
+                                         'Allowance.required'      => 'Cần phải nhập trợ cấp'
+                                     ]);
         if ($validator->fails()) {
             return redirect()->route('department.edit')->withErrors($validator)->withInput();
         }
-            if ($department->update($request->all())) {
-                return redirect()->route('department.edit')->with('message', 'Tạo Phòng ban thành công !!!');
-            }
+        if ($department->update($request->all())) {
+            return redirect()->route('department.edit')->with('message', 'Tạo Phòng ban thành công !!!');
+        }
         return redirect()->route('department.edit')->with('message', 'Tạo Phòng ban thất bại !!!');
     }
 

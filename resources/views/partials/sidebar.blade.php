@@ -61,24 +61,6 @@
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
-{{--                        <li class="nav-item">--}}
-{{--                            <a href="#" class="nav-link">--}}
-{{--                                <i class="far fa-circle nav-icon"></i>--}}
-{{--                                <p>Theo Ca và Sản Lượng</p>--}}
-{{--                            </a>--}}
-{{--                        </li>--}}
-{{--                        <li class="nav-item">--}}
-{{--                            <a href="#" class="nav-link">--}}
-{{--                                <i class="far fa-circle nav-icon"></i>--}}
-{{--                                <p>Công Công Nhân</p>--}}
-{{--                            </a>--}}
-{{--                        </li>--}}
-{{--                        <li class="nav-item">--}}
-{{--                            <a href="#" class="nav-link">--}}
-{{--                                <i class="far fa-circle nav-icon"></i>--}}
-{{--                                <p>Kiểm Tra Chấm Công</p>--}}
-{{--                            </a>--}}
-{{--                        </li>--}}
                         <li class="nav-item">
                             <a href="{{route('timekeeping.index')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
@@ -97,7 +79,7 @@
                                 <p>Chỉnh Sửa</p>
                             </a>
                         </li>
-                        <li class="nav-item has-treeview">
+                        {{--<li class="nav-item has-treeview">
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-circle"></i>
                                 <p>
@@ -106,12 +88,12 @@
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
-{{--                                <li class="nav-item">--}}
-{{--                                    <a href="#" class="nav-link">--}}
-{{--                                        <i class="far fa-dot-circle nav-icon"></i>--}}
-{{--                                        <p>Nhập Sản Lượng</p>--}}
-{{--                                    </a>--}}
-{{--                                </li>--}}
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                       <i class="far fa-dot-circle nav-icon"></i>
+                                       <p>Nhập Sản Lượng</p>
+                                    </a>
+                               </li>
                                 <li class="nav-item">
                                     <a href="{{route('time-keeping-machine.index')}}" class="nav-link">
                                         <i class="far fa-dot-circle nav-icon"></i>
@@ -119,7 +101,7 @@
                                     </a>
                                 </li>
                             </ul>
-                        </li>
+                        </li>--}}
                     </ul>
                 </li>
                 <li class="nav-item has-treeview">

@@ -24,23 +24,23 @@ Route::middleware([])->group(function () {
     Route::get('user/profile', function () {
         // Uses first & second Middleware
     });
-    Route::prefix('timekeeping')->name('timekeeping.')->group(function (){
-       Route::get('/',function(){
-          return view('TimeKeeping.index');
-       })->name('index');
-       Route::prefix('Edit')->name('edit.')->group(function (){
-          Route::get('/',function(){
-            return view('TimeKeeping.Edit.index');
-          })->name('index');
-          Route::get('/details',function (){
-             return view('TimeKeeping.Edit.editdetails');
-          })->name('editdetails');
-       });
-       Route::prefix('TimekeepingDetails')->name('TimekeepingDetails.')->group(function(){
-           Route::get('/',function(){
-              return view('TimeKeeping.TimekeepingDetails.index');
-           })->name('index');
-       });
+    Route::prefix('timekeeping')->name('timekeeping.')->group(function () {
+        Route::get('/', function () {
+            return view('TimeKeeping.index');
+        })->name('index');
+        Route::prefix('Edit')->name('edit.')->group(function () {
+            Route::get('/', function () {
+                return view('TimeKeeping.Edit.index');
+            })->name('index');
+            Route::get('/details', function () {
+                return view('TimeKeeping.Edit.editdetails');
+            })->name('editdetails');
+        });
+        Route::prefix('TimekeepingDetails')->name('TimekeepingDetails.')->group(function () {
+            Route::get('/', function () {
+                return view('TimeKeeping.TimekeepingDetails.index');
+            })->name('index');
+        });
     });
     Route::prefix('time-keeping-machine')->name('time-keeping-machine.')->group(function () {
         Route::get('/', 'TimeKeepingMachineController@importView')->name('index');
@@ -82,9 +82,6 @@ Route::middleware([])->group(function () {
     /**
      * EmployeeLevel
      */
-   Route::prefix('employee')->name('employee.')->group(function () {
-        Route::resource('employee-level', 'EmployeeLevelController')->parameters(['employee-level' => 'EmployeeLevelId']);
-    });
     /**
      * Department
      */
@@ -101,7 +98,7 @@ Route::middleware([])->group(function () {
      * EmployeeLevel
      */
     Route::namespace('EmployeeLevel')->group(function () {
-        Route::resource('employee-level', 'EmployeeLevelController')->parameters(['employee-level'=>'EmployeeLevel']);
+        Route::resource('employee-level', 'EmployeeLevelController')->parameters(['employee-level' => 'employeeLevel']);
     });
     /**
      * Importer
