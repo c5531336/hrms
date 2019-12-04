@@ -18,7 +18,7 @@ class EmployeeLevel extends Migration
             $table->bigIncrements('EmployeeLevelId');
             $table->string('Name');
             $table->integer('Level');
-            $table->string('BranchId');
+            $table->integer('BranchId');
             $table->string('Code');
             $table->double('BasicSalary',15,4)->default(0);
             $table->integer('BasicSalaryRate')->default(0);

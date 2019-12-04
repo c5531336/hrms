@@ -145,5 +145,7 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'BasicSalary'=>'Lương căn bản'
+    ],
 ];

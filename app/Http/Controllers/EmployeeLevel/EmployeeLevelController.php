@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\EmployeeLevel;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\EmployeeLevelRequest;
 use App\Models\Branch;
 use App\Models\EmployeeLevel;
 use Illuminate\Http\Request;
@@ -27,29 +28,24 @@ class EmployeeLevelController extends Controller
         return view('EmployeeLevel.create',['branches'=>$branches]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return mixed
-     */
-    public function store(Request $request)
+
+    public function store(EmployeeLevelRequest $request)
     {
-        $validator = Validator::make($request->all(),[
-            'BasicSalary'=>'required',
-            'Level'=>'required',
-            'BasicSalaryRate'=>'nullable',
-            'BasicFoodAllowance'=>'required',
-            'BasicFuelAllowance'=>'required',
-            'BasicHouseholdAllowance'=>'required',
-            'BasicAllowanceRate'=>'nullable',
-            'BasicPhoneAllowance'=>'required',
-            'BasicResponseAllowance'=>'required',
-            'Code'       =>'required'
-        ]);
-        if ($validator->fails()) {
-            return redirect()->route('employee-level.create')->withErrors($validator)->withInput();
-        }
+//        $validator = Validator::make($request->all(),[
+//            'BasicSalary'=>'required',
+//            'Level'=>'required',
+//            'BasicSalaryRate'=>'nullable',
+//            'BasicFoodAllowance'=>'required',
+//            'BasicFuelAllowance'=>'required',
+//            'BasicHouseholdAllowance'=>'required',
+//            'BasicAllowanceRate'=>'nullable',
+//            'BasicPhoneAllowance'=>'required',
+//            'BasicResponseAllowance'=>'required',
+//            'Code'       =>'required'
+//        ]);
+//        if ($validator->fails()) {
+//            return redirect()->route('employee-level.create')->withErrors($validator)->withInput();
+//        }
         if(EmployeeLevel::create($request->all())){
             return redirect()->route('employee-level.index')->with('message', 'Tạo bậc lương thành công !!!');
         }
