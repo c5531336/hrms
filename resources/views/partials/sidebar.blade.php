@@ -29,32 +29,38 @@
                     </a>
                 </li>
                 <li class="nav-item has-treeview">
+                    <a href="{{route('branch.index')}}" class="nav-link">
+                        <i class="nav-icon fas fa-code-branch"></i>
+                        <p>
+                            Chi Nhánh
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item has-treeview">
+                    <a href="{{route('department.index')}}" class="nav-link">
+                        <i class="nav-icon fas fa-door-open"></i>
+                        <p>
+                            Phòng Ban
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item has-treeview">
+                    <a href="{{route('employee-level.index')}}" class="nav-link">
+                        <i class="nav-icon fas fa-user-friends"></i>
+                        <p>
+                            Bậc Lương Công Nhân
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-chart-pie"></i>
+                        <i class="nav-icon fas fa-business-time"></i>
                         <p>
                             Chấm công
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
-{{--                        <li class="nav-item">--}}
-{{--                            <a href="#" class="nav-link">--}}
-{{--                                <i class="far fa-circle nav-icon"></i>--}}
-{{--                                <p>Theo Ca và Sản Lượng</p>--}}
-{{--                            </a>--}}
-{{--                        </li>--}}
-{{--                        <li class="nav-item">--}}
-{{--                            <a href="#" class="nav-link">--}}
-{{--                                <i class="far fa-circle nav-icon"></i>--}}
-{{--                                <p>Công Công Nhân</p>--}}
-{{--                            </a>--}}
-{{--                        </li>--}}
-{{--                        <li class="nav-item">--}}
-{{--                            <a href="#" class="nav-link">--}}
-{{--                                <i class="far fa-circle nav-icon"></i>--}}
-{{--                                <p>Kiểm Tra Chấm Công</p>--}}
-{{--                            </a>--}}
-{{--                        </li>--}}
                         <li class="nav-item">
                             <a href="{{route('timekeeping.index')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
@@ -73,7 +79,7 @@
                                 <p>Chỉnh Sửa</p>
                             </a>
                         </li>
-                        <li class="nav-item has-treeview">
+                        {{--<li class="nav-item has-treeview">
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-circle"></i>
                                 <p>
@@ -82,12 +88,12 @@
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
-{{--                                <li class="nav-item">--}}
-{{--                                    <a href="#" class="nav-link">--}}
-{{--                                        <i class="far fa-dot-circle nav-icon"></i>--}}
-{{--                                        <p>Nhập Sản Lượng</p>--}}
-{{--                                    </a>--}}
-{{--                                </li>--}}
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                       <i class="far fa-dot-circle nav-icon"></i>
+                                       <p>Nhập Sản Lượng</p>
+                                    </a>
+                               </li>
                                 <li class="nav-item">
                                     <a href="{{route('time-keeping-machine.index')}}" class="nav-link">
                                         <i class="far fa-dot-circle nav-icon"></i>
@@ -95,12 +101,12 @@
                                     </a>
                                 </li>
                             </ul>
-                        </li>
+                        </li>--}}
                     </ul>
                 </li>
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-tree"></i>
+                        <i class="nav-icon fas fa-money-check"></i>
                         <p>
                             Quản Lý Lương
                             <i class="fas fa-angle-left right"></i>
@@ -142,7 +148,7 @@
                 </li>
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-circle"></i>
+                        <i class="nav-icon fas fa-file-import"></i>
                         <p>
                             Nhập Liệu
                             <i class="right fas fa-angle-left"></i>

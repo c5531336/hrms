@@ -64,19 +64,19 @@ class EmployeeLevelController extends Controller
      */
     public function show(EmployeeLevel $employeeLevel)
     {
-        $branches = Branch::all();
-        return view('EmployeeLevel.edit',['branches'=>$branches,'employeeLevel'=>$employeeLevel]);
+
     }
 
     /**
      * Show the form for editing the specified resource.
      *
      * @param  \App\Models\EmployeeLevel  $employeeLevel
-     * @return \Illuminate\Http\Response
+     * @return mixed
      */
     public function edit(EmployeeLevel $employeeLevel)
     {
-        //
+        $branches = Branch::all();
+        return view('EmployeeLevel.edit',['branches'=>$branches,'employeeLevel'=>$employeeLevel]);
     }
 
     /**
