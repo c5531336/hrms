@@ -18,7 +18,7 @@ class CreateEmployeesTable extends Migration
             $table->string('employee_id')->default('');
             $table->integer('BranchId');
             $table->string('name');
-            $table->string('department');
+            $table->integer('DepartmentId');
             $table->bigInteger('EmployeeLevelId');
             $table->enum('gender',['Name','Nữ']);
             $table->double('basicSalary',20,2)->default(0);
