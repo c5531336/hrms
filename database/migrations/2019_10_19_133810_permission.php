@@ -15,14 +15,11 @@ class Permission extends Migration
     {
         //
         Schema::create('permissions', function (Blueprint $table) {
-            $table->Increments('id');
-            $table->Integer('role_id');
-            $table->boolean('read')->default(false);
-            $table->boolean('write')->default(false);
-            $table->boolean('update')->default(false);
-            $table->boolean('create')->default(false);
+            $table->Increments('PermissionId');
+            $table->String('PermissionName');
+            $table->String('PermissionDescription');
             $table->timestamps();
-            $table->index(['role_id']);
+            $table->index(['PermissionId']);
         });
     }
 

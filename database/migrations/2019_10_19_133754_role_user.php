@@ -15,12 +15,9 @@ class RoleUser extends Migration
     {
         //
         Schema::create('role_users', function (Blueprint $table) {
-            $table->Increments('id');
-            $table->bigInteger('user_id')->unique();
+            $table->bigInteger('user_id')->unique()->primary();
             $table->Integer('role_id');
-            $table->timestamps();
             $table->index(['user_id','role_id']);
-
         });
     }
 

@@ -92,23 +92,4 @@ class TimeKeepingMachineController extends Controller
         //
     }
 
-    /*
-     * importer
-     */
-    public function import(Request $request)
-    {
-//        $path = $request->file('file')->storeAs(
-//            'test',$request->file->getClientOriginalName()
-//        );
-
-
-        $path = $request->file('file')->store('test');
-        Excel::import(new TimeKeepingMachineImporter,$path);
-        return back();
-    }
-
-    public function importView()
-    {
-        return view('TimeKeepingMachine/index');
-    }
 }
