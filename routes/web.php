@@ -100,6 +100,9 @@ Route::middleware([])->group(function () {
     Route::namespace('EmployeeLevel')->group(function () {
         Route::resource('employee-level', 'EmployeeLevelController')->parameters(['employee-level' => 'employeeLevel']);
     });
+    Route::namespace('TimeShift')->group(function () {
+        Route::resource('time-shift', 'TimeShiftController')->parameters(['time-shift' => 'timeShift']);
+    });
     /**
      * Importer
      */
