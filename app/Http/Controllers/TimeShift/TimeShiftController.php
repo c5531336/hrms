@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\TimeShift;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\TimeShiftRequest;
+use App\Models\Branch;
 use App\Models\TimeShift;
 use Illuminate\Http\Request;
 
@@ -11,32 +13,31 @@ class TimeShiftController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+
      */
     public function index()
     {
-        return view('TimeShift.index');
+        $timeShift = TimeShift::with('Branch')->get();
+        return view('TimeShift.index', ['TimeShifts'=>$timeShift]);
+
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
-    {
-        return view('TimeShift.index');
+    {  $branch = Branch::all('Name','BranchId');
+        return view('TimeShift.create',['branches'=>$branch]);
     }
 
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(TimeShiftRequest $request)
     {
-        //
+        if (TimeShift::create($request->all())) {
+            return redirect()->route('time-shift.index')->with('message', __('Create Success!'));
+        }
+        return redirect()->route('time-shift.index')->with('message', __('Create fail!'));
     }
 
     /**
@@ -54,11 +55,11 @@ class TimeShiftController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  \App\Models\TimeShift  $timeShift
-     * @return \Illuminate\Http\Response
      */
     public function edit(TimeShift $timeShift)
     {
-        return view('TimeShift.edit');
+        $branch = Branch::all('Name','BranchId');
+        return view('TimeShift.edit',['TimeShift'=>$timeShift,'branches'=>$branch]);
     }
 
     /**
@@ -66,11 +67,13 @@ class TimeShiftController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\TimeShift  $timeShift
-     * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, TimeShift $timeShift)
+    public function update(TimeShiftRequest $request, TimeShift $timeShift)
     {
-        //
+        if ($timeShift->update($request->all())) {
+            return redirect()->route('time-shift.index')->with('message', __('Update Success!'));
+        }
+        return redirect()->route('time-shift.index')->with('message', __('Update Fails!'));
     }
 
     /**
