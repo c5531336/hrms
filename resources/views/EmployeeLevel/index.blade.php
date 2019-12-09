@@ -24,10 +24,10 @@
                                 <thead>
                                 <tr>
                                     <th>Chi Nhánh</th>
-                                    <th>Tên Chi Nhánh</th>
-                                    <th>bậc lương</th>
-                                    <th>mã bậc lương</th>
-                                    <th>lương căn bản</th>
+                                    <th>Tên Nhân Viên</th>
+                                    <th>Bậc lương</th>
+                                    <th>Mã bậc lương</th>
+                                    <th>Lương căn bản</th>
                                     <th>Trợ cấp cơm </th>
                                     <th>Trợ cấp xăng</th>
                                     <th>Trợ cấp nhà </th>
@@ -53,7 +53,7 @@
                                             <div class="btn-group" role="group" aria-label="Basic example">
                                                 <a
                                                     class="btn btn-outline-info"
-                                                    href="{{route('employee-level.edit',$EmployeeLevel->EmployeeLevelId)}}"
+                                                    href="{{route('employee-level.edit',$EmployeeLevel-> EmployeeLevelId)}}"
                                                     role="button">Edit</a>
                                                 <form class="delete-employee-level-form" method="post"
                                                       action="{{route('employee-level.destroy',$EmployeeLevel->EmployeeLevelId)}}">
