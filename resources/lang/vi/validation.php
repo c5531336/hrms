@@ -146,6 +146,14 @@ return [
     */
 
     'attributes' => [
-        'BasicSalary'=>'Lương căn bản'
+        'Employee Level Name'=> 'Tên Bậc Lương',
+        'Employee Level Code' => 'Mã Bậc Lương',
+        'Level' => 'Bậc Lương',
+        'BasicSalary'=> 'Lương căn bản',
+        'BasicFoodAllowance' => 'Trợ cấp cơm',
+        'BasicHouseholdAllowance' => 'Trợ cấp nhà ở',
+        'BasicFuelAllowance' => 'Trợ cấp xăng xe',
+        'Basic Phone Allowance' => 'Trợ cấp điện thoại',
+        'Basic Response Allowance' => 'Trợ cấp trách nhiệm',
     ],
 ];

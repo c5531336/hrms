@@ -29,7 +29,7 @@
                         </div>
                         <div class="form-group">
                             <label for="Code">{{__('Employee Level Code')}}</label>
-                            <input type="text" class="form-control" name="Code" placeholder="ILKS"
+                            <input type="text" class="form-control" name="Code" placeholder="{{__('Employee Level Code')}}"
                                    value="{{old('Code')}}"/>
                         </div>
                         <div class="form-group">
@@ -39,7 +39,7 @@
                         </div>
                         <div class="form-group">
                             <label for="Name">{{__('Basic Salary')}}</label>
-                            <input type="text" class="form-control" name="BasicSalary" placeholder="In lụa"
+                            <input type="text" class="form-control" name="BasicSalary" placeholder="{{__('Basic Salary')}}"
                                    value="{{old('BasicSalary')}}"/>
                         </div>
                         <div class="form-group">
@@ -68,12 +68,6 @@
                             <label for="Allowance">{{__('Basic Response Allowance')}}</label>
                             <input type="text" class="form-control" name="BasicResponseAllowance" placeholder="10000"
                                    value="{{old('BasicResponseAllowance')}}"
-                            />
-                        </div>
-                        <div class="form-group">
-                            <label for="Allowance">{{__('Basic Food Allowance')}}</label>
-                            <input type="text" class="form-control" name="BasicFoodAllowance" placeholder="10000"
-                                   value="{{old('BasicFoodAllowance')}}"
                             />
                         </div>
                     </div>
