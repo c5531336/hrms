@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models;
+namespace AppModels;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -21,7 +21,7 @@ class Employees extends Model
      *
      * @var array
      */
-    protected $fillable = ['employee_id', 'BranchId', 'name', 'department', 'EmployeeLevelId', 'gender', 'basicSalary', 'probationarySalary', 'probationTime', 'isProbation', 'created_at', 'updated_at'];
+    protected $fillable = ['basicSalary', 'BranchId', 'created_at', 'DepartmentId', 'employee_id', 'EmployeeLevelId', 'gender', 'isProbation', 'name', 'probationarySalary', 'probationTime', 'updated_at'];
 
     /**
      * The attributes excluded from the model's JSON form.

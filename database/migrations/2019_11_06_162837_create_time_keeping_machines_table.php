@@ -24,9 +24,9 @@ class CreateTimeKeepingMachinesTable extends Migration
             $table->time('checkout_2')->nullable();
             $table->time('checkin_3')->nullable();
             $table->time('checkout_3')->nullable();
-            $table->integer('shiftType')->default(0);
-            $table->integer('departmentId')->default(0);
-            $table->text('ProductCode')->nullable();
+            $table->integer('TimeShiftId')->default(0);
+            $table->integer('DepartmentId')->default(0);
+            $table->bigInteger('ProductCategoryId')->nullable();
             $table->tinyInteger('absent')->default(0);
             $table->timestamps();
         });
