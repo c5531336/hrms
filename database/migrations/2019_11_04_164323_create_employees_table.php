@@ -17,7 +17,7 @@ class CreateEmployeesTable extends Migration
             $table->bigIncrements('id'); // ko quan tâm đến cột này nữa
             $table->string('employee_id')->default('');
             $table->integer('BranchId');
-            $table->string('name');
+            $table->string('FullName');
             $table->integer('DepartmentId');
             $table->bigInteger('EmployeeLevelId');
             $table->enum('gender',['Name','Nữ']);
@@ -25,7 +25,6 @@ class CreateEmployeesTable extends Migration
             $table->double('probationarySalary')->default(0);
             $table->integer('probationTime')->default(0);
             $table->tinyInteger('isProbation')->default(0);
-
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
         });
