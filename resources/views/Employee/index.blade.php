@@ -28,7 +28,7 @@
                                     <th>{{__('Department Name')}}</th>
                                     <th>{{__('EmployeeId')}}</th>
                                     <th>{{__('FullName')}}</th>
-                                    <th>Chức năng</th>
+                                    <th>{{__('Functions')}}</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -36,20 +36,20 @@
                                     <tr>
                                         <td>{{$Employee->Branch->Name}}</td>
                                         <td>{{$Employee->Department->Name}}</td>
-                                        <td>{{$Employee->employee_id}}</td>
+                                        <td>{{$Employee->EmployeeId}}</td>
                                         <td>{{$Employee->FullName}}</td>
                                         <td>
                                             <div class="btn-group" role="group" aria-label="Basic example">
                                                 <a
                                                     class="btn btn-outline-info"
-                                                    href="{{route('employee.show',$Employee->id)}}"
+                                                    href="{{route('employee.show',$Employee->EmployeeId)}}"
                                                     role="button">{{__('Detail')}}</a>
                                                 <a
                                                     class="btn btn-outline-info"
-                                                    href="{{route('employee.edit',$Employee->id)}}"
+                                                    href="{{route('employee.edit',$Employee->EmployeeId)}}"
                                                     role="button">{{__('Edit')}}</a>
                                                 <form class="delete-branch-form" method="post"
-                                                      action="{{route('employee.destroy',$Employee->id)}}">
+                                                      action="{{route('employee.destroy',$Employee->EmployeeId)}}">
                                                     @method('DELETE')
                                                     @csrf
                                                     <button type="button"

@@ -15,5 +15,6 @@ class DatabaseSeeder extends Seeder
         $this->call(DepartmentSeeder::class);
         $this->call(EmployeeLevelSeeder::class);
         $this->call(TimeShiftSeeder::class);
+        $this->call(EmployeeSeeder::class);
     }
 }

@@ -15,13 +15,13 @@ class Employees extends Model
      * @var string
      */
     protected $table = 'employees';
-
+    protected $primaryKey='EmployeeId';
     /**
      * Attributes that should be mass-assignable.
      *
      * @var array
      */
-    protected $fillable = ['basicSalary', 'BranchId', 'created_at', 'DepartmentId', 'employee_id', 'EmployeeLevelId', 'FullName', 'gender', 'isProbation', 'probationarySalary', 'probationTime', 'updated_at'];
+    protected $fillable = ['EmployeeId','basicSalary', 'BranchId', 'created_at', 'DepartmentId', 'EmployeeLevelId', 'FullName', 'gender', 'isProbation', 'probationarySalary', 'probationTime', 'updated_at'];
 
     /**
      * The attributes excluded from the model's JSON form.

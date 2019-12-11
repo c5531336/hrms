@@ -37,9 +37,8 @@ class TimeKeepingMachineImporter implements ToModel, WithChunkReading, WithBatch
         $checkout_2 = ($row[9] !== '' && isset($row[9])) ? $this->parseTime($row[9]) : null;
         $checkin_3 = ($row[10] !== '' && isset($row[10])) ? $this->parseTime($row[10]) : null;
         $checkout_3 = ($row[11] !== '' && isset($row[11])) ? $this->parseTime($row[11]) : null;
-
-        return new TimeKeepingMachines(['employee_id' => $row[0],
-                                        'employee_name' => $row[1],
+        return new TimeKeepingMachines(['EmployeeId' => $row[0],
+                                        'EmployeeFullName' => $row[1],
                                         'checkin_1' => $checkin_1 ? $checkin_1->toTimeString() : null,
                                         'checkout_1' => $checkout_1 ? $checkout_1->toTimeString() : null,
                                         'checkin_2' => $checkin_2 ? $checkin_2->toTimeString() : null,
@@ -51,12 +50,12 @@ class TimeKeepingMachineImporter implements ToModel, WithChunkReading, WithBatch
 
     public function chunkSize(): int
     {
-        return 200;
+        return 10;
     }
 
     public function batchSize(): int
     {
-        return 200;
+        return 10;
     }
 
     public function parseTime($time)

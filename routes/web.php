@@ -121,3 +121,4 @@ Route::middleware([])->group(function () {
 */
 Route::get('/home2', 'HomeController@index2')->name('home2');
 Route::get('/home3', 'HomeController@index3')->name('home3');
+Route::get('/test','HomeController@testCreateTime');

@@ -4,10 +4,10 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class TimeKeepingMachines extends Model  
+class TimeKeepingMachines extends Model
 {
 
-    
+
 
     /**
      * The database table used by the model.
@@ -21,7 +21,7 @@ class TimeKeepingMachines extends Model
      *
      * @var array
      */
-    protected $fillable = ['employee_id', 'employee_name', 'date', 'checkin_1', 'checkout_1', 'checkin_2', 'checkout_2', 'checkin_3', 'checkout_3', 'shiftType', 'departmentId', 'ProductCode', 'absent', 'created_at', 'updated_at'];
+    protected $fillable = ['EmployeeId', 'EmployeeFullName', 'date', 'checkin_1', 'checkout_1', 'checkin_2', 'checkout_2', 'checkin_3', 'checkout_3', 'shiftType', 'departmentId', 'ProductCategoryId', 'absent', 'created_at', 'updated_at'];
 
     /**
      * The attributes excluded from the model's JSON form.
