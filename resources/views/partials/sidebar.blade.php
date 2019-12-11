@@ -61,6 +61,14 @@
                     </a>
                 </li>
                 <li class="nav-item has-treeview">
+                    <a href="{{route('employee.index')}}" class="nav-link">
+                        <i class="nav-icon fas fa-user-friends"></i>
+                        <p>
+                           {{__('Employee Manager')}}
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-business-time"></i>
                         <p>
@@ -76,7 +84,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{route('time-keeping-machine.time-keeping-for-workers.index')}}" class="nav-link">
+                            <a href="#" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Công Công Nhân</p>
                             </a>

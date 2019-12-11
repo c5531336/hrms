@@ -10,12 +10,11 @@ class EmployeeController extends Controller
 {
     /**
      * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        //
+        $employees = Employees::with(['Branch','Department'])->get();
+        return view('Employee.index',['Employees'=>$employees]);
     }
 
     /**

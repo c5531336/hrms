@@ -44,4 +44,13 @@ class Employees extends Model
      */
     protected $dates = ['created_at', 'updated_at'];
 
+    /**
+     * Relationship
+     */
+    public function Branch(){
+        return $this->belongsTo(Branch::class,'BranchId');
+    }
+    public function Department(){
+        return $this->belongsto(Department::class,'DepartmentId');
+    }
 }
