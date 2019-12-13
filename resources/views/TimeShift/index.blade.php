@@ -9,7 +9,7 @@
                         <div class="card-header">
                             <div class="row">
                                 <div class="col-md-9">
-                                   {{__('TimeShiftList')}}
+                                   {{__('TimeShift List')}}
                                 </div>
                                 <div class="col-md-3">
                                     <a name="" id="" class="btn btn-success"

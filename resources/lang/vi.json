@@ -2,7 +2,7 @@
     "_comment": "View Employee",
     "Employee Level Code":"Mã Bậc Lương",
     "Employee Level Name": "Tên Bậc Lương",
-    "Level ": "Bậc Lương",
+    "Level": "Cấp bậc Bậc Lương",
     "Basic Salary": "Lương căn bản",
     "Basic Salary Rate": "Tỷ lệ tăng lương căn bản",
     "Basic Food Allowance": "Trợ cấp cơm",
@@ -12,9 +12,21 @@
     "Basic Phone Allowance": "Trợ cấp điện thoại",
     "Basic Response Allowance": "Trợ cấp trách nhiệm",
 
+    "_comment": "View TimeShift",
+    "TimeShift List": "Danh Sách Ca Làm Việc",
+    "Create TimeShift": "Tạo Ca Làm Việc",
+    "Branch Name": "Tên Chi Nhánh",
+    "Branch": "Chi Nhánh",
+    "Branch Code": "Mã Chi Nhánh",
+    "TimeShift Name": "Tên Ca Làm Việc",
+    "Food Allowance": "Trợ cấp Cơm",
+    "Time Allowance": "Trợ Cấp Theo Thời Gian",
+
+
     "_comment": "General translate",
     "Update success": "Cập nhập Thành Công!",
     "Update fail": "Cập nhập Thành Công!",
     "Create": "Tạo",
-    "Update": "Cập Nhập"
+    "Update": "Cập Nhập",
+    "Function": "Chức Năng"
 }

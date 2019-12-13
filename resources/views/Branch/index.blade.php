@@ -22,9 +22,9 @@
                             <table id="Branches" class="table table-bordered table-hover ">
                                 <thead>
                                 <tr>
-                                    <th>Mã Chi Nhánh</th>
-                                    <th>Tên Chi Nhánh</th>
-                                    <th>Chức năng</th>
+                                    <th>{{__('Branch Code')}}</th>
+                                    <th>{{__('Branch Name')}}</th>
+                                    <th>{{__('Function')}}</th>
                                 </tr>
                                 </thead>
                                 <tbody>
