@@ -23,7 +23,7 @@
                                 <thead>
                                 <tr>
                                     <th>{{__('Branch Name')}}</th>
-                                    <th>{{__('Time shift Name')}}</th>
+                                    <th>{{__('TimeShift Name')}}</th>
                                     <th>{{__('Food Allowance')}}</th>
                                     <th>{{__('Time Allowance')}}</th>
                                     <th>{{__('Function')}}</th>
