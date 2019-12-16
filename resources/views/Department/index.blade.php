@@ -33,6 +33,7 @@
                                             </tr>
                                             </thead>
                                             <tbody>
+                                            @if($childrenDepartments->count()>0)
                                             @foreach($childrenDepartments as $department)
                                                 @if($department->ParentDepartmentId!==0)
                                                     <tr>
@@ -62,6 +63,7 @@
                                                     </tr>
                                                 @endif
                                             @endforeach
+                                                @endif
                                             </tbody>
                                         </table>
                                     </div>
@@ -76,6 +78,7 @@
                                             </tr>
                                             </thead>
                                             <tbody>
+                                            @if($departments->count()>0)
                                             @foreach($departments as $department)
                                                 @if($department->ParentDepartmentId===0)
                                                     <tr>
@@ -103,6 +106,7 @@
                                                     </tr>
                                                 @endif
                                             @endforeach
+                                                @endif
                                             </tbody>
                                         </table>
                                     </div>
