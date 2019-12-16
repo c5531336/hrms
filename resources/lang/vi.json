@@ -13,6 +13,17 @@
     "Basic Response Allowance": "Trợ cấp trách nhiệm",
 
     "_comment": "View TimeShift",
+    "TimeShift List": "Danh Sách Ca Làm Việc",
+    "Create TimeShift": "Tạo Ca Làm Việc",
+    "Branch Name": "Tên Chi Nhánh",
+    "Branch": "Chi Nhánh",
+    "Branch Code": "Mã Chi Nhánh",
+    "TimeShift Name": "Tên Ca Làm Việc",
+    "Food Allowance": "Trợ cấp Cơm",
+    "Time Allowance": "Trợ Cấp Theo Thời Gian",
+
+
+    "_comment": "View TimeShift",
     "Create TimeShift": "Tạo Ca Làm Việc",
     "Branch Name": "Tên Chi Nhánh",
     "Branch": "Chi Nhánh",

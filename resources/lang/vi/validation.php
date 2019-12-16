@@ -164,5 +164,22 @@ return [
         'FoodAllowance' => 'Trợ Cấp Cơm',
         'TimeAllowance' => 'Trợ Cấp Theo Thời Gian'
 
+        /*Employee Level Creation View*/
+        'Employee Level Name'=> 'Tên Bậc Lương',
+        'Employee Level Code' => 'Mã Bậc Lương',
+        'Code' => 'Mã Bậc Lương',
+        'Level' => 'Cấp bậc Bậc Lương',
+        'BasicSalary'=> 'Lương căn bản',
+        'BasicFoodAllowance' => 'Trợ cấp cơm',
+        'BasicHouseholdAllowance' => 'Trợ cấp nhà ở',
+        'BasicFuelAllowance' => 'Trợ cấp xăng xe',
+        'BasicPhoneAllowance' => 'Trợ cấp điện thoại',
+        'BasicResponseAllowance' => 'Trợ cấp trách nhiệm',
+
+        /*TimeShift Creation View*/
+        'Name' => 'Tên Ca Làm Việc',
+        'BranchId' => 'Mã Chi Nhánh',
+        'FoodAllowance' => 'Trợ Cấp Cơm',
+        'TimeAllowance' => 'Trợ Cấp Theo Thời Gian'
     ],
 ];

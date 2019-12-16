@@ -9,7 +9,7 @@
                         <div class="card-header">
                             <div class="row">
                                 <div class="col-md-9">
-                                   {{__('TimeShiftList')}}
+                                   {{__('TimeShift List')}}
                                 </div>
                                 <div class="col-md-3">
                                     <a name="" id="" class="btn btn-success"
@@ -23,7 +23,7 @@
                                 <thead>
                                 <tr>
                                     <th>{{__('Branch Name')}}</th>
-                                    <th>{{__('Time shift Name')}}</th>
+                                    <th>{{__('TimeShift Name')}}</th>
                                     <th>{{__('Food Allowance')}}</th>
                                     <th>{{__('Time Allowance')}}</th>
                                     <th>{{__('Function')}}</th>

@@ -24,7 +24,10 @@ class TimeShiftRequest extends FormRequest
     public function rules()
     {
         return [
-            'Name'=>'Required','BranchId'=>'Required','FoodAllowance'=>'Required|min:0','TimeAllowance'=>'Required|min:0'
+            'Name'=>'Required',
+            'BranchId'=>'Required',
+            'FoodAllowance'=>'Required|min:0',
+            'TimeAllowance'=>'Required|min:0'
         ];
     }
 }
