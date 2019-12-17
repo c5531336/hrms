@@ -1,20 +1,20 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Employee;
 
-use App\Deduction;
+use App\Http\Controllers\Controller;
+use App\Models\Employees;
 use Illuminate\Http\Request;
 
-class DeductionController extends Controller
+class EmployeeController extends Controller
 {
     /**
      * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        //
+        $employees = Employees::with(['Branch','Department'])->get();
+        return view('Employee.index',['Employees'=>$employees]);
     }
 
     /**
@@ -41,10 +41,10 @@ class DeductionController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Deduction  $deduction
+     * @param  \App\Models\Employees  $employees
      * @return \Illuminate\Http\Response
      */
-    public function show(Deduction $deduction)
+    public function show(Employees $employees)
     {
         //
     }
@@ -52,10 +52,10 @@ class DeductionController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Deduction  $deduction
+     * @param  \App\Models\Employees  $employees
      * @return \Illuminate\Http\Response
      */
-    public function edit(Deduction $deduction)
+    public function edit(Employees $employees)
     {
         //
     }
@@ -64,10 +64,10 @@ class DeductionController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Deduction  $deduction
+     * @param  \App\Models\Employees  $employees
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Deduction $deduction)
+    public function update(Request $request, Employees $employees)
     {
         //
     }
@@ -75,10 +75,10 @@ class DeductionController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Deduction  $deduction
+     * @param  \App\Models\Employees  $employees
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Deduction $deduction)
+    public function destroy(Employees $employees)
     {
         //
     }

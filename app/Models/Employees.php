@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class TimeKeepingMachines extends Model
+class Employees extends Model
 {
 
 
@@ -14,14 +14,14 @@ class TimeKeepingMachines extends Model
      *
      * @var string
      */
-    protected $table = 'time_keeping_machines';
-
+    protected $table = 'employees';
+    protected $primaryKey='EmployeeId';
     /**
      * Attributes that should be mass-assignable.
      *
      * @var array
      */
-    protected $fillable = ['EmployeeId', 'EmployeeFullName', 'date', 'checkin_1', 'checkout_1', 'checkin_2', 'checkout_2', 'checkin_3', 'checkout_3', 'shiftType', 'departmentId', 'ProductCategoryId', 'absent', 'created_at', 'updated_at'];
+    protected $fillable = ['EmployeeId','basicSalary', 'BranchId', 'created_at', 'DepartmentId', 'EmployeeLevelId', 'FullName', 'gender', 'isProbation', 'probationarySalary', 'probationTime', 'updated_at'];
 
     /**
      * The attributes excluded from the model's JSON form.
@@ -42,6 +42,15 @@ class TimeKeepingMachines extends Model
      *
      * @var array
      */
-    protected $dates = ['date', 'created_at', 'updated_at'];
+    protected $dates = ['created_at', 'updated_at'];
 
+    /**
+     * Relationship
+     */
+    public function Branch(){
+        return $this->belongsTo(Branch::class,'BranchId');
+    }
+    public function Department(){
+        return $this->belongsto(Department::class,'DepartmentId');
+    }
 }
