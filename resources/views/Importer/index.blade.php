@@ -16,6 +16,9 @@
                           enctype="multipart/form-data">
 
                         @csrf
+                        <label for="Month">{{__('Month')}}</label>
+                        <input type="text" name="Month" class="form-control">
+                        <label for="file">{{__('Input File')}}</label>
                         <input type="file" name="file" class="form-control">
                         <br>
                         <button class="btn btn-success">Import User Data</button>

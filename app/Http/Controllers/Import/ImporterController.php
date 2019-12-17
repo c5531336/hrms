@@ -12,17 +12,24 @@ use Maatwebsite\Excel\Facades\Excel;
 class ImporterController extends Controller
 {
     //
-    public function index(){
+    public function index()
+    {
         return view('Importer.index');
     }
-    public function ImportTimeKeepingMachine(Request $request){
+
+    public function ImportTimeKeepingMachine(Request $request)
+    {
+        //TODO: validate request before import
         $path = Storage::putFile('importedFile', $request->file('file'));
-        Excel::import(new TimeKeepingMachineImporter(),$path);
+        $result = Excel::import(new TimeKeepingMachineImporter($request->Month), $path);
+        dd($result);
         return back();
     }
-    public function ImportEmployeeLevel(Request $request){
+
+    public function ImportEmployeeLevel(Request $request)
+    {
         $path = Storage::putFile('importedFile', $request->file('file'));
-        Excel::import(new EmployeeLevelImporter(),$path);
+        Excel::import(new EmployeeLevelImporter(), $path);
         return back();
     }
 }
