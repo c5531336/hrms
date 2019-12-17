@@ -17,7 +17,7 @@ class CreateTimeKeepingMachinesTable extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('EmployeeId')->default(0);
             $table->string('EmployeeFullName')->default('');
-            $table->date('date')->nullable();
+            $table->date('Date')->nullable();
             $table->time('checkin_1')->nullable();
             $table->time('checkout_1')->nullable();
             $table->time('checkin_2')->nullable();
