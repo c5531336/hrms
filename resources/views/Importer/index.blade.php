@@ -53,3 +53,10 @@
         </section>
     </div>
 @endsection
+@section('script')
+   <script>
+       @if(session('message'))
+        toastr.success('{{session('message')}}');
+       @endif
+   </script>
+@endsection

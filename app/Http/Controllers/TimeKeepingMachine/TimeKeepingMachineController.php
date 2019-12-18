@@ -15,7 +15,8 @@ class TimeKeepingMachineController extends Controller
      */
     public function index()
     {
-        //
+       $data = TimeKeepingMachines::with(['Branch','Department','TimeShift'])->get();
+       return view('TimeKeeping.TimeKeepingMachine.index');
     }
 
     /**

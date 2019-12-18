@@ -28,7 +28,8 @@ class TimeKeepingMachineImporter implements ToCollection, WithChunkReading, With
      */
     public function collection(Collection $dataSet)
     {
-        TimeKeepingMachines::where('Month', $this->Month)->delete();
+        $year = Carbon::now()->year;
+
         $TimeKeepingMachines = new Collection();
         foreach ($dataSet as $key => $row) {
             if (empty($row[4]) || empty($row[5]) || strpos($row[4], 'Ngày') !== false || strpos($row[4], 'Ngày') === 0) {
@@ -46,6 +47,9 @@ class TimeKeepingMachineImporter implements ToCollection, WithChunkReading, With
             $checkout_2 = ($row[9] !== '' && !empty($row[9])) ? $this->parseTime($row[9]) : null;
             $checkin_3 = ($row[10] !== '' && !empty($row[10])) ? $this->parseTime($row[10]) : null;
             $checkout_3 = ($row[11] !== '' && !empty($row[11])) ? $this->parseTime($row[11]) : null;
+            if((int)$this->Month !== $carbon->month){
+                continue;
+            }
             /**
              * change to collection
              */ //
@@ -69,11 +73,11 @@ class TimeKeepingMachineImporter implements ToCollection, WithChunkReading, With
                 'checkout_3'   => $checkout_3 ? $checkout_3->toTimeString() : null,
                 'date'         => $carbon->toDateString(),
                 'Month'        => $this->Month,
+                'Year'        => $carbon->year,
             ];
             $TimeKeepingMachines->push($importedData);
         }
-        TimeKeepingMachines::insert($TimeKeepingMachines->toArray());
-        return $TimeKeepingMachines;
+        return TimeKeepingMachines::insert($TimeKeepingMachines->toArray());
     }
 
     public function parseTime($time)
@@ -88,11 +92,11 @@ class TimeKeepingMachineImporter implements ToCollection, WithChunkReading, With
 
     public function chunkSize(): int
     {
-        return 200;
+        return 300;
     }
 
     public function batchSize(): int
     {
-        return 200;
+        return 300;
     }
 }

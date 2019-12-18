@@ -20,7 +20,8 @@ class EmployeeLevel extends Migration
             $table->integer('Level');
             $table->integer('BranchId');
             $table->string('Code');
-            $table->double('BasicSalary',15,4)->default(0);
+            $table->double('BasicSalaryByHour',15,4)->default(0);
+            $table->double('BasicSalaryByMonth',15,4)->default(0);
             $table->integer('BasicSalaryRate')->default(0);
             $table->double('BasicFoodAllowance',15,4)->default(730000);
             $table->double('BasicFuelAllowance',15,4)->default(0);

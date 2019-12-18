@@ -43,5 +43,16 @@ class TimeKeepingMachines extends Model
      * @var array
      */
     protected $dates = ['date', 'created_at', 'updated_at'];
-
+    public function Branch(){
+        return $this->belongsTo(Branch::class,'BranchId');
+    }
+    public function Department(){
+        return $this->belongsTo(Department::class,'DepartmentId');
+    }
+    public function TimeShift(){
+        return $this->belongsTo(TimeShift::class,'TimeShiftId');
+    }
+    public function EmployeeLevel(){
+        return $this->hasOneThrough(EmployeeLevel::class,Employees::class,'EmployeeId','EmployeeLevelId','EmployeeId','EmployeeLevelId');
+    }
 }

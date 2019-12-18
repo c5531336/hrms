@@ -21,7 +21,7 @@ class EmployeeLevel extends Model
      *
      * @var array
      */
-    protected $fillable = [ 'Name', 'Level', 'BranchId', 'Code', 'BasicSalary', 'BasicSalaryRate', 'BasicFoodAllowance', 'BasicFuelAllowance', 'BasicHouseholdAllowance', 'BasicAllowanceRate', 'BasicPhoneAllowance', 'BasicResponseAllowance', 'created_at', 'updated_at'];
+    protected $fillable = [ 'Name', 'Level', 'BranchId', 'Code', 'BasicSalaryByHour','BasicSalaryByMonth', 'BasicSalaryRate', 'BasicFoodAllowance', 'BasicFuelAllowance', 'BasicHouseholdAllowance', 'BasicAllowanceRate', 'BasicPhoneAllowance', 'BasicResponseAllowance', 'created_at', 'updated_at'];
 
     /**
      * The attributes excluded from the model's JSON form.

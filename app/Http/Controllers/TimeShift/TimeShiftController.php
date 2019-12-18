@@ -23,7 +23,8 @@ class TimeShiftController extends Controller
     }
 
     public function create()
-    {  $branch = Branch::all('Name','BranchId');
+    {
+        $branch = Branch::all('Name','BranchId');
         return view('TimeShift.create',['branches'=>$branch]);
     }
 

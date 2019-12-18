@@ -47,4 +47,5 @@ class TimeShift extends Model
     public function Branch(){
         return $this->belongsTo(Branch::class,'BranchId');
     }
+
 }

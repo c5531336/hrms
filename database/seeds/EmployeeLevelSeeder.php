@@ -11,6 +11,6 @@ class EmployeeLevelSeeder extends Seeder
      */
     public function run()
     {
-        factory(EmployeeLevel::class, 50)->create();
+        factory(EmployeeLevel::class, 2)->create();
     }
 }
