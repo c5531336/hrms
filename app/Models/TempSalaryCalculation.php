@@ -1,10 +1,10 @@
 <?php
 
-namespace AppModels;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Employees extends Model  
+class TempSalaryCalculation extends Model  
 {
 
     
@@ -14,14 +14,14 @@ class Employees extends Model
      *
      * @var string
      */
-    protected $table = 'employees';
+    protected $table = 'TempSalaryCalculation';
 
     /**
      * Attributes that should be mass-assignable.
      *
      * @var array
      */
-    protected $fillable = ['basicSalary', 'BranchId', 'created_at', 'DepartmentId', 'employee_id', 'EmployeeLevelId', 'gender', 'isProbation', 'name', 'probationarySalary', 'probationTime', 'updated_at'];
+    protected $fillable = ['created_at', 'EmployeeId', 'Month', 'RawSalaryByHours', 'RawSalaryByMonth', 'TotalProductSalary', 'TotalWorkingDay', 'TotalWorkingTime', 'updated_at', 'Year'];
 
     /**
      * The attributes excluded from the model's JSON form.

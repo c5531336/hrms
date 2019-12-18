@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\TempSalaryCalculation;
 use App\Models\TimeKeepingMachines;
 use Carbon\Carbon;
 use Illuminate\Support\Collection;
@@ -41,62 +42,73 @@ class HomeController extends Controller
     public function testCreateTime()
     {
         /**
-         * @TODO Mapping Timekeeping table to required table to calculate all thing for salary/timeKeeping Table on Interger
-         * @TODO All calculated value must be base on Money cause of too many department and product that Employees worked and made
+         * @TODO cal overtime
+         * @TODO cal food allowance
+         * @TODO cal product
          */
         $month = 9;
-        $timeMachines = TimeKeepingMachines::with(['Department','Branch','EmployeeLevel','TimeShift'])->where('Month',$month)->limit(5)->get();
-        dd($timeMachines);
+        $year=2019;
+        $timeMachines = TimeKeepingMachines::with(['Department', 'Branch', 'EmployeeLevel', 'TimeShift'])
+            ->where('Month', $month)
+            ->get();
+
         $timeMachines = $timeMachines->groupBy('EmployeeId');
         $UserTimeKeeping = new Collection();
-        $timeMachines->each(function ($timeMachine) use ($UserTimeKeeping) {
+        $timeMachines->each(function ($timeMachine) use ($UserTimeKeeping,$month,$year) {
             $currentUser = new Collection();
-            $maxMonth = $timeMachine->max('date')->month;
-            $maxYear = $timeMachine->max('date')->year;
+            $workingDays = 0;
+            $workingHours = 0;
+            $salaryByHours = 0;
+            $salaryByMonth = 0;
+            $employeeId = 0;
+            $foodAllowance=0;
+            $timeAllownace=0;
             foreach ($timeMachine as $timeRecorded => $item) {
-                if (isset($currentUser['Month'], $currentUser['Year']) && ($currentUser['Month'] !== $item->date->month || $currentUser['Month'] <= $maxMonth + 1)) {
-                    $UserTimeKeeping->put($currentUser['EmployeeId'] . '-' . $currentUser['Month'], $currentUser->toArray());
-                }
-                $currentProduct['Month'] = $currentUser['Month'] = $item->date->month;
-                $currentProduct['Year'] = $currentUser['Year'] = $item->date->year;
-                $currentProduct['EmployeeId'] = $currentUser['EmployeeId'] = $item->EmployeeId;
                 $absent = false;
-                if (!isset($currentUser['TotalWorkingTime'])) {
-                    $currentUser['TotalWorkingTime'] = 0;
-                }
-                if (!isset($currentUser['TotalAbsentDays'])) {
-                    $currentUser['TotalAbsentDays'] = 0;
-                }
-                if ($item->checkin_1 && $item->checkout_1) {
+                $employeeId = $item->EmployeeId;
+                if (!empty($item->checkin_1) && !empty($item->checkout_1)) {
                     $checkin = Carbon::createFromFormat('H:i:s', $item->checkin_1);
                     $time = $checkin->diffInMinutes(Carbon::createFromFormat('H:i:s', $item->checkout_1));
-                    $currentUser['TotalWorkingTime'] += round($time / 60, 1);
+                    $workingHours += round($time / 60, 1);
                 } else {
                     $absent = true;
                 }
-                if ($item->checkin_2 && $item->checkout_2) {
+                if (!empty($item->checkin_2) && !empty($item->checkout_2)) {
                     if ($absent) {
                         $absent = false;
                     }
                     $checkin = Carbon::createFromFormat('H:i:s', $item->checkin_1);
                     $time = $checkin->diffInMinutes(Carbon::createFromFormat('H:i:s', $item->checkout_1));
-                    $currentUser['TotalWorkingTime'] += round($time / 60, 1);
+                    $workingHours += round($time / 60, 1);
                 }
-                if ($item->checkin_3 && $item->checkout_3) {
+                if (!empty($item->checkin_3) && !empty($item->checkout_3)) {
                     if ($absent) {
                         $absent = false;
                     }
                     $checkin = Carbon::createFromFormat('H:i:s', $item->checkin_1);
                     $time = $checkin->diffInMinutes(Carbon::createFromFormat('H:i:s', $item->checkout_1));
-                    $currentUser['TotalWorkingTime'] += round($time / 60, 1);
+                    $workingHours += round($time / 60, 1);
                 }
-                if ($absent) {
-                    $currentUser['TotalAbsentDays'] += 1;
+                if (!$absent) {
+                    ++$workingDays;
+                }
+                if ($item->EmployeeLevel->BasicSalaryByHour > 0) {
+                    $salaryByHours += $workingHours * $item->EmployeeLevel->BasicSalaryByHour;
+                } else {
+                    $salaryByMonth += $workingDays * $item->EmployeeLevel->BasicSalaryByMonth;
                 }
             }
+            $UserTimeKeeping->put($employeeId, ['EmployeeId'    => $employeeId,
+                                                'RawSalaryByHours' => $salaryByHours,
+                                                'RawSalaryByMonth' => $salaryByMonth,
+                                                'TotalWorkingDay'    => $workingDays,
+                                                'TotalWorkingTime'  => $workingHours,
+                                                'Month'=>$month,
+                                                'Year'=>$year
+            ]);
         });
         if ($UserTimeKeeping->count() > 0) {
-            dd($UserTimeKeeping);
+            TempSalaryCalculation::insert($UserTimeKeeping->toArray());
         }
     }
 }

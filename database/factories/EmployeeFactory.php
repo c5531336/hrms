@@ -10,8 +10,7 @@ $factory->define(Employees::class, function (Faker $faker) {
         'BranchId'        => 1,
         'FullName'        => $faker->name(),
         'DepartmentId'    => $faker->numberBetween(2, 3),
-        'EmployeeLevelId' => $faker->numberBetween(1, 50),
-        'gender'          => $faker->numberBetween(1, 2),
-        'basicSalary'     => $faker->numberBetween(1000000, 4000000),
+        'EmployeeLevelId' => $faker->numberBetween(1, 2),
+        'gender'          => $faker->numberBetween(1, 2)
     ];
 });

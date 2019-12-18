@@ -17,6 +17,7 @@ class CreateTimeShift extends Migration
             $table->increments('TimeShiftId');
             $table->integer('BranchId');
             $table->string('Name');
+            $table->integer('MinHourForFoodAllowance')->default(0);
             $table->double('FoodAllowance', 20, 2)->default(0);
             $table->double('TimeAllowance', 20, 2)->default(0);
             $table->timestamps();

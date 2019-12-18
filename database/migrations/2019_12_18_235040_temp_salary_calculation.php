@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTimeKeepingsTable extends Migration
+class TempSalaryCalculation extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,17 @@ class CreateTimeKeepingsTable extends Migration
      */
     public function up()
     {
-        Schema::create('time_keepings', function (Blueprint $table) {
+        Schema::create('TempSalaryCalculation', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('EmployeeId');
             $table->integer('Month');
             $table->integer('Year');
-            $table->double('TotalWorkingTime')->default(0);
-            $table->integer('TotalAbsentDays')->default(0);
-            $table->integer('TotalProductMade')->default(0);
-            $table->bigInteger('ProductCategoryId')->nullable();
-           $table->timestamps();
+            $table->double('TotalWorkingTime',20,5)->default(0);
+            $table->double('TotalWorkingDay',20,5)->default(0);
+            $table->double('RawSalaryByHours',20,5)->default(0);
+            $table->double('RawSalaryByMonth',20,5)->default(0);
+            $table->double('TotalProductSalary')->default(0);
+            $table->timestamps();
         });
     }
 
@@ -33,6 +34,6 @@ class CreateTimeKeepingsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('time_keepings');
+        Schema::dropIfExists('TempSalaryCalculation');
     }
 }

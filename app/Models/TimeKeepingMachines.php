@@ -21,7 +21,7 @@ class TimeKeepingMachines extends Model
      *
      * @var array
      */
-    protected $fillable = ['EmployeeId', 'EmployeeFullName', 'date', 'checkin_1', 'checkout_1', 'checkin_2', 'checkout_2', 'checkin_3', 'checkout_3', 'shiftType', 'departmentId', 'ProductCategoryId', 'absent', 'created_at', 'updated_at'];
+    protected $fillable = ['EmployeeId', 'EmployeeFullName', 'date', 'checkin_1', 'checkout_1', 'checkin_2', 'checkout_2', 'checkin_3', 'checkout_3', 'TimeShift_1','TimeShift_2', 'TimeShift_3',  'DepartmentId', 'ProductCategoryId', 'absent', 'created_at', 'updated_at'];
 
     /**
      * The attributes excluded from the model's JSON form.
