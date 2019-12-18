@@ -40,22 +40,22 @@ class HomeController extends Controller
 
     public function testCreateTime()
     {
-        $timeMachines = TimeKeepingMachines::get();
+        /**
+         * @TODO Mapping Timekeeping table to required table to calculate all thing for salary/timeKeeping Table on Interger
+         * @TODO All calculated value must be base on Money cause of too many department and product that Employees worked and made
+         */
+        $month = 9;
+        $timeMachines = TimeKeepingMachines::with(['Department','Branch','EmployeeLevel','TimeShift'])->where('Month',$month)->limit(5)->get();
+        dd($timeMachines);
         $timeMachines = $timeMachines->groupBy('EmployeeId');
         $UserTimeKeeping = new Collection();
-        $UserProduct = new Collection();
-        $timeMachines->each(function ($timeMachine) use ($UserTimeKeeping, $UserProduct) {
+        $timeMachines->each(function ($timeMachine) use ($UserTimeKeeping) {
             $currentUser = new Collection();
-            $currentProduct = new Collection();
             $maxMonth = $timeMachine->max('date')->month;
             $maxYear = $timeMachine->max('date')->year;
-            foreach ($timeMachine as $timeRecored => $item) {
+            foreach ($timeMachine as $timeRecorded => $item) {
                 if (isset($currentUser['Month'], $currentUser['Year']) && ($currentUser['Month'] !== $item->date->month || $currentUser['Month'] <= $maxMonth + 1)) {
                     $UserTimeKeeping->put($currentUser['EmployeeId'] . '-' . $currentUser['Month'], $currentUser->toArray());
-                    if (isset($currentProduct['ProductCategoryId'])) {
-                        $UserProduct->put($currentProduct['EmployeeId'] . '-' . $currentProduct['Month'] . '-' . $currentProduct['ProductCategoryId'], $currentProduct->toArray());
-                    }
-
                 }
                 $currentProduct['Month'] = $currentUser['Month'] = $item->date->month;
                 $currentProduct['Year'] = $currentUser['Year'] = $item->date->year;
@@ -93,19 +93,10 @@ class HomeController extends Controller
                 if ($absent) {
                     $currentUser['TotalAbsentDays'] += 1;
                 }
-                if (isset($item->ProductCategoryId)) {
-                    if (isset($currentProduct['ProductCategoryId']) && $currentProduct['ProductCategoryId'] === $item->ProductCategoryId && $currentProduct['Month'] === $item->date->month) {
-                        $currentProduct['TotalProductMade'] += $item->ProductAmount;
-                    } else {
-                        $currentProduct['ProductCategoryId'] = $item->ProductCategoryId;
-                        $currentProduct['TotalProductMade'] = $item->ProductAmount;
-                    }
-                }
-            };
-
+            }
         });
         if ($UserTimeKeeping->count() > 0) {
-            dd($UserTimeKeeping, $UserProduct);
+            dd($UserTimeKeeping);
         }
     }
 }
