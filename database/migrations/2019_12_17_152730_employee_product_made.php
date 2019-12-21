@@ -21,6 +21,8 @@ class EmployeeProductMade extends Migration
             $table->integer('Year')->default(0);
             $table->bigInteger('ProductCategoryId')->nullable();
             $table->bigInteger('ProductAmount')->nullable();
+            $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
         });
     }
 

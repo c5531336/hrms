@@ -41,7 +41,9 @@ class HomeController extends Controller
 
     public function testCreateTime()
     {
-       $result = SalaryCalculator::SalaryByHoursCalculator();
+        SalaryCalculator::SalaryByHoursCalculator();
+        SalaryCalculator::SalaryByProductCalculator();
+       $result = TempSalaryCalculation::get();
        dd($result);
     }
 }

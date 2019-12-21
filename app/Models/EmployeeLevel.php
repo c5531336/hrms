@@ -7,21 +7,36 @@ use Illuminate\Database\Eloquent\Model;
 class EmployeeLevel extends Model
 {
 
-
-
     /**
      * The database table used by the model.
      *
      * @var string
      */
     protected $table = 'EmployeeLevel';
-    protected $primaryKey='EmployeeLevelId';
+    protected $primaryKey = 'EmployeeLevelId';
     /**
      * Attributes that should be mass-assignable.
      *
      * @var array
      */
-    protected $fillable = [ 'Name', 'Level', 'BranchId', 'Code', 'BasicSalaryByHour','BasicSalaryByMonth', 'BasicSalaryRate', 'BasicFoodAllowance', 'BasicFuelAllowance', 'BasicHouseholdAllowance', 'BasicAllowanceRate', 'BasicPhoneAllowance', 'BasicResponseAllowance', 'created_at', 'updated_at'];
+    protected $fillable = [
+        'Name',
+        'Level',
+        'BranchId',
+        'Code',
+        'BasicSalaryByHour',
+        'BasicSalaryByMonth',
+        'BasicSalaryRate',
+        'BasicFoodAllowance',
+        'BasicFuelAllowance',
+        'BasicHouseholdAllowance',
+        'BasicAllowanceRate',
+        'BasicPhoneAllowance',
+        'BasicResponseAllowance',
+        'AllowOverTime',
+        'created_at',
+        'updated_at',
+    ];
 
     /**
      * The attributes excluded from the model's JSON form.
@@ -43,10 +58,12 @@ class EmployeeLevel extends Model
      * @var array
      */
     protected $dates = ['created_at', 'updated_at'];
+
     /**
      * Relation Ship
      */
-    public function belongedBranch(){
-        return $this->belongsTo(Branch::class,'BranchId','BranchId');
+    public function belongedBranch()
+    {
+        return $this->belongsTo(Branch::class, 'BranchId', 'BranchId');
     }
 }

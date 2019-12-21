@@ -47,7 +47,8 @@ class TempSalaryCalculation extends Migration
             $table->double('TotalWorkingTime', 20, 5)->default(0);
             $table->double('TotalWorkingDay', 20, 5)->default(0);
             $table->double('TotalOverTime', 20, 5)->default(0);
-            $table->timestamps();
+            $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
         });
     }
 
