@@ -46,11 +46,23 @@ class TimeKeepingMachines extends Model
     public function Branch(){
         return $this->belongsTo(Branch::class,'BranchId');
     }
-    public function Department(){
-        return $this->belongsTo(Department::class,'DepartmentId');
+    public function Department1(){
+        return $this->belongsTo(Department::class,'DepartmentId_1');
     }
-    public function TimeShift(){
-        return $this->belongsTo(TimeShift::class,'TimeShiftId');
+    public function TimeShift1(){
+        return $this->belongsTo(TimeShift::class,'TimeShiftId_1');
+    }
+    public function Department2(){
+        return $this->belongsTo(Department::class,'DepartmentId_2');
+    }
+    public function TimeShift2(){
+        return $this->belongsTo(TimeShift::class,'TimeShiftId_2');
+    }
+    public function Department3(){
+        return $this->belongsTo(Department::class,'DepartmentId_3');
+    }
+    public function TimeShift3(){
+        return $this->belongsTo(TimeShift::class,'TimeShiftId_3');
     }
     public function EmployeeLevel(){
         return $this->hasOneThrough(EmployeeLevel::class,Employees::class,'EmployeeId','EmployeeLevelId','EmployeeId','EmployeeLevelId');

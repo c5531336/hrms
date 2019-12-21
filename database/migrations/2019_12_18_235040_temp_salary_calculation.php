@@ -14,15 +14,39 @@ class TempSalaryCalculation extends Migration
     public function up()
     {
         Schema::create('TempSalaryCalculation', function (Blueprint $table) {
+            /**
+             * 'EmployeeId'    => $employeeId,
+             * 'RawSalaryByHours' => $salaryByHours,
+             * 'RawSalaryByMonth' => $salaryByMonth,
+             * 'RawSalaryByOverTime'=>$salaryByOverTime,
+             * 'RawFoodAllowance'=>$foodAllowance,
+             * 'RawTimeAllowance'=>$workingTimeAllowance,
+             * 'RawDepartmentAllowance'=>$departmentAllowance,
+             * 'TotalWorkingDay'    => $workingDays,
+             * 'TotalWorkingTime'  => $workingHours,
+             * 'TotalOverTime'=>$overTimeHours,
+             * 'Month'=>$month,
+             * 'Year'=>$year
+             */
             $table->bigIncrements('id');
             $table->bigInteger('EmployeeId');
+
             $table->integer('Month');
             $table->integer('Year');
-            $table->double('TotalWorkingTime',20,5)->default(0);
-            $table->double('TotalWorkingDay',20,5)->default(0);
-            $table->double('RawSalaryByHours',20,5)->default(0);
-            $table->double('RawSalaryByMonth',20,5)->default(0);
-            $table->double('TotalProductSalary')->default(0);
+
+            $table->double('RawSalaryByHours', 20, 5)->default(0);
+            $table->double('RawSalaryByMonth', 20, 5)->default(0);
+            $table->double('RawSalaryByOverTime', 20, 5)->default(0);
+
+            $table->double('RawFoodAllowance', 20, 5)->default(0);
+            $table->double('RawTimeAllowance', 20, 5)->default(0);
+            $table->double('RawDepartmentAllowance', 20, 5)->default(0);
+
+            $table->double('TotalProductSalary',20,5)->default(0);
+
+            $table->double('TotalWorkingTime', 20, 5)->default(0);
+            $table->double('TotalWorkingDay', 20, 5)->default(0);
+            $table->double('TotalOverTime', 20, 5)->default(0);
             $table->timestamps();
         });
     }

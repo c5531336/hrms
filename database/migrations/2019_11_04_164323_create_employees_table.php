@@ -20,7 +20,8 @@ class CreateEmployeesTable extends Migration
             $table->integer('DepartmentId');
             $table->bigInteger('EmployeeLevelId');
             $table->enum('gender',['Nam','Nữ']);
-            $table->double('probationarySalary')->default(0);
+            $table->integer('IncreaseSalaryRate')->default(0);
+            $table->integer('IncreaseAllowanceRate')->default(0);
             $table->integer('probationTime')->default(0);
             $table->tinyInteger('isProbation')->default(0);
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));

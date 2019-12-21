@@ -10,6 +10,7 @@ $factory->define(TimeShift::class, function (Faker $faker) {
         'BranchId'=>$faker->numberBetween(1,3),
         'Name'=>$faker->text('50'),
         'FoodAllowance'=>$faker->numberBetween('10000','20000'),
-        'TimeAllowance'=>$faker->numberBetween('10000','50000')
+        'TimeAllowance'=>$faker->numberBetween('10000','50000'),
+        'MinHourForFoodAllowance'=>$faker->numberBetween(8,12)
     ];
 });

@@ -21,12 +21,11 @@ class EmployeeLevel extends Migration
             $table->integer('BranchId');
             $table->string('Code');
             $table->double('BasicSalaryByHour',15,4)->default(0);
+            $table->double('ProbationSalaryByHour',15,4)->default(0);
             $table->double('BasicSalaryByMonth',15,4)->default(0);
-            $table->integer('BasicSalaryRate')->default(0);
             $table->double('BasicFoodAllowance',15,4)->default(730000);
             $table->double('BasicFuelAllowance',15,4)->default(0);
             $table->double('BasicHouseholdAllowance',15,4)->default(0);
-            $table->double('BasicAllowanceRate',15,4)->default(0);
             $table->double('BasicPhoneAllowance',15,4)->default(0);
             $table->double('BasicResponseAllowance',15,4)->default(0);
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
