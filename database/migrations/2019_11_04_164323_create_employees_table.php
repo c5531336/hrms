@@ -22,6 +22,8 @@ class CreateEmployeesTable extends Migration
             $table->enum('gender',['Nam','Nữ']);
             $table->integer('IncreaseSalaryRate')->default(0);
             $table->integer('IncreaseAllowanceRate')->default(0);
+            $table->date('StartWorkingDate')->nullable();
+            $table->date('EndWorking')->nullable();
             $table->integer('probationTime')->default(0);
             $table->tinyInteger('isProbation')->default(0);
             $table->tinyInteger('isLeader')->default(0);
