@@ -11,6 +11,6 @@ class TimeShiftSeeder extends Seeder
      */
     public function run()
     {
-        factory(\App\Models\TimeShift::class,50)->create();
+        factory(\App\Models\TimeShift::class,10)->create();
     }
 }

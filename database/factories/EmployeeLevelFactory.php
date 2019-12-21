@@ -12,6 +12,7 @@ $factory->define(EmployeeLevel::class, function (Faker $faker) {
         'BranchId'=>$faker->numberBetween(1,3),
         'Code'=>$faker->text(5),
         'BasicSalaryByHour'=>$faker->numberBetween(0,50000),
+        'ProbationSalaryByHour'=>$faker->numberBetween(0,50000),
         'BasicSalaryByMonth'=>$faker->numberBetween(0,10000000),
         'BasicFoodAllowance'=>$faker->numberBetween(10000,50000),
         'BasicFuelAllowance'=>$faker->numberBetween(10000,50000),

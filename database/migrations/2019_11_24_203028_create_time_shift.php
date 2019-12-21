@@ -21,6 +21,7 @@ class CreateTimeShift extends Migration
             $table->double('StandardWorkingTime', 20, 2)->default(0);
             $table->double('FoodAllowance', 20, 2)->default(0);
             $table->double('TimeAllowance', 20, 2)->default(0);
+            $table->tinyInteger('IsOTSunday')->default(0);
             $table->timestamps();
             $table->index('TimeShiftId','BranchId');
         });

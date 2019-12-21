@@ -24,6 +24,7 @@ class CreateEmployeesTable extends Migration
             $table->integer('IncreaseAllowanceRate')->default(0);
             $table->integer('probationTime')->default(0);
             $table->tinyInteger('isProbation')->default(0);
+            $table->tinyInteger('isLeader')->default(0);
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
         });

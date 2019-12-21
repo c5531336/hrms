@@ -4,10 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class TempSalaryCalculation extends Model  
+class TempSalaryCalculation extends Model
 {
-
-    
 
     /**
      * The database table used by the model.
@@ -21,7 +19,24 @@ class TempSalaryCalculation extends Model
      *
      * @var array
      */
-    protected $fillable = ['created_at', 'EmployeeId', 'Month', 'RawSalaryByHours', 'RawSalaryByMonth', 'TotalProductSalary', 'TotalWorkingDay', 'TotalWorkingTime', 'updated_at', 'Year'];
+    protected $fillable = [
+        'EmployeeId',
+        'Month',
+        'Year',
+        'RawSalaryByHours',
+        'RawSalaryByMonth',
+        'RawSalaryByOverTime',
+        'RawFoodAllowance',
+        'RawTimeAllowance',
+        'RawDepartmentAllowance',
+        'TotalProductSalary',
+        'TotalWorkingDay',
+        'TotalWorkingTime',
+        'TotalOverTime',
+        'created_at',
+        'updated_at',
+
+    ];
 
     /**
      * The attributes excluded from the model's JSON form.
