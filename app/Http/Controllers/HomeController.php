@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ProductCategory;
 use App\Models\TempSalaryCalculation;
 use App\Models\TimeKeepingMachines;
 use Carbon\Carbon;
@@ -41,9 +42,12 @@ class HomeController extends Controller
 
     public function testCreateTime()
     {
-        SalaryCalculator::SalaryByHoursCalculator();
-        SalaryCalculator::SalaryByProductCalculator();
-       $result = TempSalaryCalculation::get();
-       dd($result);
+//        SalaryCalculator::SalaryByHoursCalculator();
+//        SalaryCalculator::SalaryByProductCalculator();
+//       $result = TempSalaryCalculation::get();
+//       dd($result);
+        $product=ProductCategory::all();
+        $result = $product->where('ProductCode','3N')->first();
+        return $result;
     }
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Import;
 
 use App\Http\Controllers\Controller;
 use App\Imports\EmployeeLevelImporter;
+use App\Imports\ProductMadeImporter;
 use App\Imports\TimeKeepingMachineImporter;
 use App\Models\TimeKeepingMachines;
 use Carbon\Carbon;
@@ -29,7 +30,14 @@ class ImporterController extends Controller
         $result = Excel::import(new TimeKeepingMachineImporter($request->Month), $path);
         return redirect()->route('Importer.index')->with('message', __('Import Time Keeping Success!'));
     }
-
+    public function ImportProductMade(Request $request)
+    {
+        $Month = (int)$request->Month;
+        $Year = Carbon::now()->year;
+        $path = Storage::putFile('importedFile', $request->file('file'));
+        $result = Excel::import(new ProductMadeImporter($request->Month), $path);
+        return redirect()->route('Importer.index')->with('message', __('Import Product Made Success!'));
+    }
     public function ImportEmployeeLevel(Request $request)
     {
         $path = Storage::putFile('importedFile', $request->file('file'));

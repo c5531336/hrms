@@ -77,7 +77,11 @@ class TimeKeepingMachineImporter implements ToCollection, WithChunkReading, With
             ];
             $TimeKeepingMachines->push($importedData);
         }
-        return TimeKeepingMachines::insert($TimeKeepingMachines->toArray());
+        $BreakDown =  $TimeKeepingMachines->split(5);
+        foreach($BreakDown->toArray() as $key => $value){
+            TimeKeepingMachines::insert($value);
+        }
+        return true;
     }
 
     public function parseTime($time)

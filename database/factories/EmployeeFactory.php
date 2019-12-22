@@ -11,6 +11,6 @@ $factory->define(Employees::class, function (Faker $faker) {
         'FullName'        => $faker->name(),
         'DepartmentId'    => $faker->numberBetween(2, 3),
         'EmployeeLevelId' => $faker->numberBetween(1, 2),
-        'gender'          => $faker->numberBetween(1, 2)
+        'gender'          =>'Nam'
     ];
 });

@@ -98,6 +98,9 @@ Route::middleware([])->group(function () {
     Route::namespace('TimeShift')->group(function () {
         Route::resource('time-shift', 'TimeShiftController')->parameters(['time-shift' => 'timeShift']);
     });
+    Route::namespace('ProductCategory')->group(function () {
+        Route::resource('product', 'ProductCategoryController');
+    });
     /*Route::prefix('time-keeping-machine')->name('time-keeping-machine.')->group(function () {
        Route::get('/', 'TimeKeepingMachineController@importView')->name('index');
        Route::post('import', 'TimeKeepingMachineController@import')->name('import');
@@ -113,6 +116,7 @@ Route::middleware([])->group(function () {
     Route::prefix('importer')->namespace('Import')->name('Importer.')->group(function () {
         Route::get('/', 'ImporterController@index')->name('index');
         Route::post('/import-time-keeping', 'ImporterController@ImportTimeKeepingMachine')->name('TimeKeeping');
+        Route::post('/import-product-made', 'ImporterController@ImportProductMade')->name('ProductMade');
         Route::post('/import-employee-level', 'ImporterController@ImportEmployeeLevel')->name('EmployeeLevel');
     });
 });
