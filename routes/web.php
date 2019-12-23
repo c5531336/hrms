@@ -24,24 +24,10 @@ Route::middleware([])->group(function () {
     Route::get('user/profile', function () {
         // Uses first & second Middleware
     });
-    Route::prefix('timekeeping')->name('timekeeping.')->group(function () {
-        Route::get('/', function () {
-            return view('TimeKeeping.index');
-        })->name('index');
-        Route::prefix('Edit')->name('edit.')->group(function () {
-            Route::get('/', function () {
-                return view('TimeKeeping.Edit.index');
-            })->name('index');
-            Route::get('/details', function () {
-                return view('TimeKeeping.Edit.editdetails');
-            })->name('editdetails');
-        });
-        Route::prefix('TimekeepingDetails')->name('TimekeepingDetails.')->group(function () {
-            Route::get('/', function () {
-                return view('TimeKeeping.TimekeepingDetails.index');
-            })->name('index');
-        });
-    });
+
+    /**
+     *
+     */
 
     /**
      * SalaryManagement
@@ -101,15 +87,19 @@ Route::middleware([])->group(function () {
     Route::namespace('ProductCategory')->group(function () {
         Route::resource('product', 'ProductCategoryController');
     });
-    /*Route::prefix('time-keeping-machine')->name('time-keeping-machine.')->group(function () {
-       Route::get('/', 'TimeKeepingMachineController@importView')->name('index');
-       Route::post('import', 'TimeKeepingMachineController@import')->name('import');
-       Route::prefix('time-keeping-for-workers')->name('time-keeping-for-workers.')->group(function () {
-           Route::get('/', function () {
-               return view('TimeKeeping.TimekeepingForWorkers.index');
-           })->name('index');
-       });
-   });*/
+    /**
+     * Time Keeping Machine
+     */
+    Route::namespace('TimeKeepingMachine')->group(function (){
+        Route::resource('time-keeping', 'TimeKeepingMachineController')->parameters(['time-keeping' => 'EmployeeId']);
+    });
+
+    /**
+     * Salary
+     */
+    Route::namespace('Salary')->group(function (){
+        Route::resource('temp-salary', 'TemporarySalaryController')->parameters(['temp-salary' => 'TempSalary']);
+    });
     /**
      * Importer
      */

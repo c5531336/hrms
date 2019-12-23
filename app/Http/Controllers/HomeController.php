@@ -42,12 +42,12 @@ class HomeController extends Controller
 
     public function testCreateTime()
     {
-//        SalaryCalculator::SalaryByHoursCalculator();
-//        SalaryCalculator::SalaryByProductCalculator();
+        SalaryCalculator::SalaryByHoursCalculator();
+        SalaryCalculator::SalaryByProductCalculator();
 //       $result = TempSalaryCalculation::get();
-//       dd($result);
-        $product=ProductCategory::all();
-        $result = $product->where('ProductCode','3N')->first();
-        return $result;
+////       dd($result);
+//        $product=ProductCategory::all();
+//        $result = $product->where('ProductCode','3N')->first();
+//        return $result;
     }
 }

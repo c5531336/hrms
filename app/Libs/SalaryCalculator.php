@@ -51,9 +51,11 @@ class SalaryCalculator
             foreach ($timeMachine as $timeRecorded => $item) {
                 $absent = false;
                 $employeeId = $item->EmployeeId;
+                $dayWorkingTime = 0;
                 if (!empty($item->checkin_1) && !empty($item->checkout_1)) {
-                    $checkin = Carbon::createFromFormat('H:i:s', $item->checkin_1);
-                    $time = $checkin->diffInMinutes(Carbon::createFromFormat('H:i:s', $item->checkout_1));
+
+                    $checkin = Carbon::parse($item->checkin_1);
+                    $time = $checkin->diffInMinutes(Carbon::parse( $item->checkout_1));
                     $currentWorkingTime = round($time / 60, 1);
                     $OT = $currentWorkingTime - $item->TimeShift1->StandardWorkingTime;
                     if ($OT > 0 && $item->TimeShift1->AllowOverTime === 0) {
@@ -70,6 +72,7 @@ class SalaryCalculator
                         $currentWorkingTime = 0;
                     }
                     $workingHours += $currentWorkingTime;
+                    $dayWorkingTime+=$currentWorkingTime;
                 } else {
                     $absent = true;
                 }
@@ -77,8 +80,8 @@ class SalaryCalculator
                     if ($absent) {
                         $absent = false;
                     }
-                    $checkin = Carbon::createFromFormat('H:i:s', $item->checkin_2);
-                    $time = $checkin->diffInMinutes(Carbon::createFromFormat('H:i:s', $item->checkout_2));
+                    $checkin = Carbon::parse( $item->checkin_2);
+                    $time = $checkin->diffInMinutes(Carbon::parse( $item->checkout_2));
                     $currentWorkingTime = round($time / 60, 1);
                     $OT = $currentWorkingTime - $item->TimeShift1->StandardWorkingTime;
                     if ($OT > 0 && $item->TimeShift2->AllowOverTime === 0) {
@@ -88,20 +91,21 @@ class SalaryCalculator
                     if ($currentWorkingTime > $item->TimeShift2->MinHourForFoodAllowance) {
                         $foodAllowance += $item->TimeShift2->FoodAllowance;
                     }
-                    $workingTimeAllowance += $item->TimeShif2t->TimeAllowance;
+                    $workingTimeAllowance += $item->TimeShift2->TimeAllowance;
                     $departmentAllowance += $item->Department2->Allowance;
                     if ($checkin->englishDayOfWeek === 'Sunday' && $item->EmployeeLevel->AllowOverTime === 0 && $item->TimeShift2->IsOTSunday === 0) {
                         $overTimeSunday += $currentWorkingTime;
                         $currentWorkingTime = 0;
                     }
                     $workingHours += $currentWorkingTime;
+                    $dayWorkingTime+=$currentWorkingTime;
                 }
                 if (!empty($item->checkin_3) && !empty($item->checkout_3)) {
                     if ($absent) {
                         $absent = false;
                     }
-                    $checkin = Carbon::createFromFormat('H:i:s', $item->checkin_3);
-                    $time = $checkin->diffInMinutes(Carbon::createFromFormat('H:i:s', $item->checkout_3));
+                    $checkin = Carbon::parse($item->checkin_3);
+                    $time = $checkin->diffInMinutes(Carbon::parse($item->checkout_3));
                     $currentWorkingTime = round($time / 60, 1);
                     $OT = $currentWorkingTime - $item->TimeShift1->StandardWorkingTime;
                     if ($OT > 0 && $item->TimeShift3->AllowOverTime === 0) {
@@ -118,12 +122,13 @@ class SalaryCalculator
                         $currentWorkingTime = 0;
                     }
                     $workingHours += $currentWorkingTime;
+                    $dayWorkingTime+=$currentWorkingTime;
                 }
                 if (!$absent) {
                     ++$workingDays;
                 }
                 if ($item->EmployeeLevel->BasicSalaryByHour > 0) {
-                    $salaryByHours += $workingHours * $item->EmployeeLevel->BasicSalaryByHour;
+                    $salaryByHours += $dayWorkingTime * $item->EmployeeLevel->BasicSalaryByHour;
                     $salaryByOverTime += $overTimeHours * $item->EmployeeLevel->BasicSalaryByHour * 1.5;
                 } else {
                     $salaryByMonth += $workingDays * $item->EmployeeLevel->BasicSalaryByMonth;
@@ -133,6 +138,7 @@ class SalaryCalculator
                     $salaryByOverTime+=$salaryByOverTimeSunday;
                 }
             }
+
             $UserTimeKeeping->put($employeeId, [
                 'EmployeeId'             => $employeeId,
                 'RawSalaryByHours'       => $salaryByHours,
@@ -142,8 +148,8 @@ class SalaryCalculator
                 'RawTimeAllowance'       => $workingTimeAllowance,
                 'RawDepartmentAllowance' => $departmentAllowance,
                 'TotalWorkingDay'        => $workingDays,
-                'TotalWorkingTime'       => $workingHours,
-                'TotalOverTime'          => $overTimeHours,
+                'TotalWorkingTime'       => (float)$workingHours,
+                'TotalOverTime'          => (float)$overTimeHours,
                 'Month'                  => $month,
                 'Year'                   => $year,
             ]);

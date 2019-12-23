@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\ProductCategory;
+namespace App\Http\Controllers\Salary;
 
 use App\Http\Controllers\Controller;
-use App\Models\ProductCategory;
+use App\Models\TempSalaryCalculation;
 use Illuminate\Http\Request;
 
-class ProductCategoryController extends Controller
+class TemporarySalaryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +15,11 @@ class ProductCategoryController extends Controller
      */
     public function index()
     {
-        return view('ProductCategory.index',['products'=>ProductCategory::all()]);
+        /**
+         * @TODO filter on previous month
+         */
+        $data=TempSalaryCalculation::with(['Employee.Department'])->get();
+        return view('SalaryManagement.temporarySalary',['Data'=>$data]);
     }
 
     /**
@@ -42,10 +46,10 @@ class ProductCategoryController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\ProductCategory  $productCategory
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(ProductCategory $productCategory)
+    public function show($id)
     {
         //
     }
@@ -53,10 +57,10 @@ class ProductCategoryController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\ProductCategory  $productCategory
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(ProductCategory $productCategory)
+    public function edit($id)
     {
         //
     }
@@ -65,10 +69,10 @@ class ProductCategoryController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\ProductCategory  $productCategory
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, ProductCategory $productCategory)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -76,10 +80,10 @@ class ProductCategoryController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\ProductCategory  $productCategory
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(ProductCategory $productCategory)
+    public function destroy($id)
     {
         //
     }

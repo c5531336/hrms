@@ -67,4 +67,7 @@ class TimeKeepingMachines extends Model
     public function EmployeeLevel(){
         return $this->hasOneThrough(EmployeeLevel::class,Employees::class,'EmployeeId','EmployeeLevelId','EmployeeId','EmployeeLevelId');
     }
+    public function Employee(){
+        return $this->belongsTo(Employees::class,'EmployeeId','EmployeeId');
+    }
 }

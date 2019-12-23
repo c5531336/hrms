@@ -58,5 +58,7 @@ class TempSalaryCalculation extends Model
      * @var array
      */
     protected $dates = ['created_at', 'updated_at'];
-
+    public function Employee(){
+        return $this->belongsTo(Employees::class,'EmployeeId','EmployeeId');
+    }
 }

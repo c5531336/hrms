@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\TimeKeepingMachine;
 
 use App\Http\Controllers\Controller;
+use App\Models\Employees;
+use App\Models\TempSalaryCalculation;
 use App\Models\TimeKeepingMachines;
 use Illuminate\Http\Request;
 
@@ -15,8 +17,8 @@ class TimeKeepingMachineController extends Controller
      */
     public function index()
     {
-       $data = TimeKeepingMachines::with(['Branch','Department','TimeShift'])->get();
-       return view('TimeKeeping.TimeKeepingMachine.index');
+       $data = TempSalaryCalculation::with( ['Employee.Department'])->orderBy('EmployeeId','ASC')->get();
+       return view('TimeKeeping.index',['EmployeeTimeKeepingSummaries'=>$data]);
     }
 
     /**
@@ -46,9 +48,27 @@ class TimeKeepingMachineController extends Controller
      * @param  \App\Models\TimeKeepingMachines  $timeKeepingMachines
      * @return \Illuminate\Http\Response
      */
-    public function show(TimeKeepingMachines $timeKeepingMachines)
+    public function show($EmployeeId)
     {
-        //
+
+        /**
+         * @TODO create relation data with EmployeeTable
+         * @TODO Highlight Not complete checkin/checkout data
+         *       Show more detail information of Time Keeping maching
+         *      Format view for more beautiful
+         */
+        $employeeInfo = Employees::find($EmployeeId);
+        $data= TimeKeepingMachines::with([
+            'Department1',
+            'Department2',
+            'Department3',
+            'Branch',
+            'EmployeeLevel',
+            'TimeShift1',
+            'TimeShift2',
+            'TimeShift3',
+        ])->where('EmployeeId',$EmployeeId)->get();
+        return view('TimeKeeping.show',['EmployeeDetails'=>$data,'EmployeeInfo'=>$employeeInfo]);
     }
 
     /**
