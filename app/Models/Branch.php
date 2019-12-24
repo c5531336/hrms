@@ -44,4 +44,16 @@ class Branch extends Model
      */
     public $timestamps = false;
 
+    public function Deparment(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Department::class,'BranchId','BranchId');
+    }
+    public function EmployeeLevel(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(EmployeeLevel::class,'BranchId','BranchId');
+    }
+    public function TimeShift(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(TimeShift::class,'BranchId','BranchId');
+    }
 }

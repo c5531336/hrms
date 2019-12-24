@@ -53,7 +53,6 @@
             <div class="card">
                 <div class="card-body table-responsive">
                     <table class="table table-striped table-bordered" style="overflow: auto;">
-
                         <thead>
                         <tr>
                             <th>Ngày</th>
@@ -66,27 +65,60 @@
                             <th>Tên Ca 3</th>
                             <th>Vào 3</th>
                             <th>Ra 3</th>
-                            <th>Công</th>
+                            <th>{{__('Man Hours')}}</th>
+                            <th>{{__('Function')}}</th>
                         </tr>
                         </thead>
                         <tbody>
                         @forelse($EmployeeDetails as $key => $EmployeeDetail)
-                            <?php // dd($EmployeeDetail) ?>
-                            <tr>
+                            @php
+                                $warningDepartment = false;
+                                $warningTimeKeeping=false;
+                                if((int)$EmployeeDetail->TimeShiftId_1===0 && !empty($EmployeeDetail->checkin_1)){
+                                          $warningDepartment=true;
+                                 }
+                                if(!empty($EmployeeDetail->checkin_1)&& empty($EmployeeDetail->checkout_1)){
+                                    $warningTimeKeeping=true;
+
+                                }
+
+                                if((int)$EmployeeDetail->TimeShiftId_2===0 && !empty($EmployeeDetail->checkin_2)){
+                                          $warningDepartment=true;
+                                     }
+                                if(!empty($EmployeeDetail->checkin_2)&& empty($EmployeeDetail->checkout_2)){
+                                    $warningTimeKeeping=true;
+
+                                }
+
+                                if((int)$EmployeeDetail->TimeShift_3===0 &&!empty($EmployeeDetail->checkin_3)){
+                                          $warningDepartment=true;
+                                     }
+                                if(!empty($EmployeeDetail->checkin_3)&& empty($EmployeeDetail->checkout_3)){
+                                    $warningTimeKeeping=true;
+                                }
+
+                            @endphp
+                            <tr style="{{($warningTimeKeeping||$warningDepartment)?'background-color:#fbeaa88c':''}}">
                                 <td>{{$EmployeeDetail->date->toDateString()}}</td>
-                                <td>{{($EmployeeDetail->DepartmentId_1!=0)?$EmployeeDetail->Department1->Name:__('Not Checkin')}}</td>
+                                <td>{{((int)$EmployeeDetail->TimeShiftId_1!==0)?$EmployeeDetail->TimeShift1->Name:__('Not Checkin')}}</td>
                                 <td>{{!empty($EmployeeDetail->checkin_1)?\Carbon\Carbon::parse($EmployeeDetail->checkin_1)->toTimeString():__('Not Checkin')}}</td>
                                 <td>{{!empty($EmployeeDetail->checkout_1)?\Carbon\Carbon::parse($EmployeeDetail->checkout_1)->toTimeString():__('Not Checkin')}}</td>
-                                <td>{{($EmployeeDetail->DepartmentId_2!=0)?$EmployeeDetail->Department2->Name:__('Not Checkin')}}</td>
+                                <td>{{((int)$EmployeeDetail->TimeShiftId_2!==0)?$EmployeeDetail->TimeShift2->Name:__('Not Checkin')}}</td>
                                 <td>{{!empty($EmployeeDetail->checkin_2)?\Carbon\Carbon::parse($EmployeeDetail->checkin_2)->toTimeString():__('Not Checkin')}}</td>
                                 <td>{{!empty($EmployeeDetail->checkout_2)?\Carbon\Carbon::parse($EmployeeDetail->checkout_2)->toTimeString():__('Not Checkin')}}</td>
-                                <td>{{($EmployeeDetail->DepartmentId_3!=0)?$EmployeeDetail->Department3->Name:__('Not Checkin')}}</td>
+                                <td>{{((int)$EmployeeDetail->TimeShiftId_3!==0)?$EmployeeDetail->TimeShift3->Name:__('Not Checkin')}}</td>
                                 <td>{{!empty($EmployeeDetail->checkin_3)?\Carbon\Carbon::parse($EmployeeDetail->checkin_3)->toTimeString():__('Not Checkin')}}</td>
                                 <td>{{!empty($EmployeeDetail->checkout_3)?\Carbon\Carbon::parse($EmployeeDetail->checkout_3)->toTimeString():__('Not Checkin')}}</td>
                                 <th>{{(\Carbon\Carbon::parse($EmployeeDetail->checkin_1)->diffInHours(\Carbon\Carbon::parse($EmployeeDetail->checkout_1)))
                                         + (\Carbon\Carbon::parse($EmployeeDetail->checkin_2)->diffInHours(\Carbon\Carbon::parse($EmployeeDetail->checkout_2)))
                                         +(\Carbon\Carbon::parse($EmployeeDetail->checkin_3)->diffInHours(\Carbon\Carbon::parse($EmployeeDetail->checkout_3)))
                                 }}</th>
+                                <td>
+                                    <button type="button" class="btn btn-info edit-button"
+                                            data-Id="{{$EmployeeDetail->id}}"
+                                            data-toggle="button" aria-pressed="false"> Edit
+                                    </button>
+                                </td>
                             </tr>
                         @empty
                             <p>No users</p>
@@ -104,9 +136,26 @@
 
 @section('script')
     <script>
-        let date = new Date();
-        let hour = String(date.getMonth() + 1); <!--January at 0-->
-        document.getElementById("Date").innerHTML = hour;
+
+        $('.table .edit-button').on('click', function () {
+            console.log($(this).attr('data-Id'));
+            axios({
+                method: 'get',
+                url: '{{route('time-keeping.index')}}/'+$(this).attr('data-Id')+'/edit',
+                responseType: 'stream'
+            })
+                .then(function (response) {
+                    // handle success
+                    console.log(response.data);
+                })
+                .catch(function (error) {
+                    // handle error
+                    console.log(error);
+                })
+                .finally(function () {
+                    // always executed
+                });
+        })
     </script>
 
 @endsection

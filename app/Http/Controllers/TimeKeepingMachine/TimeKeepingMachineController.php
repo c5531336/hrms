@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\TimeKeepingMachine;
 
 use App\Http\Controllers\Controller;
+use App\Models\Department;
 use App\Models\Employees;
 use App\Models\TempSalaryCalculation;
 use App\Models\TimeKeepingMachines;
+use App\Models\TimeShift;
 use Illuminate\Http\Request;
 
 class TimeKeepingMachineController extends Controller
@@ -17,8 +19,8 @@ class TimeKeepingMachineController extends Controller
      */
     public function index()
     {
-       $data = TempSalaryCalculation::with( ['Employee.Department'])->orderBy('EmployeeId','ASC')->get();
-       return view('TimeKeeping.index',['EmployeeTimeKeepingSummaries'=>$data]);
+        $data = TempSalaryCalculation::with(['Employee.Department'])->orderBy('EmployeeId', 'ASC')->get();
+        return view('TimeKeeping.index', ['EmployeeTimeKeepingSummaries' => $data]);
     }
 
     /**
@@ -34,7 +36,7 @@ class TimeKeepingMachineController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -45,7 +47,7 @@ class TimeKeepingMachineController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\TimeKeepingMachines  $timeKeepingMachines
+     * @param \App\Models\TimeKeepingMachines $timeKeepingMachines
      * @return \Illuminate\Http\Response
      */
     public function show($EmployeeId)
@@ -58,7 +60,7 @@ class TimeKeepingMachineController extends Controller
          *      Format view for more beautiful
          */
         $employeeInfo = Employees::find($EmployeeId);
-        $data= TimeKeepingMachines::with([
+        $data = TimeKeepingMachines::with([
             'Department1',
             'Department2',
             'Department3',
@@ -67,37 +69,49 @@ class TimeKeepingMachineController extends Controller
             'TimeShift1',
             'TimeShift2',
             'TimeShift3',
-        ])->where('EmployeeId',$EmployeeId)->get();
-        return view('TimeKeeping.show',['EmployeeDetails'=>$data,'EmployeeInfo'=>$employeeInfo]);
+        ])->where('EmployeeId', $EmployeeId)->get();
+        return view('TimeKeeping.show', ['EmployeeDetails' => $data, 'EmployeeInfo' => $employeeInfo]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\TimeKeepingMachines  $timeKeepingMachines
+     * @param \App\Models\TimeKeepingMachines $timeKeepingMachines
      * @return \Illuminate\Http\Response
      */
-    public function edit(TimeKeepingMachines $timeKeepingMachines)
+    public function edit(TimeKeepingMachines $timeKeeping)
     {
-        //
+        $timeShift = TimeShift::all();
+        $department = Department::where('ParentDepartmentId', '>', 0)->get();
+        $timeKeeping->load([
+            'Department1',
+            'Department2',
+            'Department3',
+            'Branch',
+            'EmployeeLevel',
+            'TimeShift1',
+            'TimeShift2',
+            'TimeShift3',
+        ]);
+        return response()->json(['Department' => $department,'TimeShift'=>$timeShift,'TimeKeeping'=>$timeKeeping]);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\TimeKeepingMachines  $timeKeepingMachines
+     * @param \Illuminate\Http\Request $request
+     * @param \App\Models\TimeKeepingMachines $timeKeepingMachines
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, TimeKeepingMachines $timeKeepingMachines)
+    public function update(Request $request, TimeKeepingMachines $timeKeeping)
     {
-        //
+        return $timeKeeping;
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\TimeKeepingMachines  $timeKeepingMachines
+     * @param \App\Models\TimeKeepingMachines $timeKeepingMachines
      * @return \Illuminate\Http\Response
      */
     public function destroy(TimeKeepingMachines $timeKeepingMachines)

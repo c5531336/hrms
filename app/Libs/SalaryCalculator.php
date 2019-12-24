@@ -15,7 +15,7 @@ class SalaryCalculator
         /**
          * @TODO cal overtime --ReadyToTest
          *       cal food allowance --Ready
-         *       Cal OT on sunday if this time shift OT is occur on sunday
+         *       Cal OT on sunday if this time shift OT is occur on sunday --Ready
          *
          * @TODO cal product
          */
