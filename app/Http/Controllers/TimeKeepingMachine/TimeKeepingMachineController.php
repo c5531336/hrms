@@ -59,7 +59,7 @@ class TimeKeepingMachineController extends Controller
          *       Show more detail information of Time Keeping maching
          *      Format view for more beautiful
          */
-        $employeeInfo = Employees::find($EmployeeId);
+        $employeeInfo = Employees::with(['Branch:Name,BranchId','Department:Name,DepartmentId'])->find($EmployeeId);
         $data = TimeKeepingMachines::with([
             'Department1',
             'Department2',
@@ -93,7 +93,7 @@ class TimeKeepingMachineController extends Controller
             'TimeShift2',
             'TimeShift3',
         ]);
-        return response()->json(['Department' => $department,'TimeShift'=>$timeShift,'TimeKeeping'=>$timeKeeping]);
+        return view('TimeKeeping.edit');
     }
 
     /**

@@ -12,6 +12,8 @@ try {
 
     require('bootstrap');
     require('admin-lte');
+    window.moment= require('moment');
+    window.toastr = require('toastr');
 } catch (e) {}
 
 /**

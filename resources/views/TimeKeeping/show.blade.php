@@ -5,5 +5,3 @@
                             index-route="{{route('time-keeping.index')}}"
     ></time-keeping-component>
 @endsection
-
-

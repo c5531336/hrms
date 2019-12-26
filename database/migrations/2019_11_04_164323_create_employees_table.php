@@ -28,8 +28,6 @@ class CreateEmployeesTable extends Migration
             $table->tinyInteger('isProbation')->default(0);
             $table->tinyInteger('isLeader')->default(0);
             $table->timestamps();
-//            $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
-//            $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
         });
 //        DB::update('ALTER TABLE employees AUTO_INCREMENT = 3000;');
     }

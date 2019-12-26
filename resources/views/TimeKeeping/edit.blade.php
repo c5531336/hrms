@@ -7,7 +7,7 @@
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-left">
                             <a class="btn btn-lg btn-primary fas fa-backward"
-                               href="{{route('timekeeping.edit.index')}}" role="button"></a>
+                               href="{{route('time-keeping.index')}}" role="button"></a>
                         </ol>
                     </div>
                     <div class="col-sm-6">
@@ -63,7 +63,6 @@
                             <th>Ra 2</th>
                             <th>Vào 3</th>
                             <th>Ra 3</th>
-                            <th>Công</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -77,7 +76,6 @@
                             <th><input type="time" class="form-control"></th>
                             <th><input type="time" class="form-control"></th>
                             <th><input type="time" class="form-control"></th>
-                            <th><input type="number" class="form-control" style="width: 50px;"></th>
                         </tr>
                         <tr>
                             <th>2</th>
@@ -89,7 +87,6 @@
                             <th><input type="time" class="form-control"></th>
                             <th><input type="time" class="form-control"></th>
                             <th><input type="time" class="form-control"></th>
-                            <th><input type="number" class="form-control" style="width: 50px;"></th>
                         </tr>
                         <tr>
                             <th>3</th>
@@ -101,7 +98,6 @@
                             <th><input type="time" class="form-control"></th>
                             <th><input type="time" class="form-control"></th>
                             <th><input type="time" class="form-control"></th>
-                            <th><input type="number" class="form-control" style="width: 50px;"></th>
                         </tr>
                         <tr>
                             <th>4</th>
@@ -113,7 +109,6 @@
                             <th><input type="time" class="form-control"></th>
                             <th><input type="time" class="form-control"></th>
                             <th><input type="time" class="form-control"></th>
-                            <th><input type="number" class="form-control" style="width: 50px;"></th>
                         </tr>
                         <tr>
                             <th>5</th>
@@ -125,7 +120,6 @@
                             <th><input type="time" class="form-control"></th>
                             <th><input type="time" class="form-control"></th>
                             <th><input type="time" class="form-control"></th>
-                            <th><input type="number" class="form-control" style="width: 50px;"></th>
                         </tr>
                         </tbody>
                     </table>

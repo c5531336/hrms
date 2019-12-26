@@ -15,7 +15,6 @@ class TimeKeepingMachines extends Model
      * @var string
      */
     protected $table = 'time_keeping_machines';
-
     /**
      * Attributes that should be mass-assignable.
      *
