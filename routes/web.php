@@ -91,7 +91,8 @@ Route::middleware([])->group(function () {
      * Time Keeping Machine
      */
     Route::namespace('TimeKeepingMachine')->group(function (){
-        Route::get('time-keeping/{timeKeeping}/edit','TimeKeepingMachineController@edit')->name('time-keeping.edit');
+        Route::get('time-keeping/{employeeId}/edit','TimeKeepingMachineController@edit')->name('time-keeping.edit');
+        Route::put('time-keeping/{employeeId}','TimeKeepingMachineController@update')->name('time-keeping.update');
         Route::resource('time-keeping', 'TimeKeepingMachineController')->parameters(['time-keeping' => 'EmployeeId'])->except([
             'edit','update'
         ]);

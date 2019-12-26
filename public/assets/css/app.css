@@ -36681,3 +36681,7 @@ readers do not read off random characters that represent icons */
   font-weight: 400;
 }
 
+.form-control.time-picker {
+  width: 7rem;
+}
+

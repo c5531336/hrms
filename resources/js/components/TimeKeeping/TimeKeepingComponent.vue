@@ -76,7 +76,10 @@
                         </thead>
                         <tbody>
                         <tr v-for="detail in employeeDetails"
-                            v-bind:style="[(detail.department1===null
+                            v-bind:style="[(detail.time_shift1===null
+                            || (!detail.checkin_1 && detail.time_shift1!==null)
+                            || (!detail.checkin_2 && detail.time_shift2!==null)
+                            || (!detail.checkin_3 && detail.time_shift3!==null)
                             || (detail.checkin_1 && !detail.checkout_1)
                             || (detail.checkin_2 && !detail.checkout_2)
                             || (detail.checkin_3 && !detail.checkout_3))?{'background-color':'#fbeaa88c'}:'']">
@@ -115,7 +118,7 @@
                             </td>
                             <td>
                                 <a name="" id="" class="btn btn-info"
-                                   :href="indexRoute+'/'+detail.id+'/edit'" role="button">Edit</a>
+                                   :href="indexRoute+'/'+detail.EmployeeId+'/edit'" role="button">Edit</a>
                             </td>
                         </tr>
                         </tbody>

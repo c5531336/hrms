@@ -37,6 +37,7 @@ class TimeKeepingMachineController extends Controller
      * Store a newly created resource in storage.
      *
      * @param \Illuminate\Http\Request $request
+     *
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -48,6 +49,7 @@ class TimeKeepingMachineController extends Controller
      * Display the specified resource.
      *
      * @param \App\Models\TimeKeepingMachines $timeKeepingMachines
+     *
      * @return \Illuminate\Http\Response
      */
     public function show($EmployeeId)
@@ -59,41 +61,42 @@ class TimeKeepingMachineController extends Controller
          *       Show more detail information of Time Keeping maching
          *      Format view for more beautiful
          */
-        $employeeInfo = Employees::with(['Branch:Name,BranchId','Department:Name,DepartmentId'])->find($EmployeeId);
+        $employeeInfo = Employees::with(['Branch:Name,BranchId', 'Department:Name,DepartmentId'])->find($EmployeeId);
         $data = TimeKeepingMachines::with([
-            'Department1',
-            'Department2',
-            'Department3',
-            'Branch',
-            'EmployeeLevel',
-            'TimeShift1',
-            'TimeShift2',
-            'TimeShift3',
-        ])->where('EmployeeId', $EmployeeId)->get();
+                                              'Department1',
+                                              'Department2',
+                                              'Department3',
+                                              'Branch',
+                                              'EmployeeLevel',
+                                              'TimeShift1',
+                                              'TimeShift2',
+                                              'TimeShift3',
+                                          ])->where('EmployeeId', $EmployeeId)->get();
         return view('TimeKeeping.show', ['EmployeeDetails' => $data, 'EmployeeInfo' => $employeeInfo]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param \App\Models\TimeKeepingMachines $timeKeepingMachines
-     * @return \Illuminate\Http\Response
+     * @param $employeeId
+     *
+     * @return mixed
      */
-    public function edit(TimeKeepingMachines $timeKeeping)
+    public function edit($employeeId)
     {
         $timeShift = TimeShift::all();
+        $employeeInfo = Employees::with(['Branch:Name,BranchId', 'Department:Name,DepartmentId'])->find($employeeId);
         $department = Department::where('ParentDepartmentId', '>', 0)->get();
-        $timeKeeping->load([
-            'Department1',
-            'Department2',
-            'Department3',
-            'Branch',
-            'EmployeeLevel',
-            'TimeShift1',
-            'TimeShift2',
-            'TimeShift3',
+        $data = TimeKeepingMachines::with([
+                                              'Branch',
+                                              'EmployeeLevel',
+                                          ])->where('EmployeeId', $employeeId)->get();
+        return view('TimeKeeping.edit', [
+            'TimeKeepingDetails' => $data,
+            'EmployeeInfo'    => $employeeInfo,
+            'Department'      => $department,
+            'TimeShift'=>$timeShift
         ]);
-        return view('TimeKeeping.edit');
     }
 
     /**
@@ -101,17 +104,23 @@ class TimeKeepingMachineController extends Controller
      *
      * @param \Illuminate\Http\Request $request
      * @param \App\Models\TimeKeepingMachines $timeKeepingMachines
-     * @return \Illuminate\Http\Response
+     *
+     * @return mixed
      */
-    public function update(Request $request, TimeKeepingMachines $timeKeeping)
+    public function update(Request $request, $employeeId)
     {
-        return $timeKeeping;
+        $updateData = $request->except(['_token','_method']);
+        foreach($updateData as $key => $value){
+            TimeKeepingMachines::where('id',$key)->update($value);
+        }
+        return redirect()->route('time-keeping.show',$employeeId)->with('message',__('Update success'));
     }
 
     /**
      * Remove the specified resource from storage.
      *
      * @param \App\Models\TimeKeepingMachines $timeKeepingMachines
+     *
      * @return \Illuminate\Http\Response
      */
     public function destroy(TimeKeepingMachines $timeKeepingMachines)
