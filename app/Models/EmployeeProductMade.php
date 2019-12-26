@@ -4,24 +4,24 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class EmployeeSalaryByProducts extends Model  
+class EmployeeProductMade extends Model
 {
 
-    
+
 
     /**
      * The database table used by the model.
      *
      * @var string
      */
-    protected $table = 'employee_salary_by_products';
+    protected $table = 'EmployeeProductMade';
 
     /**
      * Attributes that should be mass-assignable.
      *
      * @var array
      */
-    protected $fillable = ['employee_id', 'price', 'amount', 'total'];
+    protected $fillable = ['Date', 'EmployeeId', 'Month', 'ProductAmount', 'ProductCategoryId', 'Year'];
 
     /**
      * The attributes excluded from the model's JSON form.
@@ -42,6 +42,16 @@ class EmployeeSalaryByProducts extends Model
      *
      * @var array
      */
-    protected $dates = [];
+    protected $dates = ['Date'];
 
+    /**
+     * Relationship
+     *
+     */
+    public function ProductCategory(){
+        return $this->belongsTo(ProductCategory::class,'ProductCategoryId','ProductCategoryId');
+    }
+    public function Employee(){
+        return $this->belongsTo(Employees::class,'EmployeeId','EmployeeId');
+    }
 }

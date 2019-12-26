@@ -21,6 +21,7 @@ class DepartmentTable extends Migration
             $table->string('DepartmentCode');
             $table->text('Description')->nullable();
             $table->double('Allowance')->default(0);
+            $table->timestamps();
             $table->index(['DepartmentId','ParentDepartmentId']);
         });
     }

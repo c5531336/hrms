@@ -17,8 +17,8 @@ class DepartmentController extends Controller
 
     public function index()
     {
-        $parentData = Department::with('belongedBranch')->get();
-        $childrenData = Department::with([
+        $parentData = Department::where('ParentDepartmentId',0)->with('belongedBranch')->get();
+        $childrenData = Department::where('ParentDepartmentId','<>',0)->with([
                                              'belongedDepartment',
                                              'belongedBranch'
                                          ])->get();

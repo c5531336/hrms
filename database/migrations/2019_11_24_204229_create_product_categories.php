@@ -14,7 +14,7 @@ class CreateProductCategories extends Migration
     public function up()
     {
         Schema::create('ProductCategory', function (Blueprint $table) {
-            $table->bigInteger('ProductCategoryId');
+            $table->bigIncrements('ProductCategoryId');
             $table->string('ProductCode');
             $table->string('Name');
             $table->double('Price')->default(0);

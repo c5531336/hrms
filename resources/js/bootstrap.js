@@ -12,6 +12,10 @@ try {
 
     require('bootstrap');
     require('admin-lte');
+    window.moment= require('moment');
+    window.toastr = require('toastr');
+
+    window.timepicker= require('jquery-timepicker/jquery.timepicker');
 } catch (e) {}
 
 /**

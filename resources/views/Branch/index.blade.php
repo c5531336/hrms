@@ -82,5 +82,8 @@
         @if(session('message'))
             toastr.success('{{session('message')}}');
         @endif
+        @if(session('errors'))
+        toastr.error('{{session('errors')}}');
+        @endif
     </script>
 @endsection

@@ -18,8 +18,10 @@ class EmployeeProductMade extends Migration
             $table->bigInteger('EmployeeId')->default(0);
             $table->date('Date')->nullable();
             $table->integer('Month')->default(0);
+            $table->integer('Year')->default(0);
             $table->bigInteger('ProductCategoryId')->nullable();
             $table->bigInteger('ProductAmount')->nullable();
+            $table->timestamps();
         });
     }
 

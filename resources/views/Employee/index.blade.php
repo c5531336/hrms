@@ -76,8 +76,8 @@
 @section('script')
     <script>
         $('#Employees').DataTable({
-                paging: false,
-                searching: false,
+                paging: true,
+                searching: true,
                 "scrollX": true,
                 "overflow": true,
                 info: false
