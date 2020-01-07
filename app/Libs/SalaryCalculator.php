@@ -52,24 +52,55 @@ class SalaryCalculator
                 $absent = false;
                 $employeeId = $item->EmployeeId;
                 $dayWorkingTime = 0;
-                if (!empty($item->checkin_1) && !empty($item->checkout_1)) {
+                for($i=1;$i<=3;$i++){
+                    if (!empty($item->{'checkin_'.$i}) && !empty($item->{'checkout_'.$i})) {
+                        $checkin = Carbon::parse($item->{'checkin_'.$i});
+                        $time = $checkin->diffInMinutes(Carbon::parse( $item->{'checkout_'.$i}));
+                        $currentWorkingTime = round($time / 60, 1);
+                        $OT = $currentWorkingTime - ($item->{'TimeShift' . $i}->StandardWorkingTime ?? 6.0);
+                        if (isset($item->{'TimeShift'.$i}->AllowOverTime)&&($OT > 0 && $item->{'TimeShift'.$i}->AllowOverTime === 0)) {
+                            $currentWorkingTime = $item->{'TimeShift'.$i}->StandardWorkingTime??8.0;
+                            $overTimeHours += $OT;
+                        }
+                        if ($currentWorkingTime > ($item->{'TimeShift'.$i}->MinHourForFoodAllowance??8.0)) {
+                            $foodAllowance += $item->{'TimeShift'.$i}->FoodAllowance??0;
+                        }
+                        $workingTimeAllowance += $item->{'TimeShift'.$i}->TimeAllowance??0;
+                        $departmentAllowance += $item->{'Department'.$i}->Allowance??0;
+                        if($item->EmployeeLevel->AllowOverTime && $item->{'TimeShift'.$i}->IsOTSunday){
+                            if ($checkin->englishDayOfWeek === 'Sunday' && $item->EmployeeLevel->AllowOverTime === 0 && $item->{'TimeShift'.$i}->IsOTSunday === 0) {
+                                $overTimeSunday += $currentWorkingTime;
+                                $currentWorkingTime = 0;
+                            }
+                        }
+                        $workingHours += $currentWorkingTime-1;
+                        $dayWorkingTime+=$currentWorkingTime;
+                    } else {
+                        $absent = true;
+                    }
+                }
+                /**
+                 * @des old code
+                 * if (!empty($item->checkin_1) && !empty($item->checkout_1)) {
 
                     $checkin = Carbon::parse($item->checkin_1);
                     $time = $checkin->diffInMinutes(Carbon::parse( $item->checkout_1));
                     $currentWorkingTime = round($time / 60, 1);
-                    $OT = $currentWorkingTime - $item->TimeShift1->StandardWorkingTime;
+                    $OT = $currentWorkingTime - $item->TimeShift1->StandardWorkingTime??8.0;
                     if ($OT > 0 && $item->TimeShift1->AllowOverTime === 0) {
-                        $currentWorkingTime = $item->TimeShift1->StandardWorkingTime;
+                        $currentWorkingTime = $item->TimeShift1->StandardWorkingTime??8.0;
                         $overTimeHours += $OT;
                     }
-                    if ($currentWorkingTime > $item->TimeShift1->MinHourForFoodAllowance) {
-                        $foodAllowance += $item->TimeShift1->FoodAllowance;
+                    if ($currentWorkingTime > ($item->TimeShift1->MinHourForFoodAllowance??8.0)) {
+                        $foodAllowance += $item->TimeShift1->FoodAllowance??0;
                     }
-                    $workingTimeAllowance += $item->TimeShift1->TimeAllowance;
-                    $departmentAllowance += $item->Department1->Allowance;
-                    if ($checkin->englishDayOfWeek === 'Sunday' && $item->EmployeeLevel->AllowOverTime === 0 && $item->TimeShift1->IsOTSunday === 0) {
-                        $overTimeSunday += $currentWorkingTime;
-                        $currentWorkingTime = 0;
+                    $workingTimeAllowance += $item->TimeShift1->TimeAllowance??0;
+                    $departmentAllowance += $item->Department1->Allowance??0;
+                    if($item->EmployeeLevel->AllowOverTime && $item->TimeShift1->IsOTSunday){
+                        if ($checkin->englishDayOfWeek === 'Sunday' && $item->EmployeeLevel->AllowOverTime === 0 && $item->TimeShift1->IsOTSunday === 0) {
+                            $overTimeSunday += $currentWorkingTime;
+                            $currentWorkingTime = 0;
+                        }
                     }
                     $workingHours += $currentWorkingTime;
                     $dayWorkingTime+=$currentWorkingTime;
@@ -123,18 +154,18 @@ class SalaryCalculator
                     }
                     $workingHours += $currentWorkingTime;
                     $dayWorkingTime+=$currentWorkingTime;
-                }
+                }*/
                 if (!$absent) {
                     ++$workingDays;
                 }
                 if ($item->EmployeeLevel->BasicSalaryByHour > 0) {
-                    $salaryByHours += $dayWorkingTime * $item->EmployeeLevel->BasicSalaryByHour;
-                    $salaryByOverTime += $overTimeHours * $item->EmployeeLevel->BasicSalaryByHour * 1.5;
+                    $salaryByHours += $dayWorkingTime * $item->EmployeeLevel->BasicSalaryByHour??0.0;
+                    $salaryByOverTime += $overTimeHours * $item->EmployeeLevel->BasicSalaryByHour??0.0 * 1.5;
                 } else {
-                    $salaryByMonth += $workingDays * $item->EmployeeLevel->BasicSalaryByMonth;
+                    $salaryByMonth += $workingDays * $item->EmployeeLevel->BasicSalaryByMonth??0.0;
                 }
                 if($item->EmployeeLevel->AllowOverTime === 0){
-                    $salaryByOverTimeSunday = $overTimeSunday * $item->EmployeeLevel->BasicSalaryByHour * 2;
+                    $salaryByOverTimeSunday = $overTimeSunday * $item->EmployeeLevel->BasicSalaryByHour??0.0 * 2;
                     $salaryByOverTime+=$salaryByOverTimeSunday;
                 }
             }
