@@ -33,35 +33,37 @@
                                             </tr>
                                             </thead>
                                             <tbody>
-                                            @foreach($childrenDepartments as $department)
-                                                @if($department->ParentDepartmentId!==0)
-                                                    <tr>
-                                                        <td>{{$department->belongedBranch->Name}}</td>
-                                                        <td>{{$department->Name}}</td>
-                                                        <td>{{$department->DepartmentCode}}</td>
-                                                        <td>{{$department->ParentDepartmentId!==0?$department->belongedDepartment->Name:''}}</td>
-                                                        <td>{{number_format($department->Allowance)}}</td>
-                                                        <td>
-                                                            <div class="btn-group" role="group"
-                                                                 aria-label="Basic example">
-                                                                <a
-                                                                    class="btn btn-outline-info"
-                                                                    href="{{route('department.edit',$department->DepartmentId)}}"
-                                                                    role="button">Edit</a>
-                                                                <form class="delete-department-form" method="post"
-                                                                      action="{{route('department.destroy',$department->DepartmentId)}}">
-                                                                    @method('DELETE')
-                                                                    @csrf
-                                                                    <button type="button"
-                                                                            class="btn btn-outline-danger">
-                                                                        Xóa
-                                                                    </button>
-                                                                </form>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                @endif
-                                            @endforeach
+                                            @if($childrenDepartments->count()>0)
+                                                @foreach($childrenDepartments as $department)
+                                                    @if($department->ParentDepartmentId!==0)
+                                                        <tr>
+                                                            <td>{{$department->belongedBranch->Name}}</td>
+                                                            <td>{{$department->Name}}</td>
+                                                            <td>{{$department->DepartmentCode}}</td>
+                                                            <td>{{$department->ParentDepartmentId!==0?$department->belongedDepartment->Name:''}}</td>
+                                                            <td>{{number_format($department->Allowance)}}</td>
+                                                            <td>
+                                                                <div class="btn-group" role="group"
+                                                                     aria-label="Basic example">
+                                                                    <a
+                                                                        class="btn btn-outline-info"
+                                                                        href="{{route('department.edit',$department->DepartmentId)}}"
+                                                                        role="button">Edit</a>
+                                                                    <form class="delete-department-form" method="post"
+                                                                          action="{{route('department.destroy',$department->DepartmentId)}}">
+                                                                        @method('DELETE')
+                                                                        @csrf
+                                                                        <button type="button"
+                                                                                class="btn btn-outline-danger">
+                                                                            Xóa
+                                                                        </button>
+                                                                    </form>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    @endif
+                                                @endforeach
+                                            @endif
                                             </tbody>
                                         </table>
                                     </div>
@@ -76,8 +78,8 @@
                                             </tr>
                                             </thead>
                                             <tbody>
-                                            @foreach($departments as $department)
-                                                @if($department->ParentDepartmentId===0)
+                                            @if($departments->count()>0)
+                                                @foreach($departments as $department)
                                                     <tr>
                                                         <td>{{$department->belongedBranch->Name}}</td>
                                                         <td>{{$department->Name}}</td>
@@ -101,8 +103,9 @@
                                                             </div>
                                                         </td>
                                                     </tr>
-                                                @endif
-                                            @endforeach
+
+                                                @endforeach
+                                            @endif
                                             </tbody>
                                         </table>
                                     </div>

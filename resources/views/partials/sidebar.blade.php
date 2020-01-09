@@ -53,6 +53,22 @@
                     </a>
                 </li>
                 <li class="nav-item has-treeview">
+                    <a href="{{route('time-shift.index')}}" class="nav-link">
+                        <i class="nav-icon fas fa-user-friends"></i>
+                        <p>
+                            Ca Làm Việc
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item has-treeview">
+                    <a href="{{route('employee.index')}}" class="nav-link">
+                        <i class="nav-icon fas fa-user-friends"></i>
+                        <p>
+                           {{__('Employee Manager')}}
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-business-time"></i>
                         <p>
@@ -62,23 +78,23 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{route('timekeeping.index')}}" class="nav-link">
+                            <a href="{{route('time-keeping.index')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Công Tổng Hợp</p>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a href="{{route('time-keeping-machine.time-keeping-for-workers.index')}}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Công Công Nhân</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{route('timekeeping.edit.index')}}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Chỉnh Sửa</p>
-                            </a>
-                        </li>
+{{--                        <li class="nav-item">--}}
+{{--                            <a href="#" class="nav-link">--}}
+{{--                                <i class="far fa-circle nav-icon"></i>--}}
+{{--                                <p>Công Công Nhân</p>--}}
+{{--                            </a>--}}
+{{--                        </li>--}}
+{{--                        <li class="nav-item">--}}
+{{--                            <a href="{{route('timekeeping.edit.index')}}" class="nav-link">--}}
+{{--                                <i class="far fa-circle nav-icon"></i>--}}
+{{--                                <p>Chỉnh Sửa</p>--}}
+{{--                            </a>--}}
+{{--                        </li>--}}
                         {{--<li class="nav-item has-treeview">
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-circle"></i>
@@ -114,9 +130,9 @@
                     </a>
                     <ul class="nav nav-item nav-treeview">
                         <li class="nav-item">
-                            <a href="{{route('salary-management.SalaryCalculation.index')}}" class="nav-link">
+                            <a href="{{route('temp-salary.index')}}" class="nav-link">
                                 <i class="nav-icon far fa-circle"></i>
-                                <p>Tính Lương</p>
+                                <p>{{__('Tempory Salary')}}</p>
                             </a>
                         </li>
                         <li class="nav-item">

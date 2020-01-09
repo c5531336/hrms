@@ -15,11 +15,15 @@ class CreateTimeShift extends Migration
     {
         Schema::create('TimeShift', function (Blueprint $table) {
             $table->increments('TimeShiftId');
+            $table->integer('BranchId');
             $table->string('Name');
+            $table->integer('MinHourForFoodAllowance')->default(0);
+            $table->double('StandardWorkingTime', 20, 2)->default(0);
             $table->double('FoodAllowance', 20, 2)->default(0);
             $table->double('TimeAllowance', 20, 2)->default(0);
+            $table->tinyInteger('IsOTSunday')->default(0);
             $table->timestamps();
-            $table->index('TimeShiftId');
+            $table->index('TimeShiftId','BranchId');
         });
 
 

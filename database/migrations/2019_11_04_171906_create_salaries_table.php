@@ -21,8 +21,9 @@ class CreateSalariesTable extends Migration
             // ma so nhan vien
             $table->integer('employee_id');
             $table->double('total_salary',20,2);
-            $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
-            $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
+            $table->timestamps();
+//            $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+//            $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
         });
     }
 

@@ -4,10 +4,10 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Employees extends Model  
+class Employees extends Model
 {
 
-    
+
 
     /**
      * The database table used by the model.
@@ -15,13 +15,14 @@ class Employees extends Model
      * @var string
      */
     protected $table = 'employees';
-
+    protected $primaryKey='EmployeeId';
     /**
      * Attributes that should be mass-assignable.
      *
      * @var array
      */
-    protected $fillable = ['employee_id', 'BranchId', 'name', 'department', 'EmployeeLevelId', 'gender', 'basicSalary', 'probationarySalary', 'probationTime', 'isProbation', 'created_at', 'updated_at'];
+    protected $fillable = ['EmployeeId','basicSalary', 'BranchId', 'created_at', 'DepartmentId', 'EmployeeLevelId', 'FullName', 'gender', 'isProbation', 'probationarySalary', 'probationTime', 'updated_at',
+        'AllowOverTime'];
 
     /**
      * The attributes excluded from the model's JSON form.
@@ -44,4 +45,13 @@ class Employees extends Model
      */
     protected $dates = ['created_at', 'updated_at'];
 
+    /**
+     * Relationship
+     */
+    public function Branch(){
+        return $this->belongsTo(Branch::class,'BranchId');
+    }
+    public function Department(){
+        return $this->belongsto(Department::class,'DepartmentId');
+    }
 }

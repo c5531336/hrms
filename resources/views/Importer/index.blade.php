@@ -6,7 +6,7 @@
 
                 <div class="card-header">
 
-                    Laravel 5.7 Import Export Excel to database Example - ItSolutionStuff.com
+                    {{__('Import TimeKeeping')}}
 
                 </div>
 
@@ -16,9 +16,12 @@
                           enctype="multipart/form-data">
 
                         @csrf
+                        <label for="Month">{{__('Month')}}</label>
+                        <input type="text" name="Month" class="form-control">
+                        <label for="file">{{__('Input File')}}</label>
                         <input type="file" name="file" class="form-control">
                         <br>
-                        <button class="btn btn-success">Import User Data</button>
+                        <button class="btn btn-success">{{ __('Import')}}</button>
 
                     </form>
 
@@ -27,16 +30,30 @@
             <div class="card bg-light mt-3">
 
                 <div class="card-header">
+                    {{__('Import Product Made')}}
+                </div>
+                <div class="card-body">
+                    <form action="{{ route('Importer.ProductMade') }}" method="POST"
+                          enctype="multipart/form-data">
+                        @csrf
+                        <label for="Month">{{__('Month')}}</label>
+                        <input type="text" name="Month" class="form-control">
+                        <label for="file">{{__('Input File')}}</label>
+                        <input type="file" name="file" class="form-control">
+                        <br>
+                        <button class="btn btn-success">{{ __('Import')}}</button>
 
-                    Importer For EmployeeLevel
-
+                    </form>
                 </div>
 
+            </div>
+            <div class="card bg-light mt-3">
+                <div class="card-header">
+                    {{__('Import Product')}}
+                </div>
                 <div class="card-body">
-
                     <form action="{{ route('Importer.EmployeeLevel') }}" method="POST"
                           enctype="multipart/form-data">
-
                         @csrf
                         <input type="file" name="file" class="form-control">
                         <br>
@@ -47,6 +64,14 @@
                 </div>
 
             </div>
+
         </section>
     </div>
+@endsection
+@section('script')
+   <script>
+       @if(session('message'))
+        toastr.success('{{session('message')}}');
+       @endif
+   </script>
 @endsection

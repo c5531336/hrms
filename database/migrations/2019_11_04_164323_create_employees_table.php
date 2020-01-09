@@ -14,21 +14,23 @@ class CreateEmployeesTable extends Migration
     public function up()
     {
         Schema::create('employees', function (Blueprint $table) {
-            $table->bigIncrements('id'); // ko quan tâm đến cột này nữa
-            $table->string('employee_id')->default('');
+            $table->bigIncrements('EmployeeId');
             $table->integer('BranchId');
-            $table->string('name');
+            $table->string('FullName');
             $table->integer('DepartmentId');
             $table->bigInteger('EmployeeLevelId');
-            $table->enum('gender',['Name','Nữ']);
-            $table->double('basicSalary',20,2)->default(0);
-            $table->double('probationarySalary')->default(0);
+            $table->enum('gender',['Nam','Nữ']);
+            $table->integer('IncreaseSalaryRate')->default(0);
+            $table->integer('IncreaseAllowanceRate')->default(0);
+            $table->date('StartWorkingDate')->nullable();
+            $table->date('EndWorking')->nullable();
             $table->integer('probationTime')->default(0);
             $table->tinyInteger('isProbation')->default(0);
-
-            $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
-            $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
+            $table->tinyInteger('isLeader')->default(0);
+            $table->tinyInteger('AllowOverTime')->default(1);
+            $table->timestamps();
         });
+//        DB::update('ALTER TABLE employees AUTO_INCREMENT = 3000;');
     }
 
     /**

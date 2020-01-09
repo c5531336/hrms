@@ -55,3 +55,8 @@ mix.scripts([
     'node_modules/admin-lte/plugins/jszip/jszip.min.js',
     'node_modules/sparklines/source/sparkline.js'
 ],'public/assets/js/library.min.js');
+
+/** dev browsycn*/
+mix.browserSync({
+    proxy: 'hrm.io:8000'
+});

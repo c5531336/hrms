@@ -29,12 +29,12 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="DepartmentCode">Mã Phòng ban</label>
+                            <label for="DepartmentCode">Mã Phòng ban/ Mã Tổ</label>
                             <input type="text" class="form-control" name="DepartmentCode" placeholder="ILKS"
                                    value="{{old('DepartmentCode')}}"/>
                         </div>
                         <div class="form-group">
-                            <label for="Name">Tên Phòng ban</label>
+                            <label for="Name">Tên Phòng ban/ Tên Tổ</label>
                             <input type="text" class="form-control" name="Name" placeholder="In lụa"
                                    value="{{old('Name')}}"/>
                         </div>

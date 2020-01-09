@@ -7,21 +7,29 @@ use Illuminate\Database\Eloquent\Model;
 class TimeShift extends Model
 {
 
-
-
     /**
      * The database table used by the model.
      *
      * @var string
      */
     protected $table = 'TimeShift';
-    protected $primaryKey='TimeShiftId';
+    protected $primaryKey = 'TimeShiftId';
     /**
      * Attributes that should be mass-assignable.
      *
      * @var array
      */
-    protected $fillable = ['Name', 'FoodAllowance', 'TimeAllowance', 'created_at', 'updated_at'];
+    protected $fillable = [
+        'Name',
+        'BranchId',
+        'FoodAllowance',
+        'TimeAllowance',
+        'MinHourForFoodAllowance',
+        'StandardWorkingTime',
+        'IsOTSunday',
+        'created_at',
+        'updated_at',
+    ];
 
     /**
      * The attributes excluded from the model's JSON form.
@@ -43,5 +51,11 @@ class TimeShift extends Model
      * @var array
      */
     protected $dates = ['created_at', 'updated_at'];
+
+    /** relationship */
+    public function Branch()
+    {
+        return $this->belongsTo(Branch::class, 'BranchId');
+    }
 
 }

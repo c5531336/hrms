@@ -13,7 +13,9 @@
 <div class="wrapper">
     @include('partials.navbar')
     @include('partials.sidebar')
-    @yield('content')
+    <div id="app">
+        @yield('content')
+    </div>
     @include('partials.control-sidebar')
 </div>
 @include('partials.footer')
