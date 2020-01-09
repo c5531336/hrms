@@ -33,7 +33,6 @@ class EmployeeLevel extends Model
         'BasicAllowanceRate',
         'BasicPhoneAllowance',
         'BasicResponseAllowance',
-        'AllowOverTime',
         'created_at',
         'updated_at',
     ];

@@ -42,22 +42,20 @@ class EmployeeController extends Controller
      * Display the specified resource.
      *
      * @param  \App\Models\Employees  $employees
-     * @return \Illuminate\Http\Response
      */
-    public function show(Employees $employees)
+    public function show(Employees $employee)
     {
-        //
+        return view('Employee.edit',['Employee'=>$employee]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Employees  $employees
-     * @return \Illuminate\Http\Response
      */
-    public function edit(Employees $employees)
+    public function edit(Employees $employee)
     {
-        //
+        $employee->load(['Branch','Department']);
+        return view('Employee.edit',['Employee'=>$employee]);
     }
 
     /**
