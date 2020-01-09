@@ -21,7 +21,8 @@ class Employees extends Model
      *
      * @var array
      */
-    protected $fillable = ['EmployeeId','basicSalary', 'BranchId', 'created_at', 'DepartmentId', 'EmployeeLevelId', 'FullName', 'gender', 'isProbation', 'probationarySalary', 'probationTime', 'updated_at'];
+    protected $fillable = ['EmployeeId','basicSalary', 'BranchId', 'created_at', 'DepartmentId', 'EmployeeLevelId', 'FullName', 'gender', 'isProbation', 'probationarySalary', 'probationTime', 'updated_at',
+        'AllowOverTime'];
 
     /**
      * The attributes excluded from the model's JSON form.

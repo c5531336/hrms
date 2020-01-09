@@ -27,6 +27,7 @@ class CreateEmployeesTable extends Migration
             $table->integer('probationTime')->default(0);
             $table->tinyInteger('isProbation')->default(0);
             $table->tinyInteger('isLeader')->default(0);
+            $table->tinyInteger('AllowOverTime')->default(1);
             $table->timestamps();
         });
 //        DB::update('ALTER TABLE employees AUTO_INCREMENT = 3000;');
